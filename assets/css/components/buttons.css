@@ -1,0 +1,11 @@
+.cta__link {
+  padding: var(--ss-space-xs-s);
+  background: var(--ss-accent-gradient);
+  border-radius: 100vmax;
+  line-height: 1;
+  color: var(--ss-body-bg);
+  text-decoration: none;
+  min-width: 120px;
+  display: grid;
+  place-content: center;
+}

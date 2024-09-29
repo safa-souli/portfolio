@@ -1,0 +1,34 @@
+.header {
+  position: fixed;
+  top: 80px;
+  z-index: 999;
+  border-radius: 100vmax;
+  background-color: black;
+  width: var(--ss-grid-max-width);
+  margin: 0 auto;
+  left: var(--ss-grid-gutter);
+  right: var(--ss-grid-gutter);
+  padding: var(--ss-space-s);
+}
+
+.header__wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  place-content: space-between;
+  place-items: center;
+}
+
+.brand__link {
+  display: block;
+}
+
+.nav__list {
+  display: flex;
+  gap: var(--ss-grid-gutter);
+  list-style-type: none;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+}
