@@ -2,6 +2,15 @@
   margin: 0;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+  color: var(--ss-body-color);
+  font-style: italic;
+  text-decoration: unset;
+  font-family: inherit;
+}
+
 body {
   background-color: var(--ss-body-bg);
   color: var(--ss-body-color);
@@ -31,6 +40,11 @@ cta {
   justify-content: center;
   align-items: center;
   gap: var(--ss-space-xs);
+}
+
+.ds-px {
+  display: block;
+  padding-block: var(--ss-space-3xl);
 }
 
 .ds-header {

@@ -12,6 +12,7 @@
   --ss-card-bg: rgba(24, 24, 24, 65%);
   --ss-border-radius: 14px;
   --ss-dark: black;
+  --ss-dark-rgb: 0, 0, 0;
 
   /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
 
@@ -71,10 +72,10 @@
 
   /* colors */
   --ss-accent-color: #4DFFAF;
-  --ss-accent-color-rgb: 255, 184, 0;
+  --ss-accent-color-rgb: 77, 255, 175;
   --ss-accent-gradient: linear-gradient(90deg, var(--ss-accent-color) 0%, #3EAD7B 100%);
 
   /* buttons */
-  --ss-btn-font-weight: 500;
+  --ss-btn-font-weight: 600;
 
 }
