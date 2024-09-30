@@ -1,6 +1,6 @@
 .cta__btn--outline,
 .cta__btn {
-  padding: var(--ss-space-xs-s);
+  padding: var(--ss-space-xs-s) var(--ss-space-m);
   border-radius: 100vmax;
   line-height: 1;
   text-decoration: none;
@@ -11,6 +11,7 @@
   grid-auto-flow: column;
   gap: var(--ss-space-3xs-2xs);
   place-items: baseline;
+  overflow: hidden;
 }
 
 .cta__btn .icon,
@@ -23,10 +24,19 @@
 }
 
 .cta__btn--outline {
-  border: 1px solid var(--ss-accent-color);
+  position: relative;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.cta__btn--outline::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  inset-block: 0;
+  background-color: var(--ss-dark);
+  z-index: -1;
 }
 
 .cta__btn--outline .icon {

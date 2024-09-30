@@ -24,9 +24,19 @@
 .icon--computer-brush {
   --icon-url: url("../../icons/computer-brush.svg");
 }
+
 .icon--webpage-layout {
   --icon-url: url("../../icons/webpage-layout.svg");
 }
+
 .icon--computer-code {
   --icon-url: url("../../icons/computer-code.svg");
+}
+
+.icon--eye {
+  --icon-url: url("../../icons/eye.svg");
+}
+
+.icon--eye-2 {
+  --icon-url: url("../../icons/eye-2.svg");
 }
