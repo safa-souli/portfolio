@@ -1,0 +1,22 @@
+.callout {
+  background-color: var(--ss-card-bg);
+}
+
+.callout__wrapper {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  place-items: center;
+}
+
+.callout__title {
+  margin-bottom: var(--ss-space-s-m);
+}
+
+.callout .cta__btn {
+  margin-top: var(--ss-space-s-l);
+}
+
+.callout__text {
+  text-wrap: balance;
+}
