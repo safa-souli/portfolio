@@ -60,6 +60,12 @@
 
 .portfolio__image {
   object-fit: cover;
+  transform: scale(1);
+  transition: all 500ms ease-in-out;
+}
+
+.portfolio__item:hover .portfolio__image {
+  transform: scale(1.2);
 }
 
 .portfolio__item:not(.coming-soon) .portfolio__image {
