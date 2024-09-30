@@ -47,6 +47,11 @@ cta {
   padding-block: var(--ss-space-3xl);
 }
 
+.ds-lg-px {
+  display: block;
+  padding-block: var(--ss-space-5xl);
+}
+
 .ds-header {
   display: grid;
   place-content: center;
