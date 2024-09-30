@@ -1,0 +1,16 @@
+.counter {
+  display: block;
+  background: var(--ss-card-bg);
+  padding: var(--ss-space-l-xl);
+}
+
+
+.counter__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: var(--ss-grid-gutter);
+}
+
+.counter__number {
+  font-size: var(--ss-step-4);
+}
