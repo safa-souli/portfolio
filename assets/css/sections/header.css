@@ -1,14 +1,14 @@
 .header {
   position: fixed;
-  top: 80px;
+  top: var(--ss-space-xl);
   z-index: 999;
   border-radius: 100vmax;
-  background-color: black;
+  background-color: var(--ss-card-bg);
   width: var(--ss-grid-max-width);
   margin: 0 auto;
   left: var(--ss-grid-gutter);
   right: var(--ss-grid-gutter);
-  padding: var(--ss-space-s);
+  padding: var(--ss-space-2xs);
 }
 
 .header__wrapper {
@@ -20,6 +20,11 @@
 
 .brand__link {
   display: block;
+  line-height: 1;
+}
+
+.brand__logo {
+  margin-left: var(--ss-space-3xs);
 }
 
 .nav__list {
@@ -29,6 +34,7 @@
 }
 
 .nav__link {
-  color: white;
+  color: var(--ss-heading-color);
   text-decoration: none;
+  font-weight: var(--ss-btn-font-weight);
 }

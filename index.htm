@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="assets/font/Sora/stylesheet.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/icons/style.css">
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 
@@ -24,7 +25,7 @@
     <div class="header__wrapper">
       <brand class="brand">
         <a class="brand__link" href="index.html">
-          <img class="brand__logo" src="assets/img/logo.svg" width="106" height="36" alt="logo">
+          <img class="brand__logo" src="assets/img/logo.svg" width="117" height="40" alt="logo">
         </a>
       </brand>
       <nav class="nav">
@@ -52,29 +53,68 @@
       </nav>
 
       <cta>
-        <a class="cta__link" href="contact.html">Let's Talk</a>
+        <a class="cta__btn" href="contact.html"><i class="icon icon--message"></i> Let's Talk</a>
       </cta>
     </div>
   </header>
 
   <hero class="hero">
     <div class="container">
-      <h1 class="hero__title">Web Developer + UI Designer</h1>
-      <h2 class="hero__subtitle">Hi there! I'm Safa Souli</h2>
-      <p class="hero__text">
-        I am a Web Developer and UX Designer passionate about crafting seamless digital solutions. I merge creativity
-        with clean code to deliver intuitive user experiences. Let’s build something innovative together
-      </p>
-      <div class="hero__cta">
-        <a class="cta__btn" href="contact.html">Download CV</a>
-        <a class="cta__btn" href="contact.html">See Work</a>
+      <div class="hero__content">
+        <div class="u-container">
+          <div class="hero__wrapper">
+            <h1 class="hero__title title">Web Developer +<br> UI Designer</h1>
+            <h2 class="hero__subtitle subtitle">Hi there! I'm Safa Souli</h2>
+            <p class="hero__text">
+              I am a Web Developer and UX Designer passionate about crafting seamless digital solutions. I merge
+              creativity
+              with clean code to deliver intuitive user experiences. Let’s build something innovative together
+            </p>
+            <cta class="hero__cta">
+              <a class="cta__btn--outline " href="contact.html">Download CV <i class="icon icon--download-file"></i></a>
+              <a class="cta__btn--outline" href="contact.html">See Work</a>
+            </cta>
+          </div>
+        </div>
       </div>
     </div>
   </hero>
 
   <footer class="footer">
     <div class="container">
-      <p class="footer__text">© 2022 Safa Souli. All rights reserved.</p>
+      <div class="footer__wrapper">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="about.html">About</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="service.html">Service</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="portfolio.html">Portfolio</a>
+            </li>
+
+            <li class="nav__item">
+              <a class="nav__link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <brand class="brand">
+          <a class="brand__link" href="index.html">
+            <img class="brand__logo" src="assets/img/logo.svg" width="165" height="56" alt="logo">
+          </a>
+        </brand>
+
+        <p class="footer__text">© 2022 Safa Souli. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 

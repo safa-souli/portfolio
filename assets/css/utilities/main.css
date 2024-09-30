@@ -11,9 +11,24 @@ body {
   line-height: var(--ss-body-line-height);
 }
 
+.u-container,
 .container {
-  max-width: var(--ss-grid-max-width);
   margin: 0 auto;
   padding-left: var(--ss-grid-gutter);
   padding-right: var(--ss-grid-gutter);
+}
+
+.container {
+  max-width: var(--ss-grid-max-width);
+}
+
+.u-container {
+  max-width: var(--ss-grid-ultimate-width);
+}
+
+cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--ss-space-xs);
 }

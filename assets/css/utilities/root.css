@@ -4,11 +4,12 @@
   --ss-body-font-family: 'Sora', system-ui;
   --ss-body-font-size: var(--ev-step-0);
   --ss-body-font-weight: 400;
-  --ss-body-line-height: 1.5;
+  --ss-body-line-height: 2;
   --ss-heading-color: #fff;
   --ss-heading-font-family: 'Sora', system-ui;
-  --ss-body-font-weight: 700;
-  --ss-body-line-height: 1.2;
+  --ss-heading-font-weight: 700;
+  --ss-heading-line-height: 1.1;
+  --ss-card-bg: rgba(24, 24, 24, 65%);
 
   /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
 
@@ -62,6 +63,7 @@
   /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,2xl,12 */
 
   --ss-grid-max-width: 74.00rem;
+  --ss-grid-ultimate-width: 50.00rem;
   --ss-grid-gutter: var(--space-s-l, clamp(0.875rem, 0.4583rem + 2.0833vw, 2rem));
   --ss-grid-columns: 12;
 
@@ -69,4 +71,8 @@
   --ss-accent-color: #4DFFAF;
   --ss-accent-color-rgb: 255, 184, 0;
   --ss-accent-gradient: linear-gradient(90deg, var(--ss-accent-color) 0%, #3EAD7B 100%);
+
+  /* buttons */
+  --ss-btn-font-weight: 500;
+
 }

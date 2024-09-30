@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--ss-heading-color);
+  font-family: var(--ss-heading-font-family);
+  font-weight: var(--ss-heading-font-weight);
+  line-height: var(--ss-heading-line-height);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.title {
+  background-image: var(--ss-accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: var(--ss-space-xs);
+}
+
+h1 {
+  font-size: var(--ss-step-5);
+}
+
+h2 {
+  font-size: var(--ss-step-4);
+}
+
+h3 {
+  font-size: var(--ss-step-3);
+}
+
+h4 {
+  font-size: var(--ss-step-2);
+}
+
+h5 {
+  font-size: var(--ss-step-1);
+}
+
+.subtitle {
+  grid-row: 1;
+  font-size: var(--ss-step-0);
+  font-weight: var(--ss-btn-font-weight);
+}
+
+small {
+  font-size: var(--ss-step--1);
+}

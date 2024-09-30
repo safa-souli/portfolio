@@ -1,11 +1,34 @@
-.cta__link {
+.cta__btn--outline,
+.cta__btn {
   padding: var(--ss-space-xs-s);
-  background: var(--ss-accent-gradient);
   border-radius: 100vmax;
   line-height: 1;
-  color: var(--ss-body-bg);
   text-decoration: none;
-  min-width: 120px;
-  display: grid;
+  display: inline-grid;
   place-content: center;
+  font-weight: var(--ss-btn-font-weight);
+  background-image: var(--ss-accent-gradient);
+  grid-auto-flow: column;
+  gap: var(--ss-space-3xs-2xs);
+  place-items: baseline;
+}
+
+.cta__btn .icon,
+.cta__btn--outline .icon {
+  --icon-height: 14px;
+}
+
+.cta__btn {
+  color: var(--ss-body-bg);
+}
+
+.cta__btn--outline {
+  border: 1px solid var(--ss-accent-color);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.cta__btn--outline .icon {
+  --icon-gradient: var(--ss-accent-gradient);
 }

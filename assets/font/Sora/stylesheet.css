@@ -1,14 +1,140 @@
 @font-face {
     font-family: 'Sora';
-    src: url('Sora-Medium.eot');
-    src: local('Sora Medium'), local('Sora-Medium'),
-        url('Sora-Medium.eot?#iefix') format('embedded-opentype'),
-        url('Sora-Medium.woff2') format('woff2'),
-        url('Sora-Medium.woff') format('woff'),
-        url('Sora-Medium.ttf') format('truetype'),
-        url('Sora-Medium.svg#Sora-Medium') format('svg');
-    font-weight: 500;
+    src: url('Sora-ExtraBold.eot');
+    src: local('Sora ExtraBold'), local('Sora-ExtraBold'),
+        url('Sora-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Sora-ExtraBold.woff2') format('woff2'),
+        url('Sora-ExtraBold.woff') format('woff'),
+        url('Sora-ExtraBold.ttf') format('truetype'),
+        url('Sora-ExtraBold.svg#Sora-ExtraBold') format('svg');
+    font-weight: bold;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-Light.eot');
+    src: local('Sora Light'), local('Sora-Light'),
+        url('Sora-Light.eot?#iefix') format('embedded-opentype'),
+        url('Sora-Light.woff2') format('woff2'),
+        url('Sora-Light.woff') format('woff'),
+        url('Sora-Light.ttf') format('truetype'),
+        url('Sora-Light.svg#Sora-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-ExtraLightItalic.eot');
+    src: local('Sora ExtraLight Italic'), local('Sora-ExtraLightItalic'),
+        url('Sora-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-ExtraLightItalic.woff2') format('woff2'),
+        url('Sora-ExtraLightItalic.woff') format('woff'),
+        url('Sora-ExtraLightItalic.ttf') format('truetype'),
+        url('Sora-ExtraLightItalic.svg#Sora-ExtraLightItalic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-Italic.eot');
+    src: local('Sora Italic'), local('Sora-Italic'),
+        url('Sora-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-Italic.woff2') format('woff2'),
+        url('Sora-Italic.woff') format('woff'),
+        url('Sora-Italic.ttf') format('truetype'),
+        url('Sora-Italic.svg#Sora-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-BoldItalic.eot');
+    src: local('Sora Bold Italic'), local('Sora-BoldItalic'),
+        url('Sora-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-BoldItalic.woff2') format('woff2'),
+        url('Sora-BoldItalic.woff') format('woff'),
+        url('Sora-BoldItalic.ttf') format('truetype'),
+        url('Sora-BoldItalic.svg#Sora-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-ExtraBoldItalic.eot');
+    src: local('Sora ExtraBold Italic'), local('Sora-ExtraBoldItalic'),
+        url('Sora-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-ExtraBoldItalic.woff2') format('woff2'),
+        url('Sora-ExtraBoldItalic.woff') format('woff'),
+        url('Sora-ExtraBoldItalic.ttf') format('truetype'),
+        url('Sora-ExtraBoldItalic.svg#Sora-ExtraBoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-LightItalic.eot');
+    src: local('Sora Light Italic'), local('Sora-LightItalic'),
+        url('Sora-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-LightItalic.woff2') format('woff2'),
+        url('Sora-LightItalic.woff') format('woff'),
+        url('Sora-LightItalic.ttf') format('truetype'),
+        url('Sora-LightItalic.svg#Sora-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-Bold.eot');
+    src: local('Sora Bold'), local('Sora-Bold'),
+        url('Sora-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Sora-Bold.woff2') format('woff2'),
+        url('Sora-Bold.woff') format('woff'),
+        url('Sora-Bold.ttf') format('truetype'),
+        url('Sora-Bold.svg#Sora-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-ExtraLight.eot');
+    src: local('Sora ExtraLight'), local('Sora-ExtraLight'),
+        url('Sora-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Sora-ExtraLight.woff2') format('woff2'),
+        url('Sora-ExtraLight.woff') format('woff'),
+        url('Sora-ExtraLight.ttf') format('truetype'),
+        url('Sora-ExtraLight.svg#Sora-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('Sora-MediumItalic.eot');
+    src: local('Sora Medium Italic'), local('Sora-MediumItalic'),
+        url('Sora-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-MediumItalic.woff2') format('woff2'),
+        url('Sora-MediumItalic.woff') format('woff'),
+        url('Sora-MediumItalic.ttf') format('truetype'),
+        url('Sora-MediumItalic.svg#Sora-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
     font-display: swap;
 }
 
@@ -42,6 +168,20 @@
 
 @font-face {
     font-family: 'Sora';
+    src: url('Sora-ThinItalic.eot');
+    src: local('Sora Thin Italic'), local('Sora-ThinItalic'),
+        url('Sora-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-ThinItalic.woff2') format('woff2'),
+        url('Sora-ThinItalic.woff') format('woff'),
+        url('Sora-ThinItalic.ttf') format('truetype'),
+        url('Sora-ThinItalic.svg#Sora-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
     src: url('Sora-Thin.eot');
     src: local('Sora Thin'), local('Sora-Thin'),
         url('Sora-Thin.eot?#iefix') format('embedded-opentype'),
@@ -56,57 +196,29 @@
 
 @font-face {
     font-family: 'Sora';
-    src: url('Sora-Light.eot');
-    src: local('Sora Light'), local('Sora-Light'),
-        url('Sora-Light.eot?#iefix') format('embedded-opentype'),
-        url('Sora-Light.woff2') format('woff2'),
-        url('Sora-Light.woff') format('woff'),
-        url('Sora-Light.ttf') format('truetype'),
-        url('Sora-Light.svg#Sora-Light') format('svg');
-    font-weight: 300;
+    src: url('Sora-Medium.eot');
+    src: local('Sora Medium'), local('Sora-Medium'),
+        url('Sora-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Sora-Medium.woff2') format('woff2'),
+        url('Sora-Medium.woff') format('woff'),
+        url('Sora-Medium.ttf') format('truetype'),
+        url('Sora-Medium.svg#Sora-Medium') format('svg');
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Sora';
-    src: url('Sora-ExtraBold.eot');
-    src: local('Sora ExtraBold'), local('Sora-ExtraBold'),
-        url('Sora-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('Sora-ExtraBold.woff2') format('woff2'),
-        url('Sora-ExtraBold.woff') format('woff'),
-        url('Sora-ExtraBold.ttf') format('truetype'),
-        url('Sora-ExtraBold.svg#Sora-ExtraBold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Sora';
-    src: url('Sora-ExtraLight.eot');
-    src: local('Sora ExtraLight'), local('Sora-ExtraLight'),
-        url('Sora-ExtraLight.eot?#iefix') format('embedded-opentype'),
-        url('Sora-ExtraLight.woff2') format('woff2'),
-        url('Sora-ExtraLight.woff') format('woff'),
-        url('Sora-ExtraLight.ttf') format('truetype'),
-        url('Sora-ExtraLight.svg#Sora-ExtraLight') format('svg');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Sora';
-    src: url('Sora-Bold.eot');
-    src: local('Sora Bold'), local('Sora-Bold'),
-        url('Sora-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Sora-Bold.woff2') format('woff2'),
-        url('Sora-Bold.woff') format('woff'),
-        url('Sora-Bold.ttf') format('truetype'),
-        url('Sora-Bold.svg#Sora-Bold') format('svg');
-    font-weight: bold;
-    font-style: normal;
+    src: url('Sora-SemiBoldItalic.eot');
+    src: local('Sora SemiBold Italic'), local('Sora-SemiBoldItalic'),
+        url('Sora-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Sora-SemiBoldItalic.woff2') format('woff2'),
+        url('Sora-SemiBoldItalic.woff') format('woff'),
+        url('Sora-SemiBoldItalic.ttf') format('truetype'),
+        url('Sora-SemiBoldItalic.svg#Sora-SemiBoldItalic') format('svg');
+    font-weight: 600;
+    font-style: italic;
     font-display: swap;
 }
 

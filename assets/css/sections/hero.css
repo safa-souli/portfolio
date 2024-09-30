@@ -4,3 +4,20 @@
   place-content: center;
   text-align: center;
 }
+
+.hero__wrapper {
+  display: grid;
+  transform: translateY(48px);
+}
+
+.hero__title {
+  margin-bottom: var(--ss-space-s-m);
+}
+
+.hero__cta {
+  margin-top: var(--ss-space-s-l);
+}
+
+.hero__subtitle {
+  margin-bottom: var(--ss-space-xs-s);
+}
