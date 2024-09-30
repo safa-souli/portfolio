@@ -33,6 +33,14 @@
   list-style-type: none;
 }
 
+.nav__item.active .nav__link {
+  background-image: var(--ss-accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: var(--ss-space-xs);
+}
+
 .nav__link {
   color: var(--ss-heading-color);
   text-decoration: none;
