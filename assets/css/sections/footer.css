@@ -10,3 +10,7 @@
   text-align: center;
   gap: var(--ss-space-m-l);
 }
+
+.footer__text {
+  color: var(--ss-accent-color);
+}

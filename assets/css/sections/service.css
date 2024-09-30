@@ -1,0 +1,30 @@
+.service {
+  display: block;
+  padding-block: var(--ss-space-3xl);
+}
+
+.service__item {
+  background-color: var(--ss-card-bg);
+  border-radius: var(--ss-border-radius);
+  padding: var(--ss-space-s-l);
+}
+
+.service__item-title {
+  margin-bottom: var(--ss-space-xs-s);
+  font-size: var(--ss-step-1);
+}
+
+.service__icon {
+  display: grid;
+  background: var(--ss-dark);
+  padding: var(--ss-space-xs-s);
+  margin-bottom: var(--ss-space-s-m);
+  border-radius: 100vmax;
+  width: fit-content;
+  aspect-ratio: 1/1;
+}
+
+.service__icon .icon {
+  --icon-height: 28px;
+  --icon-gradient: var(--ss-accent-gradient);
+}

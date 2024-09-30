@@ -32,3 +32,29 @@ cta {
   align-items: center;
   gap: var(--ss-space-xs);
 }
+
+.ds-header {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: var(--ss-space-s);
+}
+
+.ds-grid {
+  display: grid;
+  gap: var(--ss-grid-gutter);
+  grid-template-columns: repeat(var(--grid-columns, 1), 1fr);
+  margin-top: var(--ss-space-xl);
+}
+
+@media (width > 768px) {
+  .ds-grid {
+    --grid-columns: 2;
+  }
+}
+
+@media (width > 992px) {
+  .ds-grid {
+    --grid-columns: 3;
+  }
+}
