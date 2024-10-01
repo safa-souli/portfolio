@@ -48,3 +48,59 @@
 .icon--graduation-cap {
   --icon-url: url("../../icons/graduation-cap.svg");
 }
+
+.icon--html5 {
+  --icon-url: url("../../icons/html5.svg");
+}
+
+.icon--css3 {
+  --icon-url: url("../../icons/css3.svg");
+}
+
+.icon--sass {
+  --icon-url: url("../../icons/sass.svg");
+}
+
+.icon--javascript {
+  --icon-url: url("../../icons/js.svg");
+}
+
+.icon--jquery {
+  --icon-url: url("../../icons/jquery.svg");
+}
+
+.icon--bootstrap {
+  --icon-url: url("../../icons/bootstrap.svg");
+}
+
+.icon--figma {
+  --icon-url: url("../../icons/figma.svg");
+}
+
+.icon--illustrator {
+  --icon-url: url("../../icons/ai.svg");
+}
+
+.icon--framer {
+  --icon-url: url("../../icons/framer.svg");
+}
+
+.icon--sql {
+  --icon-url: url("../../icons/sql.svg");
+}
+
+.icon--php {
+  --icon-url: url("../../icons/php.svg");
+}
+
+.icon--symfony {
+  --icon-url: url("../../icons/symfony.svg");
+}
+
+.icon--git {
+  --icon-url: url("../../icons/git.svg");
+}
+
+.icon--github {
+  --icon-url: url("../../icons/github.svg");
+}
