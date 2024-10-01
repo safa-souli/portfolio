@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-image: linear-gradient(90deg, #4DFFAF 0%, #3EAD7B 100%);height: 100vmax;">
 
 <head>
   <meta charset="UTF-8">
@@ -18,479 +18,488 @@
   <link rel="preload" href="assets/font/Sora/Sora-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
   <link rel="stylesheet" href="assets/font/Sora/stylesheet.css">
-  <link rel="stylesheet" href="node_modules/@fancyapps/ui/dist/fancybox/fancybox.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.min.css"
+    integrity="sha512-s4DOVHc73MjMnsueMjvJSnYucSU3E7WF0UVGRQFd/QDzeAx0D0BNuAX9fbZSLkrYW7V2Ly0/BKHSER04bCJgtQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
 </head>
 
-<body>
-  <header class="header">
-    <div class="header__wrapper">
-      <brand class="brand">
-        <a class="brand__link" href="index.htm">
-          <img class="brand__logo" src="assets/img/logo.svg" width="117" height="40" alt="logo">
-        </a>
-      </brand>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item active">
-            <a class="nav__link" href="index.htm">Home</a>
-          </li>
-
-          <li class="nav__item disabled">
-            <a class="nav__link" href="about.htm">About</a>
-          </li>
-
-          <li class="nav__item disabled">
-            <a class="nav__link" href="service.htm">Service</a>
-          </li>
-
-          <li class="nav__item disabled">
-            <a class="nav__link" href="portfolio.htm">Portfolio</a>
-          </li>
-
-          <li class="nav__item disabled">
-            <a class="nav__link" href="contact.htm">Contact</a>
-          </li>
-        </ul>
-      </nav>
-
-      <cta>
-        <a class="cta__btn" href="contact.htm"><i class="icon icon--message"></i> Let's Talk</a>
-      </cta>
-    </div>
-  </header>
-
-  <hero class="hero">
-    <div class="container">
-      <div class="hero__content">
-        <div class="u-container">
-          <div class="hero__wrapper">
-            <h1 class="hero__title title">Web Developer +<br> UI Designer</h1>
-            <h2 class="hero__subtitle subtitle">Hi there! I'm Safa Souli</h2>
-            <p class="hero__text">
-              I am a Web Developer and UX Designer passionate about crafting seamless digital solutions. I merge
-              creativity
-              with clean code to deliver intuitive user experiences. Let’s build something innovative together
-            </p>
-            <cta class="hero__cta">
-              <a class="cta__btn--outline " href="assets/pdf/Resume-English.pdf" target="_blank">Download CV <i
-                  class="icon icon--download-file"></i></a>
-              <a class="cta__btn--outline disabled" href="contact.htm">See Work</a>
-            </cta>
-          </div>
-        </div>
-      </div>
-    </div>
-  </hero>
-
-  <counter class="counter">
-    <div class="container">
-      <div class="counter__wrapper">
-        <div class="counter__item">
-          <h2 class="counter__number title">05+</h2>
-          <p class="counter__text">Years of Experience</p>
-        </div>
-
-        <div class="counter__item">
-          <h2 class="counter__number title">100+</h2>
-          <p class="counter__text">Project completed</p>
-        </div>
-
-        <div class="counter__item">
-          <h2 class="counter__number title aboutme">About me</h2>
-          <p class="counter__text">As a UI designer and web developer, I create intuitive, visually engaging interfaces.
-            Combining design and front-end
-            expertise, I craft seamless digital experiences.</p>
-        </div>
-      </div>
-    </div>
-  </counter>
-
-  <service class="service ds-outer-px">
-    <div class="container">
-      <div class="service__header ds-header">
-        <h2 class="service__title title">My quality of Service</h2>
-        <h3 class="service__subtitle subtitle">What can I do?</h2>
-      </div>
-      <div class="service__body ds-grid">
-        <div class="service__item">
-          <div class="service__icon">
-            <i class="icon icon--computer-brush"></i>
-          </div>
-
-          <div class="service__content">
-            <h4 class="service__item-title">Web Design</h4>
-            <p class="service__text">I design visually engaging, user-centered interfaces with a focus on aesthetics,
-              usability, typography, and layout for a
-              seamless user experience</p>
-          </div>
-        </div>
-        <div class="service__item">
-          <div class="service__icon">
-            <i class="icon icon--webpage-layout"></i>
-          </div>
-
-          <div class="service__content">
-            <h4 class="service__item-title">Frontend Developpement</h4>
-            <p class="service__text">Skilled in HTML, SCSS, CSS, JavaScript, and jQuery, I create responsive,
-              interactive websites that deliver seamless user
-              experiences</p>
-          </div>
-        </div>
-        <div class="service__item">
-          <div class="service__icon">
-            <i class="icon icon--computer-code"></i>
-          </div>
-
-          <div class="service__content">
-            <h4 class="service__item-title">Backend Developpement</h4>
-            <p class="service__text">Highlight your ability to handle both design and technical development, ensuring
-              functionality and aesthetic harmony.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </service>
-
-  <portfolio class="portfolio ds-outer-px">
-    <div class="container">
-      <div class="portfolio__header ds-header">
-        <h2 class="portfolio__title title">My recent Work</h2>
-        <h3 class="portfolio__subtitle subtitle">What am I capable of?</h2>
-      </div>
-
-      <div class="portfolio__body ds-grid">
-        <div class="portfolio__item">
-          <a data-fancybox="gallery" class="portfolio__link" href="assets/img/fitness.jpg"
-            data-caption="Fitness Design Preview">
-            <figure class="portfolio__figure">
-              <img class="portfolio__image" src="assets/img/fitness-thumbnail.jpg" width="100%" alt="Fitness prototype"
-                style="aspect-ratio: 1/1;">
-            </figure>
+<body style="background-color: var(--ss-body-bg);">
+  <div class="masked-circle"></div>
+  <div id="page-content" class="page__content">
+    <header class="header">
+      <div class="header__wrapper">
+        <brand class="brand">
+          <a class="brand__link animate-page" href="index.htm">
+            <img class="brand__logo" src="assets/img/logo.svg" width="117" height="40" alt="logo">
           </a>
-          <div class="portfolio__content">
-            <h4 class="portfolio__item-title">Fitness</h4>
-            <p class="portfolio__item-text">Gym portfolio</p>
-            <a class="cta__btn--outline"
-              href="https://www.figma.com/proto/0kIbmtYkQVPGd0WSuA1QvZ/GTS?node-id=2038-4&node-type=frame&t=AENwKkmJianBmlaj-1&scaling=min-zoom&content-scaling=fixed&page-id=2038%3A2"
-              target="_blank">preview <i class="icon icon--eye-2"></i></a>
-          </div>
-        </div>
-        <div class="portfolio__item coming-soon">
-          <figure class="portfolio__figure">
-            <img class="portfolio__image" src="assets/img/coming-soon.jpg" width="100%" alt="portfolio"
-              style="aspect-ratio: 1/1;">
-          </figure>
-
-          <div class="portfolio__content">
-            <h4 class="portfolio__item-title">Coming Soon</h4>
-            <p class="portfolio__item-text">Work in Progress</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </portfolio>
-
-  <callout class="callout ds-inner-px">
-    <div class="u-container">
-      <div class="callout__wrapper">
-        <h2 class="callout__title title">Wanna work togetter?</h2>
-        <p class="callout__text">I am a UI designer and web developer, skilled in creating intuitive, visually engaging
-          interfaces and seamless digital
-          experiences. With expertise in front-end development and intermediate English, I deliver user-centered
-          solutions. Let's
-          collaborate to bring your ideas to life!</p>
-        <a class="cta__btn" href="contact.htm"><i class="icon icon--message"></i>Get in touch</a>
-      </div>
-    </div>
-
-
-  </callout>
-
-  <profile class="profile ds-outer-px">
-    <div class="container">
-      <div class="profile__wrapper">
-        <div class="profile__content profile--experience">
-          <h2 class="profile__title title"><i class="icon icon--briefcase"></i> Experience</h2>
-          <ul class="profile__list">
-            <li class="profile__item">
-              <h3 class="profile__item-title">Front-end developer</h3>
-              <h4 class="profile__item-date">2021 - Present</h4>
-              <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
-            </li>
-            <li class="profile__item" style="min-height: 130px;">
-              <h3 class="profile__item-title">Web designer (UX/UI designer)</h3>
-              <h4 class="profile__item-date">2021 - Present</h4>
-              <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
-            </li>
-            <li class="profile__item">
-              <h3 class="profile__item-title">Symfony developer / Back-end developer</h3>
-              <h4 class="profile__item-date">2021 - Present</h4>
-              <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="profile__content profile--education">
-          <h2 class="profile__title title"><i class="icon icon--graduation-cap"></i> Education</h2>
-          <ul class="profile__list">
-            <li class="profile__item">
-              <h3 class="profile__item-title">Master’s degree in E-COMMERCE</h3>
-              <h4 class="profile__item-date">2018 - 2020</h4>
-              <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
-            </li>
-            <li class="profile__item">
-              <h3 class="profile__item-title">Bachelor’s Degree in Applied Computer Science for Management</h3>
-              <h4 class="profile__item-date">2015 - 2018</h4>
-              <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
-            </li>
-            <li class="profile__item">
-              <h3 class="profile__item-title">High School Diploma in Computer Science</h3>
-              <h4 class="profile__item-date">2014 - 2015</h4>
-              <p class="profile__item-text">Liberty High School - Jendouba, Tunisia </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </profile>
-
-  <skill class="skill ds-outer-px">
-    <div class="container">
-      <div class="skill__wrapper">
-        <div class="skill__content">
-          <div class="skill__header ds-header">
-            <h2 class="skill__title title">My skills</h2>
-            <h3 class="skill__subtitle subtitle">What am I capable of?</h3>
-          </div>
-          <ul class="skill__list">
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--html5"></i>
-                <figcaption class="skill__caption">85%</figcaption>
-              </figure>
-              <p class="skill__text">HTML5</p>
-            </li>
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--css3"></i>
-                <figcaption class="skill__caption">90%</figcaption>
-              </figure>
-              <p class="skill__text">CSS3</p>
-            </li>
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--sass"></i>
-                <figcaption class="skill__caption">85%</figcaption>
-              </figure>
-              <p class="skill__text">SASS</p>
-            </li>
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--javascript"></i>
-                <figcaption class="skill__caption">70%</figcaption>
-              </figure>
-              <p class="skill__text">JavaScript</p>
-            </li>
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--jquery"></i>
-                <figcaption class="skill__caption">80%</figcaption>
-              </figure>
-              <p class="skill__text">jQuery</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--bootstrap"></i>
-                <figcaption class="skill__caption">87%</figcaption>
-              </figure>
-              <p class="skill__text">Bootstrap</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--git"></i>
-                <figcaption class="skill__caption">80%</figcaption>
-              </figure>
-              <p class="skill__text">Git</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--github"></i>
-                <figcaption class="skill__caption">85%</figcaption>
-              </figure>
-              <p class="skill__text">GitHub</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--figma"></i>
-                <figcaption class="skill__caption">88%</figcaption>
-              </figure>
-              <p class="skill__text">Figma</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--illustrator"></i>
-                <figcaption class="skill__caption">60%</figcaption>
-              </figure>
-              <p class="skill__text">Illustrator</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--framer"></i>
-                <figcaption class="skill__caption">50%</figcaption>
-              </figure>
-              <p class="skill__text">Framer</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--sql"></i>
-                <figcaption class="skill__caption">65%</figcaption>
-              </figure>
-              <p class="skill__text">SQL</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--php"></i>
-                <figcaption class="skill__caption">70%</figcaption>
-              </figure>
-              <p class="skill__text">PHP</p>
-            </li>
-
-            <li class="skill__item">
-              <figure class="skill__figure">
-                <i class="icon icon--symfony"></i>
-                <figcaption class="skill__caption">65%</figcaption>
-              </figure>
-              <p class="skill__text">Symfony</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </skill>
-
-  <contact class="contact ds-outer-px">
-    <div class="container">
-      <div class="contact__wrapper">
-        <div class="contact__info">
-          <div class="contact__info-header ds-header">
-            <h2 class="contact__title title">Let's get in touch</h2>
-            <h3 class="contact__subtitle subtitle">Wanna work togetter?</h3>
-            <p class="contact__text">I am always open to discussing product design work or partnership opportunities.
-            </p>
-          </div>
-          <ul class="contact__list">
-            <li class="contact__item">
-              <a class="contact__link" href="tel:+212 52 110 104">
-                <span class="contact__icon"><i class="icon icon--phone"></i></span>
-                <span class="contact__item-subtile" for="email">Phone</span>
-                <span class="contact__item-title">(+216) 52 110 104</span>
-              </a>
-            </li>
-
-            <li class="contact__item">
-              <a class="contact__link" href="mailto:safa.souli@yahoo.com">
-                <span class="contact__icon"><i class="icon icon--mail"></i></span>
-                <span class="contact__item-subtile" for="email">Email</span>
-                <span class="contact__item-title">safa.souli@yahoo.com</span>
-              </a>
-            </li>
-
-            <li class="contact__item">
-              <a class="contact__link" href="https://maps.app.goo.gl/QyspgFqyWMKP5wvs9" target="_blank">
-                <span class="contact__icon"><i class="icon icon--map"></i></span>
-                <span class="contact__item-subtile" for="map">Address</span>
-                <span class="contact__item-title">Hadi Ben Hassine - Jendouba, Tunisia</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <form class="contact__form">
-          <div class="form__group">
-            <label class="form__label" for="name">First Name</label>
-            <input class="form__input" type="text" id="name" placeholder="e.p, Safa">
-          </div>
-          <div class="form__group">
-            <label class="form__label" for="name">Last Name</label>
-            <input class="form__input" type="text" id="name" placeholder="e.p, Souli">
-          </div>
-          <div class="form__group">
-            <label class="form__label" for="email">Email</label>
-            <input class="form__input" type="email" id="email" placeholder="e.p, safa.souli@yahoo.com">
-          </div>
-          <div class="form__group">
-            <label class="form__label" for="phone">Phone</label>
-            <input class="form__input" type="tel" id="phone" placeholder="e.p, (+216) 52 110 104">
-          </div>
-          <div class="form__group full-width">
-            <label class="form__label" for="subject">Subject</label>
-            <div class="form__select-wrapper">
-              <select class="form__select" id="subject">
-                <option disabled selected>Select a subject</option>
-                <option value="design">Branding Design</option>
-                <option value="design">UX/UI Design</option>
-                <option value="design">Frontend Developpement</option>
-                <option value="development">App Development</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-          <div class="form__group full-width">
-            <label class="form__label" for="message">Message</label>
-            <textarea class="form__input" id="message" placeholder="Your message"></textarea>
-          </div>
-          <div class="form__group">
-            <button class="cta__btn disabled" type="submit">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </contact>
-
-  <footer class="footer ds-inner-px">
-    <div class="container">
-      <div class="footer__wrapper">
+        </brand>
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item disabled">
-              <a class="nav__link" href="about.htm">About</a>
+            <li class="nav__item active">
+              <a class="nav__link animate-page" href="index.htm">Home</a>
             </li>
 
             <li class="nav__item disabled">
-              <a class="nav__link" href="service.htm">Service</a>
+              <a class="nav__link animate-page" href="about.htm">About</a>
             </li>
 
             <li class="nav__item disabled">
-              <a class="nav__link" href="portfolio.htm">Portfolio</a>
+              <a class="nav__link animate-page" href="service.htm">Service</a>
             </li>
 
             <li class="nav__item disabled">
-              <a class="nav__link" href="contact.htm">Contact</a>
+              <a class="nav__link animate-page" href="portfolio.htm">Portfolio</a>
+            </li>
+
+            <li class="nav__item disabled">
+              <a class="nav__link animate-page" href="contact.htm">Contact</a>
             </li>
           </ul>
         </nav>
 
-        <brand class="brand">
-          <a class="brand__link" href="index.htm">
-            <img class="brand__logo" src="assets/img/logo.svg" width="100%" height="48" alt="logo">
-          </a>
-        </brand>
-
-        <p class="footer__text">© 2024 All rights reserved by me Safa Souli.</p>
+        <cta>
+          <a class="cta__btn disabled animate-page" href="contact.htm"><i class="icon icon--message"></i> Let's Talk</a>
+        </cta>
       </div>
-    </div>
-  </footer>
+    </header>
+    <hero class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="u-container">
+            <div class="hero__wrapper">
+              <h1 class="hero__title title">Web Developer +<br> UI Designer</h1>
+              <h2 class="hero__subtitle subtitle">Hi there! I'm Safa Souli</h2>
+              <p class="hero__text">
+                I am a Web Developer and UX Designer passionate about crafting seamless digital solutions. I merge
+                creativity
+                with clean code to deliver intuitive user experiences. Let’s build something innovative together
+              </p>
+              <cta class="hero__cta">
+                <a class="cta__btn--outline" href="assets/pdf/Resume-English.pdf" target="_blank">Download CV <i
+                    class="icon icon--download-file"></i></a>
+                <a class="cta__btn--outline disabled animate-page" href="index.htm">See Work</a>
+              </cta>
+            </div>
+          </div>
+        </div>
+      </div>
+    </hero>
+
+    <counter class="counter">
+      <div class="container">
+        <div class="counter__wrapper">
+          <div class="counter__item">
+            <h2 class="counter__number title">05+</h2>
+            <p class="counter__text">Years of Experience</p>
+          </div>
+
+          <div class="counter__item">
+            <h2 class="counter__number title">100+</h2>
+            <p class="counter__text">Project completed</p>
+          </div>
+
+          <div class="counter__item">
+            <h2 class="counter__number title aboutme">About me</h2>
+            <p class="counter__text">As a UI designer and web developer, I create intuitive, visually engaging
+              interfaces.
+              Combining design and front-end
+              expertise, I craft seamless digital experiences.</p>
+          </div>
+        </div>
+      </div>
+    </counter>
+
+    <service class="service ds-outer-px">
+      <div class="container">
+        <div class="service__header ds-header">
+          <h2 class="service__title title">My quality of Service</h2>
+          <h3 class="service__subtitle subtitle">What can I do?</h2>
+        </div>
+        <div class="service__body ds-grid">
+          <div class="service__item">
+            <div class="service__icon">
+              <i class="icon icon--computer-brush"></i>
+            </div>
+
+            <div class="service__content">
+              <h4 class="service__item-title">Web Design</h4>
+              <p class="service__text">I design visually engaging, user-centered interfaces with a focus on aesthetics,
+                usability, typography, and layout for a
+                seamless user experience</p>
+            </div>
+          </div>
+          <div class="service__item">
+            <div class="service__icon">
+              <i class="icon icon--webpage-layout"></i>
+            </div>
+
+            <div class="service__content">
+              <h4 class="service__item-title">Frontend Developpement</h4>
+              <p class="service__text">Skilled in HTML, SCSS, CSS, JavaScript, and jQuery, I create responsive,
+                interactive websites that deliver seamless user
+                experiences</p>
+            </div>
+          </div>
+          <div class="service__item">
+            <div class="service__icon">
+              <i class="icon icon--computer-code"></i>
+            </div>
+
+            <div class="service__content">
+              <h4 class="service__item-title">Backend Developpement</h4>
+              <p class="service__text">Highlight your ability to handle both design and technical development, ensuring
+                functionality and aesthetic harmony.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </service>
+
+    <portfolio class="portfolio ds-outer-px">
+      <div class="container">
+        <div class="portfolio__header ds-header">
+          <h2 class="portfolio__title title">My recent Work</h2>
+          <h3 class="portfolio__subtitle subtitle">What am I capable of?</h2>
+        </div>
+
+        <div class="portfolio__body ds-grid">
+          <div class="portfolio__item">
+            <a data-fancybox="gallery" class="portfolio__link" href="assets/img/fitness.jpg"
+              data-caption="Fitness Design Preview">
+              <figure class="portfolio__figure">
+                <img class="portfolio__image" src="assets/img/fitness-thumbnail.jpg" width="100%"
+                  alt="Fitness prototype" style="aspect-ratio: 1/1;">
+              </figure>
+            </a>
+            <div class="portfolio__content">
+              <h4 class="portfolio__item-title">Fitness</h4>
+              <p class="portfolio__item-text">Gym portfolio</p>
+              <a class="cta__btn--outline"
+                href="https://www.figma.com/proto/0kIbmtYkQVPGd0WSuA1QvZ/GTS?node-id=2038-4&node-type=frame&t=AENwKkmJianBmlaj-1&scaling=min-zoom&content-scaling=fixed&page-id=2038%3A2"
+                target="_blank">preview <i class="icon icon--eye-2"></i></a>
+            </div>
+          </div>
+          <div class="portfolio__item coming-soon">
+            <figure class="portfolio__figure">
+              <img class="portfolio__image" src="assets/img/coming-soon.jpg" width="100%" alt="portfolio"
+                style="aspect-ratio: 1/1;">
+            </figure>
+
+            <div class="portfolio__content">
+              <h4 class="portfolio__item-title">Coming Soon</h4>
+              <p class="portfolio__item-text">Work in Progress</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </portfolio>
+
+    <callout class="callout ds-inner-px">
+      <div class="u-container">
+        <div class="callout__wrapper">
+          <h2 class="callout__title title">Wanna work togetter?</h2>
+          <p class="callout__text">I am a UI designer and web developer, skilled in creating intuitive, visually
+            engaging
+            interfaces and seamless digital
+            experiences. With expertise in front-end development and intermediate English, I deliver user-centered
+            solutions. Let's
+            collaborate to bring your ideas to life!</p>
+          <a class="cta__btn animate-page disabled" href="contact.htm"><i class="icon icon--message"></i>Get in touch</a>
+        </div>
+      </div>
+
+
+    </callout>
+
+    <profile class="profile ds-outer-px">
+      <div class="container">
+        <div class="profile__wrapper">
+          <div class="profile__content profile--experience">
+            <h2 class="profile__title title"><i class="icon icon--briefcase"></i> Experience</h2>
+            <ul class="profile__list">
+              <li class="profile__item">
+                <h3 class="profile__item-title">Front-end developer</h3>
+                <h4 class="profile__item-date">2021 - Present</h4>
+                <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+              </li>
+              <li class="profile__item" style="min-height: 130px;">
+                <h3 class="profile__item-title">Web designer (UX/UI designer)</h3>
+                <h4 class="profile__item-date">2021 - Present</h4>
+                <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+              </li>
+              <li class="profile__item">
+                <h3 class="profile__item-title">Symfony developer / Back-end developer</h3>
+                <h4 class="profile__item-date">2021 - Present</h4>
+                <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="profile__content profile--education">
+            <h2 class="profile__title title"><i class="icon icon--graduation-cap"></i> Education</h2>
+            <ul class="profile__list">
+              <li class="profile__item">
+                <h3 class="profile__item-title">Master’s degree in E-COMMERCE</h3>
+                <h4 class="profile__item-date">2018 - 2020</h4>
+                <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
+              </li>
+              <li class="profile__item">
+                <h3 class="profile__item-title">Bachelor’s Degree in Applied Computer Science for Management</h3>
+                <h4 class="profile__item-date">2015 - 2018</h4>
+                <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
+              </li>
+              <li class="profile__item">
+                <h3 class="profile__item-title">High School Diploma in Computer Science</h3>
+                <h4 class="profile__item-date">2014 - 2015</h4>
+                <p class="profile__item-text">Liberty High School - Jendouba, Tunisia </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </profile>
+
+    <skill class="skill ds-outer-px">
+      <div class="container">
+        <div class="skill__wrapper">
+          <div class="skill__content">
+            <div class="skill__header ds-header">
+              <h2 class="skill__title title">My skills</h2>
+              <h3 class="skill__subtitle subtitle">What am I capable of?</h3>
+            </div>
+            <ul class="skill__list">
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--html5"></i>
+                  <figcaption class="skill__caption">85%</figcaption>
+                </figure>
+                <p class="skill__text">HTML5</p>
+              </li>
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--css3"></i>
+                  <figcaption class="skill__caption">90%</figcaption>
+                </figure>
+                <p class="skill__text">CSS3</p>
+              </li>
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--sass"></i>
+                  <figcaption class="skill__caption">85%</figcaption>
+                </figure>
+                <p class="skill__text">SASS</p>
+              </li>
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--javascript"></i>
+                  <figcaption class="skill__caption">70%</figcaption>
+                </figure>
+                <p class="skill__text">JavaScript</p>
+              </li>
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--jquery"></i>
+                  <figcaption class="skill__caption">80%</figcaption>
+                </figure>
+                <p class="skill__text">jQuery</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--bootstrap"></i>
+                  <figcaption class="skill__caption">87%</figcaption>
+                </figure>
+                <p class="skill__text">Bootstrap</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--git"></i>
+                  <figcaption class="skill__caption">80%</figcaption>
+                </figure>
+                <p class="skill__text">Git</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--github"></i>
+                  <figcaption class="skill__caption">85%</figcaption>
+                </figure>
+                <p class="skill__text">GitHub</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--figma"></i>
+                  <figcaption class="skill__caption">88%</figcaption>
+                </figure>
+                <p class="skill__text">Figma</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--illustrator"></i>
+                  <figcaption class="skill__caption">60%</figcaption>
+                </figure>
+                <p class="skill__text">Illustrator</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--framer"></i>
+                  <figcaption class="skill__caption">50%</figcaption>
+                </figure>
+                <p class="skill__text">Framer</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--sql"></i>
+                  <figcaption class="skill__caption">65%</figcaption>
+                </figure>
+                <p class="skill__text">SQL</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--php"></i>
+                  <figcaption class="skill__caption">70%</figcaption>
+                </figure>
+                <p class="skill__text">PHP</p>
+              </li>
+
+              <li class="skill__item">
+                <figure class="skill__figure">
+                  <i class="icon icon--symfony"></i>
+                  <figcaption class="skill__caption">65%</figcaption>
+                </figure>
+                <p class="skill__text">Symfony</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </skill>
+
+    <contact class="contact ds-outer-px">
+      <div class="container">
+        <div class="contact__wrapper">
+          <div class="contact__info">
+            <div class="contact__info-header ds-header">
+              <h2 class="contact__title title">Let's get in touch</h2>
+              <h3 class="contact__subtitle subtitle">Wanna work togetter?</h3>
+              <p class="contact__text">I am always open to discussing product design work or partnership opportunities.
+              </p>
+            </div>
+            <ul class="contact__list">
+              <li class="contact__item">
+                <a class="contact__link" href="tel:+212 52 110 104">
+                  <span class="contact__icon"><i class="icon icon--phone"></i></span>
+                  <span class="contact__item-subtile" for="email">Phone</span>
+                  <span class="contact__item-title">(+216) 52 110 104</span>
+                </a>
+              </li>
+
+              <li class="contact__item">
+                <a class="contact__link" href="mailto:safa.souli@yahoo.com">
+                  <span class="contact__icon"><i class="icon icon--mail"></i></span>
+                  <span class="contact__item-subtile" for="email">Email</span>
+                  <span class="contact__item-title">safa.souli@yahoo.com</span>
+                </a>
+              </li>
+
+              <li class="contact__item">
+                <a class="contact__link" href="https://maps.app.goo.gl/QyspgFqyWMKP5wvs9" target="_blank">
+                  <span class="contact__icon"><i class="icon icon--map"></i></span>
+                  <span class="contact__item-subtile" for="map">Address</span>
+                  <span class="contact__item-title">Hadi Ben Hassine - Jendouba, Tunisia</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <form class="contact__form">
+            <div class="form__group">
+              <label class="form__label" for="name">First Name</label>
+              <input class="form__input" type="text" id="name" placeholder="e.p, Safa">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="name">Last Name</label>
+              <input class="form__input" type="text" id="name" placeholder="e.p, Souli">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email</label>
+              <input class="form__input" type="email" id="email" placeholder="e.p, safa.souli@yahoo.com">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Phone</label>
+              <input class="form__input" type="tel" id="phone" placeholder="e.p, (+216) 52 110 104">
+            </div>
+            <div class="form__group full-width">
+              <label class="form__label" for="subject">Subject</label>
+              <div class="form__select-wrapper">
+                <select class="form__select" id="subject">
+                  <option disabled selected>Select a subject</option>
+                  <option value="design">Branding Design</option>
+                  <option value="design">UX/UI Design</option>
+                  <option value="design">Frontend Developpement</option>
+                  <option value="development">App Development</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group full-width">
+              <label class="form__label" for="message">Message</label>
+              <textarea class="form__input" id="message" placeholder="Your message"></textarea>
+            </div>
+            <div class="form__group">
+              <button class="cta__btn disabled" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </contact>
+
+
+    <footer class="footer ds-inner-px">
+      <div class="container">
+        <div class="footer__wrapper">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item disabled">
+                <a class="nav__link animate-page" href="about.htm">About</a>
+              </li>
+
+              <li class="nav__item disabled">
+                <a class="nav__link animate-page" href="service.htm">Service</a>
+              </li>
+
+              <li class="nav__item disabled">
+                <a class="nav__link animate-page" href="portfolio.htm">Portfolio</a>
+              </li>
+
+              <li class="nav__item disabled">
+                <a class="nav__link animate-page" href="contact.htm">Contact</a>
+              </li>
+            </ul>
+          </nav>
+
+          <brand class="brand">
+            <a class="brand__link" href="index.htm">
+              <img class="brand__logo animate-page" src="assets/img/logo.svg" width="100%" height="48" alt="logo">
+            </a>
+          </brand>
+
+          <p class="footer__text">© 2024 All rights reserved by me Safa Souli.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
 
   <div class="scroll-to-top">
     <div class="scroll-to-top__progress">
@@ -499,8 +508,12 @@
     <p class="scroll-to-top__text">Scroll to top</p>
   </div>
 
-  <script src="node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
-  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js"
+    integrity="sha512-v80Z62SYCVHA3UxmFG69Vclopt+3ngQDocRjtxnB3htcTs6l9mnXc6SixuDae1rJ3L2J6p2KAuG+soHbhVd+6g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     Fancybox.bind("[data-fancybox='gallery']", {
     });
