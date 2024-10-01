@@ -21,7 +21,6 @@
 
 .skill__item .icon {
   --icon-height: 64px;
-  filter: contrast(90%);
 }
 
 .skill__text {
