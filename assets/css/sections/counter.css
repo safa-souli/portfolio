@@ -31,6 +31,10 @@
 }
 
 @media (width > 768px) {
+  .counter__number.aboutme {
+    display: none;
+  }
+
   .counter__wrapper {
     grid-template-columns: 1fr 1fr 2fr;
   }

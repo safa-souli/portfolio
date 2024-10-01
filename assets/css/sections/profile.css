@@ -1,5 +1,9 @@
+.profile__title {
+  font-size: var(--ss-step-3);
+}
+
 .profile__title .icon {
-  --icon-height: 40px;
+  --icon-height: calc(var(--ss-step-3) - 6px);
   margin-right: var(--ss-space-2xs);
 }
 
@@ -34,11 +38,11 @@
   grid-row: 1;
   font-size: var(--ss-step-0);
   color: var(--ss-accent-color);
-  margin-bottom: var(--ss-space-xs-s);
+  margin-bottom: var(--ss-space-xs);
 }
 
 .profile__item-title {
   font-size: var(--ss-step-1);
   line-height: 1.4;
-  margin-bottom: var(--ss-space-xs-s);
+  margin-bottom: var(--ss-space-2xs);
 }
