@@ -87,13 +87,15 @@ cta {
   position: fixed;
   bottom: var(--ss-space-xs-s);
   right: 0;
-  transform: translatex(75%) rotate(-90deg);
+  transform: translateX(75%) rotate(-90deg);
   transform-origin: left;
   display: grid;
   grid-template-columns: 50px auto;
   place-items: center;
   column-gap: var(--ss-space-xs);
   cursor: pointer;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .scroll-to-top__progress {
@@ -115,4 +117,14 @@ cta {
 .scroll-to-top__text {
   font-size: var(--ss-step--1);
   color: var(--ss-accent-color);
+}
+
+.masked-circle {
+  position: fixed;
+  inset: 0;
+  background-color: var(--ss-accent-color);
+  mask-image: radial-gradient(circle at 50% 20%, transparent 0%, var(--ss-body-bg) 0%);
+  z-index: 999;
+  opacity: 1;
+  transition: none;
 }

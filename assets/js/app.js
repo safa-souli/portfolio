@@ -1,62 +1,85 @@
 $(document).ready(function () {
+  const $window = $(window);
+  const $document = $(document);
+  const $progressBar = $('#progress-bar');
+  const $scrollToTopBtn = $('.scroll-to-top');
+  const $maskedCircle = $('.masked-circle');
+  const $header = $('.header');
 
-  /**
-   * Updates the progress bar based on the user's scroll position.
-   * Additionally, shows or hides the "Scroll to top" button based on whether the user has scrolled more than 100 pixels from the top of the page.
-   */
-  function updateProgressBar() {
-    var scrollTop = $(window).scrollTop();
-    var scrollHeight = $(document).height() - $(window).height();
-    var scrollPercentage = (scrollTop / scrollHeight) * 100;
-    $('#progress-bar').css('width', scrollPercentage + '%');
+  const isInTheViewport = ($element) => {
+    const elementTop = $element.offset().top;
+    const elementBottom = elementTop + $element.outerHeight();
 
-    if (scrollTop > 100) {
-      $('.scroll-to-top').fadeIn();
+    const viewportTop = $window.scrollTop();
+    const viewportBottom = viewportTop + $window.height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+
+  const updateProgressBar = () => {
+    const scrollTop = $window.scrollTop();
+    const scrollHeight = $document.height() - $window.height();
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+    $progressBar.css('width', `${scrollPercentage}%`);
+
+    const fadeInThreshold = $window.height();
+
+    scrollTop > fadeInThreshold ? $scrollToTopBtn.fadeIn() : $scrollToTopBtn.fadeOut();
+
+    if (isInTheViewport($header)) {
+      $header.addClass('in-viewport');
     } else {
-      $('.scroll-to-top').fadeOut();
+      $header.removeClass('in-viewport');
     }
-  }
+  };
 
-  function pageTransition() {
-    return gsap.to("#content", {
-      duration: 0.8,
-      scale: 0.8,
-      rotateX: 180,
-      opacity: 0,
-      x: "100vw",
-      filter: "blur(30px)",
-      backgroundColor: "#ff7f50",
-      ease: "power2.inOut"
+  const scrollToTop = () => {
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+  };
+
+  const contentAnimation = () => {
+    gsap.to($maskedCircle, {
+      duration: 1,
+      maskImage: 'radial-gradient(circle at 50% 20%, transparent 100%, var(--ss-body-bg) 2.1%)',
+      ease: 'power1.out',
+      onComplete: () => {
+        gsap.delayedCall(0.1, () => {
+          gsap.set($maskedCircle, { zIndex: -999 });
+        });
+      },
     });
-  }
+  };
 
-  function contentAnimation() {
-    gsap.from("#content", {
-      duration: 1.2,
-      scale: 1.2,
-      rotateX: -180,
-      opacity: 0,
-      x: "-100vw",
-      filter: "blur(30px)",
-      backgroundColor: "#fff",
-      ease: "power2.out",
-      delay: 0.5
+  const pageTransition = () => {
+    return gsap.to($maskedCircle, {
+      duration: 1,
+      maskImage: 'radial-gradient(circle at 50% 20%, transparent 0%, var(--ss-body-bg) 0%)',
+      ease: 'power1.in',
+      onStart: () => gsap.set($maskedCircle, { zIndex: 1 }),
     });
-  }
+  };
 
-  $('.nav-link').on('click', function (event) {
+  const handleLinkClick = (event) => {
     event.preventDefault();
-    const targetUrl = $(this).attr('href');
+    const targetUrl = $(event.currentTarget).attr('href');
+
     pageTransition().then(() => {
       window.location.href = targetUrl;
     });
-  });
+  };
 
-  $('.scroll-to-top').on('click', function () {
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
-  });
+  const registerEventListeners = () => {
+    $window.on('scroll', updateProgressBar);
+    $scrollToTopBtn.on('click', scrollToTop);
+    $('a.animate-page').on('click', handleLinkClick);
+  };
 
-  $(window).on('scroll', updateProgressBar);
+  const init = () => {
+    updateProgressBar();
+    contentAnimation();
+    registerEventListeners();
+  };
 
-  contentAnimation();
+  init();
 });
