@@ -49,8 +49,9 @@
 }
 
 .cta__btn--outline.disabled {
-  color: gray;
   --icon-color: gray;
+  color: gray;
+  opacity: 1 !important;
 }
 
 .cta__btn--outline.disabled::before {
