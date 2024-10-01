@@ -82,3 +82,37 @@ cta {
   pointer-events: none;
   opacity: 0.5;
 }
+
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--ss-space-xs-s);
+  right: 0;
+  transform: translatex(75%) rotate(-90deg);
+  transform-origin: left;
+  display: grid;
+  grid-template-columns: 50px auto;
+  place-items: center;
+  column-gap: var(--ss-space-xs);
+  cursor: pointer;
+}
+
+.scroll-to-top__progress {
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background: #555;
+  transform: translateY(2px) scaleX(-1);
+  border-radius: 100vmax;
+}
+
+#progress-bar {
+  position: absolute;
+  inset: 0;
+  background: var(--ss-accent-color);
+  transition: width 500ms ease-in-out;
+}
+
+.scroll-to-top__text {
+  font-size: var(--ss-step--1);
+  color: var(--ss-accent-color);
+}
