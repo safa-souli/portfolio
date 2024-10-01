@@ -49,7 +49,7 @@
 }
 
 .portfolio__link {
-  display: inline-block;
+  display: block;
 }
 
 .portfolio__figure {

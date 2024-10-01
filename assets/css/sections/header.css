@@ -1,10 +1,10 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: var(--ss-space-xl);
   z-index: 999;
   border-radius: 100vmax;
   background-color: var(--ss-card-bg);
-  width: var(--ss-grid-max-width);
+  max-width: var(--ss-grid-max-width);
   margin: 0 auto;
   left: var(--ss-grid-gutter);
   right: var(--ss-grid-gutter);
@@ -45,4 +45,15 @@
   color: var(--ss-heading-color);
   text-decoration: none;
   font-weight: var(--ss-btn-font-weight);
+}
+
+@media (width < 768px) {
+  .nav {
+    display: none;
+  }
+
+  .brand__logo {
+    height: 36px;
+    width: auto;
+  }
 }

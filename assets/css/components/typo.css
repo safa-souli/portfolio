@@ -20,6 +20,12 @@ h6 {
   padding-bottom: var(--ss-space-xs);
 }
 
+.title .icon {
+  --icon-gradient: var(--ss-accent-gradient);
+  --icon-color: transparent;
+  aspect-ratio: 1/1;
+}
+
 h1 {
   font-size: var(--ss-step-5);
 }

@@ -1,6 +1,5 @@
 .footer {
-  /* background-color: var(--ss-card-bg); */
-  padding-block: var(--ss-space-2xl);
+  background-color: var(--ss-card-bg);
 }
 
 .footer__wrapper {
@@ -8,9 +7,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: var(--ss-space-m-l);
+  gap: var(--ss-space-s);
 }
 
 .footer__text {
   color: var(--ss-accent-color);
+}
+
+@media (min-width: 768px) {
+  .footer__wrapper {
+    gap: var(--ss-space-m-l);
+  }
 }

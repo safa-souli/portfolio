@@ -89,16 +89,17 @@
     <div class="container">
       <div class="counter__wrapper">
         <div class="counter__item">
-          <h3 class="counter__number title">05+</h3>
+          <h2 class="counter__number title">05+</h2>
           <p class="counter__text">Years of Experience</p>
         </div>
 
         <div class="counter__item">
-          <h3 class="counter__number title">100+</h3>
+          <h2 class="counter__number title">100+</h2>
           <p class="counter__text">Project completed</p>
         </div>
 
         <div class="counter__item">
+          <h2 class="counter__number title">About me</h2>
           <p class="counter__text">As a UI designer and web developer, I create intuitive, visually engaging interfaces.
             Combining design and front-end
             expertise, I craft seamless digital experiences.</p>
@@ -107,7 +108,7 @@
     </div>
   </counter>
 
-  <service class="service ds-lg-px">
+  <service class="service ds-outer-px">
     <div class="container">
       <div class="service__header ds-header">
         <h2 class="service__title title">My quality of Service</h2>
@@ -153,7 +154,7 @@
     </div>
   </service>
 
-  <portfolio class="portfolio ds-px">
+  <portfolio class="portfolio ds-outer-px">
     <div class="container">
       <div class="portfolio__header ds-header">
         <h2 class="portfolio__title title">My recent Work</h2>
@@ -193,7 +194,7 @@
     </div>
   </portfolio>
 
-  <callout class="callout ds-px">
+  <callout class="callout ds-inner-px">
     <div class="u-container">
       <div class="callout__wrapper">
         <h2 class="callout__title title">Wanna work togetter?</h2>
@@ -207,7 +208,55 @@
 
   </callout>
 
-  <footer class="footer">
+  <profile class="profile ds-outer-px">
+    <div class="container">
+      <div class="profile__wrapper">
+        <div class="profile__content profile--experience">
+          <h2 class="profile__title title"><i class="icon icon--briefcase"></i> Experience</h2>
+          <ul class="profile__list">
+            <li class="profile__item">
+              <h3 class="profile__item-title">Front-end developer</h3>
+              <h4 class="profile__item-date">2021 - Present</h4>
+              <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+            </li>
+            <li class="profile__item" style="min-height: 144px;">
+              <h3 class="profile__item-title">Web designer (UX/UI designer)</h3>
+              <h4 class="profile__item-date">2021 - Present</h4>
+              <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+            </li>
+            <li class="profile__item">
+              <h3 class="profile__item-title">Symfony developer / Back-end developer</h3>
+              <h4 class="profile__item-date">2021 - Present</h4>
+              <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="profile__content profile--education">
+          <h2 class="profile__title title"><i class="icon icon--graduation-cap"></i> Education</h2>
+          <ul class="profile__list">
+            <li class="profile__item">
+              <h3 class="profile__item-title">Master’s degree in E-COMMERCE</h3>
+              <h4 class="profile__item-date">2018 - 2020</h4>
+              <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
+            </li>
+            <li class="profile__item">
+              <h3 class="profile__item-title">Bachelor’s Degree in Applied Computer Science for Management</h3>
+              <h4 class="profile__item-date">2015 - 2018</h4>
+              <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
+            </li>
+            <li class="profile__item">
+              <h3 class="profile__item-title">High School Diploma in Computer Science</h3>
+              <h4 class="profile__item-date">2014 - 2015</h4>
+              <p class="profile__item-text">Liberty High School - Jendouba, Tunisia </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </profile>          
+
+  <footer class="footer ds-inner-px">
     <div class="container">
       <div class="footer__wrapper">
         <nav class="nav">
@@ -240,8 +289,6 @@
       </div>
     </div>
   </footer>
-
-
 
   <script src="node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
   <script>

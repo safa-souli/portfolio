@@ -15,7 +15,7 @@ body {
   background-color: var(--ss-body-bg);
   color: var(--ss-body-color);
   font-family: var(--ss-body-font-family);
-  font-size: var(--ss-body-font-size);
+  font-size: var(--ss-step-0);
   font-weight: var(--ss-body-font-weight);
   line-height: var(--ss-body-line-height);
 }
@@ -42,12 +42,12 @@ cta {
   gap: var(--ss-space-xs);
 }
 
-.ds-px {
+.ds-inner-px {
   display: block;
-  padding-block: var(--ss-space-3xl);
+  padding-block: var(--ss-space-l-xl);
 }
 
-.ds-lg-px {
+.ds-outer-px {
   display: block;
   padding-block: var(--ss-space-5xl);
 }
