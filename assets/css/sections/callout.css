@@ -10,7 +10,7 @@
 }
 
 .callout__title {
-  margin-bottom: var(--ss-space-s-m);
+  margin-bottom: var(--ss-space-s);
 }
 
 .callout .cta__btn {
