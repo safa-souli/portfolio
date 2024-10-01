@@ -56,7 +56,7 @@ $(document).ready(function () {
       duration: 1,
       maskImage: 'radial-gradient(circle at 50% 20%, transparent 0%, var(--ss-body-bg) 0%)',
       ease: 'power1.in',
-      onStart: () => gsap.set($maskedCircle, { zIndex: 1 }),
+      onStart: () => gsap.set($maskedCircle, { zIndex: 999 }),
     });
   };
 
