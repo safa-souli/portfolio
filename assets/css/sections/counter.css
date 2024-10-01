@@ -4,13 +4,38 @@
   padding: var(--ss-space-l-xl);
 }
 
-
 .counter__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr;
   gap: var(--ss-grid-gutter);
 }
 
-.counter__number {
-  font-size: var(--ss-step-4);
+.counter__item:nth-child(3) {
+  grid-row: 1;
+}
+
+@media (400px < width <=768px) {
+  .counter__wrapper {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+  .counter__item {
+    grid-row: 2;
+  }
+
+  div.counter__item:nth-child(3) {
+    grid-row: 1;
+    grid-column: 1/3;
+  }
+}
+
+@media (width > 768px) {
+  .counter__wrapper {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+
+  .counter__item:nth-child(3) {
+    grid-row: unset;
+  }
 }

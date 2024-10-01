@@ -40,3 +40,11 @@
 .icon--eye-2 {
   --icon-url: url("../../icons/eye-2.svg");
 }
+
+.icon--briefcase {
+  --icon-url: url("../../icons/briefcase.svg");
+}
+
+.icon--graduation-cap {
+  --icon-url: url("../../icons/graduation-cap.svg");
+}

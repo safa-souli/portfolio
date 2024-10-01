@@ -1,0 +1,44 @@
+.profile__title .icon {
+  --icon-height: 40px;
+  margin-right: var(--ss-space-2xs);
+}
+
+.profile__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ss-space-l-xl) var(--ss-grid-gutter);
+}
+
+@media (min-width: 768px) {
+  .profile__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.profile__list {
+  display: grid;
+  gap: var(--ss-grid-gutter);
+  margin-top: var(--ss-space-s-m);
+  padding-left: 0;
+}
+
+.profile__item {
+  display: grid;
+  background-color: var(--ss-card-bg);
+  border-radius: var(--ss-border-radius);
+  padding: var(--ss-space-s-l);
+  align-content: space-evenly;
+}
+
+.profile__item-date {
+  grid-row: 1;
+  font-size: var(--ss-step-0);
+  color: var(--ss-accent-color);
+  margin-bottom: var(--ss-space-xs-s);
+}
+
+.profile__item-title {
+  font-size: var(--ss-step-1);
+  line-height: 1.4;
+  margin-bottom: var(--ss-space-xs-s);
+}
