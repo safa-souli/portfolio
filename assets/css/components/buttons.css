@@ -14,6 +14,7 @@
   overflow: hidden;
 }
 
+
 .cta__btn .icon,
 .cta__btn--outline .icon {
   --icon-height: 14px;
@@ -21,6 +22,12 @@
 
 .cta__btn {
   color: var(--ss-body-bg);
+}
+
+.cta__btn.disabled {
+  background-image: none;
+  background-color: #3c3c3c;
+  color: gray;
 }
 
 .cta__btn--outline {

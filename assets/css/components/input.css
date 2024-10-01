@@ -1,0 +1,57 @@
+.form__select,
+.form__input {
+  display: block;
+  background: var(--ss-dark);
+  border-color: rgba(255, 255, 255, 0.15);
+  outline: unset;
+  box-shadow: unset;
+  border-radius: 7px;
+  padding: var(--ss-space-xs);
+  color: var(--ss-body-color);
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  box-sizing: border-box;
+}
+
+
+.form__select {
+  padding-right: var(--ss-space-l);
+}
+
+.form__select-wrapper {
+  position: relative;
+}
+
+.form__select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: var(--ss-space-xs);
+  bottom: var(--ss-space-xs);
+  margin-block: auto;
+  right: var(--ss-space-xs);
+  display: inline-block;
+  background-color: var(--icon-color, currentColor);
+  background-image: var(--icon-gradient, none);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-mask: url('../../icons/angle-down.svg') no-repeat center;
+  mask: url('../../icons/angle-down.svg') no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  height: 16px;
+  width: 16px;
+  z-index: 1;
+}
+
+.form__label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: var(--ss-space-2xs);
+}

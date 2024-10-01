@@ -104,3 +104,15 @@
 .icon--github {
   --icon-url: url("../../icons/github.svg");
 }
+
+.icon--phone {
+  --icon-url: url("../../icons/phone.svg");
+}
+
+.icon--mail {
+  --icon-url: url("../../icons/envelope.svg");
+}
+
+.icon--map {
+  --icon-url: url("../../icons/map.svg");
+}
