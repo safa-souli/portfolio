@@ -6,15 +6,6 @@ $(document).ready(function () {
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
 
-  const mixer = mixitup('#portfolio-grid', {
-    selectors: {
-      target: '.portfolio__item'
-    },
-    animation: {
-      duration: 300
-    }
-  });
-
   /**
    * Returns true if the given element is in the viewport, false otherwise.
    * @param {jQuery} $element - The element to check.
@@ -115,10 +106,6 @@ $(document).ready(function () {
     updateProgressBar();
     registerEventListeners();
     $maskedCircle.addClass('loading');
-    $('.portfolio__filter-btn').on('click', function () {
-      $('.portfolio__filter-btn').removeClass('active');
-      $(this).addClass('active');
-    });
     if (document.readyState === 'complete') {
       contentAnimation();
       $maskedCircle.removeClass('loading');
