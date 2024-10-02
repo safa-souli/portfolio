@@ -138,8 +138,8 @@ cta {
   text-transform: uppercase;
   font-weight: lighter;
   letter-spacing: 26px;
-  animation: scalingTransition 3s infinite ease-in-out;
-  animation-delay: 1s;
+  animation: scalingTransition 5s infinite ease-in-out;
+  animation-delay: 500ms;
   opacity: 0;
 }
 
