@@ -113,3 +113,7 @@
 .icon--map {
   --icon-url: url("../../icons/map.svg");
 }
+
+.icon--book {
+  --icon-url: url("../../icons/book.svg");
+}
