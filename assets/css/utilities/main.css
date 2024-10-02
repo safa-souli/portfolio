@@ -122,10 +122,52 @@ cta {
   position: fixed;
   inset: 0;
   background-color: var(--ss-dark);
-  mask-image: radial-gradient(circle at 50% 20%, transparent 0%, var(--ss-body-bg) 0%);
+  mask-image: radial-gradient(circle at center center, transparent 0%, var(--ss-body-bg) 0%);
   z-index: 999;
   opacity: 1;
   transition: none;
+}
+
+.masked-circle.loading::before {
+  content: 'loading';
+  display: grid;
+  place-content: center;
+  position: absolute;
+  inset: 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 26px;
+  animation: scalingTransition 3s infinite ease-in-out;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+@keyframes scalingTransition {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  75% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
 }
 
 [class*='hint']::after {
