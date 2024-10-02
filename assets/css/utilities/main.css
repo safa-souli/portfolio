@@ -127,3 +127,8 @@ cta {
   opacity: 1;
   transition: none;
 }
+
+[class*='hint']::after {
+  font-family: inherit !important;
+  border-radius: 7px;
+}

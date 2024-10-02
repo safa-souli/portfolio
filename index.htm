@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.min.css"
     integrity="sha512-s4DOVHc73MjMnsueMjvJSnYucSU3E7WF0UVGRQFd/QDzeAx0D0BNuAX9fbZSLkrYW7V2Ly0/BKHSER04bCJgtQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.6.0/hint.min.css">
+
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
@@ -393,7 +395,7 @@
         <div class="contact__wrapper">
           <div class="contact__info">
             <div class="contact__info-header ds-header">
-              <h2 class="contact__title title">Let's get in touch</h2>
+              <h2 class="contact__title title hint--top-left" aria-label="Let's get in touch">Let's get in touch</h2>
               <h3 class="contact__subtitle subtitle">Wanna work togetter?</h3>
               <p class="contact__text">I am always open to discussing product design work or partnership opportunities.
               </p>
@@ -459,7 +461,9 @@
               <textarea class="form__input" id="message" placeholder="Your message"></textarea>
             </div>
             <div class="form__group">
-              <button class="cta__btn disabled" type="submit">Send Message</button>
+              <div class="hint--right hint--large" aria-label="This feature is not available yet, we are working on it, thank you for your patience.">
+                <button class="cta__btn disabled" type="submit">Send Message</button>
+              </div>
             </div>
           </form>
         </div>

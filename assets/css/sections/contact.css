@@ -76,6 +76,9 @@
 .contact .cta__btn {
   border: hidden;
   font-size: var(--ss-step-0);
+}
+
+.contact [class*='hint'] {
   margin-top: var(--ss-space-s-m);
 }
 
