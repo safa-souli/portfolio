@@ -7,6 +7,7 @@
   display: inline-grid;
   place-content: center;
   font-weight: var(--ss-btn-font-weight);
+  font-family: var(--ss-body-font-family);
   background-image: var(--ss-accent-gradient);
   grid-auto-flow: column;
   gap: var(--ss-space-3xs-2xs);
@@ -25,6 +26,7 @@
 }
 
 .cta__btn.disabled {
+  font-weight: 400;
   background-image: none;
   background-color: #3c3c3c;
   color: gray;
@@ -50,11 +52,6 @@
   --icon-gradient: var(--ss-accent-gradient);
 }
 
-.disabled {
-  opacity: .5;
-  pointer-events: none;
-}
-
 .cta__btn--outline.disabled {
   --icon-color: gray;
   color: gray;
@@ -65,3 +62,32 @@
   background-color: gray;
   opacity: 0.05;
 }
+
+
+
+/* Inline #3 | http://127.0.0.1:5500/index.htm
+
+.cta__btn.disabled::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 0;
+  background: var(--ss-dark);
+  border: ;
+  font-size: var(--ss-step--1);
+  line-height: 1.6;
+  top: 0;
+  display: inline-block;
+  height: max-content;
+  padding: var(--ss-space-xs-s);
+  width: 177px;
+  color: white;
+  border-radius: var(--ss-border-radius);
+  left: 100%;
+  bottom: 0;
+  margin-inline: auto;
+}
+
+.contact .cta__btn {
+  position: relative;
+  overflow: visible;
+} */
