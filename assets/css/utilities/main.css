@@ -284,3 +284,25 @@ cta {
   border-top: 1px solid #ffffff2b;
   padding-block: var(--ss-space-2xl) var(--ss-space-5xl);
 }
+
+@media (width > 992px) {
+  .page--service .ds-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.page--service .service__item {
+  background-color: var(--ss-dark);
+}
+
+.page--service .service__icon {
+  background: var(--ss-card-bg);
+}
+
+.page--service .service__text {
+  font-weight: 300;
+}
+
+.page--service .service__title.title {
+  font-size: var(--ss-step-3);
+}
