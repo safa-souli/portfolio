@@ -306,3 +306,9 @@ cta {
 .page--service .service__title.title {
   font-size: var(--ss-step-3);
 }
+
+/* portfolio page style */
+
+.page--portfolio .portfolio__title {
+  font-size: var(--ss-step-3);
+}
