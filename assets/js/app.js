@@ -6,6 +6,15 @@ $(document).ready(function () {
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
 
+  const mixer = mixitup('#portfolio-grid', {
+    selectors: {
+      target: '.portfolio__item'
+    },
+    animation: {
+      duration: 300
+    }
+  });
+
   /**
    * Returns true if the given element is in the viewport, false otherwise.
    * @param {jQuery} $element - The element to check.
@@ -14,10 +23,8 @@ $(document).ready(function () {
   const isInTheViewport = ($element) => {
     const elementTop = $element.offset().top;
     const elementBottom = elementTop + $element.outerHeight();
-
     const viewportTop = $window.scrollTop();
     const viewportBottom = viewportTop + $window.height();
-
     return elementBottom > viewportTop && elementTop < viewportBottom;
   };
 
@@ -28,13 +35,9 @@ $(document).ready(function () {
     const scrollTop = $window.scrollTop();
     const scrollHeight = $document.height() - $window.height();
     const scrollPercentage = (scrollTop / scrollHeight) * 100;
-
     $progressBar.css('width', `${scrollPercentage}%`);
-
     const fadeInThreshold = $window.height();
-
     scrollTop > fadeInThreshold ? $scrollToTopBtn.fadeIn() : $scrollToTopBtn.fadeOut();
-
     if (isInTheViewport($header)) {
       $header.addClass('in-viewport');
     } else {
@@ -89,13 +92,8 @@ $(document).ready(function () {
   const handleLinkClick = (event) => {
     event.preventDefault();
     const targetUrl = $(event.currentTarget).attr('href');
-
-    // Show the masked circle loading screen
     gsap.set($maskedCircle, { display: 'block', zIndex: 1000, opacity: 1 });
-
-    // Start the page transition
     pageTransition().then(() => {
-      // After the transition, navigate to the next page
       window.location.href = targetUrl;
     });
   };
@@ -112,41 +110,31 @@ $(document).ready(function () {
   /**
    * Initializes the page by calling the content animation, updating the progress bar, and
    * registering event listeners. Hides the masked circle after the page is fully loaded.
-   */const init = () => {
+   */
+  const init = () => {
     updateProgressBar();
     registerEventListeners();
     $maskedCircle.addClass('loading');
-
-    // Ensure DOM readiness before executing any DOM-related operations
-    $(document).ready(() => {
-      console.log('DOM is ready');
+    $('.portfolio__filter-btn').on('click', function () {
+      $('.portfolio__filter-btn').removeClass('active');
+      $(this).addClass('active');
     });
-
-    // Check if the page is already fully loaded (handles fast page load)
     if (document.readyState === 'complete') {
-      // Trigger contentAnimation immediately if page is already loaded
       contentAnimation();
-      console.log('Page already fully loaded');
       $maskedCircle.removeClass('loading');
     } else {
-      // Wait for the page to fully load (normal scenario)
       $(window).on('load', () => {
         contentAnimation();
-        console.log('Page fully loaded');
         $maskedCircle.removeClass('loading');
       });
-
-      // Fallback in case the load event is missed due to fast loading
       setTimeout(() => {
         if (document.readyState === 'complete') {
           contentAnimation();
-          console.log('Fallback: Page load detected after timeout');
           $maskedCircle.removeClass('loading');
         }
-      }, 500); // Adjust this timeout duration if necessary
+      }, 500);
     }
   };
 
-  // Initialize the page
   init();
 });
