@@ -46,3 +46,14 @@
   line-height: 1.4;
   margin-bottom: var(--ss-space-2xs);
 }
+
+.profile--aboutme {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--ss-space-l);
+}
+
+.profile--aboutme + hr {
+  margin-block: var(--ss-space-2xl);
+  opacity: .2;
+}
