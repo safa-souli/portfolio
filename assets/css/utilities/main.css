@@ -95,7 +95,6 @@ cta {
   column-gap: var(--ss-space-xs);
   cursor: pointer;
   transition: opacity 0.3s ease;
-  pointer-events: none;
 }
 
 .scroll-to-top__progress {

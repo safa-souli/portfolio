@@ -5,7 +5,7 @@ coming-soon {
   text-align: center;
   background-image: url(../../img/coming-soon.jpg);
   background-repeat: no-repeat;
-  background-color: black;
+  background-color: var(--ss-dark);
   background-position: center;
-  background-size: 47%;
+  background-size: 48%;
 }
