@@ -1,0 +1,11 @@
+coming-soon {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  text-align: center;
+  background-image: url(../../img/coming-soon.jpg);
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: center;
+  background-size: 47%;
+}
