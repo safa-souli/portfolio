@@ -16,11 +16,8 @@
   <link rel="preload" href="assets/font/Sora/Sora-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="assets/font/Sora/Sora-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="assets/font/Sora/Sora-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
   <link rel="stylesheet" href="assets/font/Sora/stylesheet.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.min.css"
-    integrity="sha512-s4DOVHc73MjMnsueMjvJSnYucSU3E7WF0UVGRQFd/QDzeAx0D0BNuAX9fbZSLkrYW7V2Ly0/BKHSER04bCJgtQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.6.0/hint.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
@@ -29,7 +26,8 @@
 
 <body>
   <div class="masked-circle"></div>
-  <div id="page-content" class="page__content">
+
+  <div id="page-content" class="page__content page--contact">
     <header class="header">
       <div class="header__wrapper">
         <brand class="brand">
@@ -67,8 +65,99 @@
       </div>
     </header>
 
-    <coming-soon class="coming-soon"></coming-soon>
-    
+    <breadcrumb class="breadcrumb ds-inner-px">
+      <div class="container">
+        <div class="breadcrumb__wrapper">
+          <h1 class="breadcrumb__title">Contact</h1>
+          <ul class="breadcrumb__list">
+            <li class="breadcrumb__item"><a class="breadcrumb__link" href="index.htm">Home</a></li>
+            <li class="breadcrumb__item">Contact</li>
+          </ul>
+        </div>
+      </div>
+    </breadcrumb>
+
+    <contact class="contact ds-outer-px">
+      <div class="container">
+        <div class="contact__wrapper">
+          <div class="contact__info">
+            <div class="contact__info-header ds-header">
+              <h2 class="contact__title title hint--top-left" aria-label="Let's get in touch">Let's get in touch</h2>
+              <h3 class="contact__subtitle subtitle">Wanna work togetter?</h3>
+              <p class="contact__text">I am always open to discussing product design work or partnership opportunities.
+              </p>
+            </div>
+            <ul class="contact__list">
+              <li class="contact__item">
+                <a class="contact__link" href="tel:+212 52 110 104">
+                  <span class="contact__icon"><i class="icon icon--phone"></i></span>
+                  <span class="contact__item-subtile" for="email">Phone</span>
+                  <span class="contact__item-title">(+216) 52 110 104</span>
+                </a>
+              </li>
+
+              <li class="contact__item">
+                <a class="contact__link" href="mailto:safa.souli@yahoo.com">
+                  <span class="contact__icon"><i class="icon icon--mail"></i></span>
+                  <span class="contact__item-subtile" for="email">Email</span>
+                  <span class="contact__item-title">safa.souli@yahoo.com</span>
+                </a>
+              </li>
+
+              <li class="contact__item">
+                <a class="contact__link" href="https://maps.app.goo.gl/QyspgFqyWMKP5wvs9" target="_blank">
+                  <span class="contact__icon"><i class="icon icon--map"></i></span>
+                  <span class="contact__item-subtile" for="map">Address</span>
+                  <span class="contact__item-title">Hadi Ben Hassine - Jendouba, Tunisia</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <form class="contact__form">
+            <div class="form__group">
+              <label class="form__label" for="name">First Name</label>
+              <input class="form__input" type="text" id="name" placeholder="e.p, Safa">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="name">Last Name</label>
+              <input class="form__input" type="text" id="name" placeholder="e.p, Souli">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email</label>
+              <input class="form__input" type="email" id="email" placeholder="e.p, safa.souli@yahoo.com">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Phone</label>
+              <input class="form__input" type="tel" id="phone" placeholder="e.p, (+216) 52 110 104">
+            </div>
+            <div class="form__group full-width">
+              <label class="form__label" for="subject">Subject</label>
+              <div class="form__select-wrapper">
+                <select class="form__select" id="subject">
+                  <option disabled selected>Select a subject</option>
+                  <option value="design">Branding Design</option>
+                  <option value="design">UX/UI Design</option>
+                  <option value="design">Frontend Developpement</option>
+                  <option value="development">App Development</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group full-width">
+              <label class="form__label" for="message">Message</label>
+              <textarea class="form__input" id="message" placeholder="Your message"></textarea>
+            </div>
+            <div class="form__group">
+              <div class="hint--right hint--large"
+                aria-label="This feature is not available yet, we are working on it, thank you for your patience.">
+                <button class="cta__btn disabled" type="submit">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </contact>
+
     <footer class="footer ds-inner-px">
       <div class="container">
         <div class="footer__wrapper">
@@ -112,15 +201,10 @@
     <p class="scroll-to-top__text">Scroll to top</p>
   </div>
 
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-    Fancybox.bind("[data-fancybox='gallery']", {
-    });
-  </script>
-  <script type="module" src="assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 
 </html>
