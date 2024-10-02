@@ -11,7 +11,7 @@ coming-soon {
 }
 
 .page--about coming-soon {
+  background-image: url(../../img/coming-soon-thumbnail.jpg);
   height: calc(64vh - var(--ss-space-l-xl) * 2);
-  background-position: center 100%;
-  background-size: 29%;
+  background-size: 25%;
 }
