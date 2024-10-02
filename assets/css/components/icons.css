@@ -117,3 +117,27 @@
 .icon--book {
   --icon-url: url("../../icons/book.svg");
 }
+
+.icon--computer-gear {
+  --icon-url: url("../../icons/computer-gear.svg");
+}
+
+.icon--display-chart-up {
+  --icon-url: url("../../icons/display-chart-up.svg");
+}
+
+.icon--ui-design {
+  --icon-url: url("../../icons/ui-design.svg");
+}
+
+.icon--ux-desgin {
+  --icon-url: url("../../icons/ux-design.svg");
+}
+
+.icon--bulleye-pointer {
+  --icon-url: url("../../icons/bulleye-pointer.svg");
+}
+
+.icon--web-design {
+  --icon-url: url("../../icons/web-design.svg");
+}
