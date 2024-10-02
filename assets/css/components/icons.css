@@ -1,3 +1,4 @@
+/* @link https://www.freepik.com/author/uicons/icons/uicons-rounded-bold_5087 */
 .icon {
   display: inline-block;
   background-color: var(--icon-color, currentColor);
@@ -33,12 +34,8 @@
   --icon-url: url("../../icons/computer-code.svg");
 }
 
-.icon--eye {
-  --icon-url: url("../../icons/eye.svg");
-}
-
-.icon--eye-2 {
-  --icon-url: url("../../icons/eye-2.svg");
+.icon--arrow-up-right-from-square {
+  --icon-url: url("../../icons/arrow-up-right-from-square.svg");
 }
 
 .icon--briefcase {
