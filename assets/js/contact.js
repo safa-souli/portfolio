@@ -68,11 +68,14 @@ $(document).ready(function () {
 
   $form.on('submit', function (e) {
     e.preventDefault();
+    $('.bounce').removeClass('bounce');
     validation();
 
     if (validSubmit) {
       alert('Your message has been sent');
     } else {
+      $('.form__input.invalid').eq(0).addClass('bounce');
+      $('.form__input.invalid').eq(0).next('[class*="hint"]').addClass('bounce');
       $('.form__input.invalid').on('input', function () {
         validation();
       });
