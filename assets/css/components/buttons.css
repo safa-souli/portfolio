@@ -37,15 +37,7 @@
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-}
-
-.cta__btn--outline::before {
-  content: '';
-  position: absolute;
-  inset-inline: 0;
-  inset-block: 0;
-  background-color: var(--ss-dark);
-  z-index: -1;
+  border: 1px solid #19523859;
 }
 
 .cta__btn--outline .icon {

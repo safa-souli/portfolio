@@ -49,6 +49,7 @@
 .contact__item-subtile {
   grid-area: subtitle;
   line-height: 1.4;
+  font-weight: 300;
 }
 
 .contact__item-title {
