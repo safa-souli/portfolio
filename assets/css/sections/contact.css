@@ -5,13 +5,14 @@
 }
 
 .contact__info-header {
+  place-content: start;
   text-align: start;
 }
 
 .contact__list {
   padding-left: 0;
   list-style-type: none;
-  margin-top: var(--ss-space-m);
+  margin-top: var(--ss-space-l);
 }
 
 .contact__item {
@@ -89,6 +90,10 @@
 @media (min-width: 768px) {
   .contact__wrapper {
     grid-template-columns: 1fr 1fr;
-    place-items: center;
+    align-items: center;
   }
+}
+
+.contact__title {
+  margin-bottom: 0;
 }

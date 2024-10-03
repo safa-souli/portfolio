@@ -29,7 +29,7 @@
 
 .nav__list {
   display: flex;
-  gap: var(--ss-grid-gutter);
+  gap: var(--ss-space-xl);
   list-style-type: none;
 }
 

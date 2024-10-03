@@ -14,7 +14,7 @@
   list-style-type: none;
   gap: var(--ss-grid-gutter);
   flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fill, minmax(121px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(143px, 1fr));
   margin-top: var(--ss-space-xl);
   text-align: center;
   padding-left: 0;

@@ -265,13 +265,13 @@ cta {
 
 @media (width > 1440px) {
   .page--about .callout__title {
-    font-size: 8.2vw;
+    font-size: 8.74vw;
   }
 }
 
 @media (width > 1600px) {
   .page--about .callout__title {
-    font-size: 6.6vw;
+    font-size: 6.99vw;
   }
 }
 
@@ -311,4 +311,12 @@ cta {
 
 .page--portfolio .portfolio__title {
   font-size: var(--ss-step-3);
+}
+
+.page--portfolio .portfolio {
+  background-color: revert;
+}
+
+.page--portfolio .portfolio__filter {
+  background: var(--ss-dark);
 }
