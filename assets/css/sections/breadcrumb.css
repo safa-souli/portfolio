@@ -28,9 +28,10 @@
   gap: var(--ss-space-s-m);
   height: 36vh;
   justify-content: center;
-  align-content: end;
+  align-content: center;
   justify-items: center;
   grid-auto-rows: max-content;
+  transform: translateY(64px);
 }
 
 .breadcrumb__title {
