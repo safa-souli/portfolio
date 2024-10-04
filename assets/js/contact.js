@@ -120,10 +120,6 @@ $(document).ready(function () {
   // Form submission
   $form.on('submit', function (e) {
     e.preventDefault();
-    // $('.bounce').removeClass('bounce');
-    console.log($('.bounce').length)
-    $('.bounce').removeClass('bounce');
-    console.log($('.bounce').length)
     validation();
 
     if (validSubmit) {
@@ -163,6 +159,9 @@ $(document).ready(function () {
     }, 10);
     $submitElement.find('.cta__btn').removeClass('disabled');
     $form[0].reset();
+
+    $('.valid').removeClass('valid');
+    $('.hint--top-left').remove();
   }
 
   // Error handler
@@ -174,14 +173,30 @@ $(document).ready(function () {
     }, 10);
     $submitElement.find('.cta__btn').removeClass('disabled');
     console.error('Email sending failed:', error);
+
+    $('.valid').removeClass('valid');
+    $('.hint--top-left').remove();
   }
 
-  // Highlight invalid fields
   function highlightInvalidFields() {
     const $firstInvalid = $('.form__input.invalid').eq(0);
-    $firstInvalid.attr('autocomplete', 'off');
-    $firstInvalid.addClass('bounce');
+    const $fieldInvalids = $('.form__input.invalid');
+
+    // Remove and reapply bounce class to trigger animation
+    $firstInvalid.removeClass('bounce');
+
+    $fieldInvalids.attr('autocomplete', 'off');
+
+    // Use a small timeout to force reflow, then reapply the bounce class
+    setTimeout(function () {
+      $firstInvalid.addClass('bounce');
+    }, 0);
+
+    // Add bounce to the hint as well
     $firstInvalid.next('[class*="hint"]').addClass('bounce');
-    $firstInvalid.on('input', validation); // Validate only on blur event
+    $fieldInvalids.on('input', validation);
+    // Optionally: Ensure the input field is focused (to draw user's attention)
+    $firstInvalid.focus();
   }
+
 });
