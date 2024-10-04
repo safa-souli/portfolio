@@ -2,7 +2,8 @@
 .form__input {
   display: block;
   background: var(--ss-dark);
-  border-color: rgba(255, 255, 255, 0.15);
+  border: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   outline: unset;
   box-shadow: unset;
   border-radius: 7px;
@@ -17,7 +18,6 @@
   background-clip: padding-box;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   box-sizing: border-box;
-  border-width: 1px;
 }
 
 textarea.form__input {
@@ -28,7 +28,7 @@ textarea.form__input {
 .form__input.valid,
 .form__select:focus,
 .form__input:focus {
-  box-shadow: 0 0 5px 1px #3CB687;
+  border-color: var(--ss-accent-color);
   outline: 0;
 }
 
@@ -36,8 +36,15 @@ textarea.form__input {
 .form__select.invalid,
 .form__input:invalid,
 .form__input.invalid {
-  box-shadow: 0 0 5px 1px #de0000a8 !important;
+  border-color: var(--ss-danger);
 }
+
+.form__select.valid,
+.form__input.valid {
+  border-color: var(--ss-success);
+}
+
+
 
 .form__error {
   color: var(--ss-danger);
@@ -83,24 +90,6 @@ textarea.form__input {
   display: flex;
 }
 
-.form__input-wrapper .form__input {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form__input-wrapper.invalid .form__input {
-  border-top-color: #de0000;
-  border-bottom-color: #de0000;
-  border-right-color: #de0000;
-  border-left-color: transparent;
-}
-
-.form__input-wrapper.invalid .form__addon {
-  border-top-color: #de0000;
-  border-bottom-color: #de0000;
-  border-left-color: #de0000;
-}
-
 .input__wrapper--phone {
   position: relative;
 }
@@ -127,7 +116,6 @@ textarea.form__input {
 
 
 .input__wrapper [class*="hint"] {
-  color: var(--ss-danger);
   position: absolute;
   right: var(--ss-space-s);
   top: 1px;
@@ -139,6 +127,14 @@ textarea.form__input {
   display: grid;
   place-content: center;
   margin-block: unset !important;
+}
+
+.input__wrapper .hint--error {
+  color: var(--ss-danger);
+}
+
+.input__wrapper .hint--success {
+  color: var(--ss-success);
 }
 
 textarea.form__input+.hint--top-left {
@@ -161,6 +157,13 @@ textarea.form__input+.hint--top-left {
 .form__optional-text {
   font-size: 0.8rem;
   font-weight: 300;
-  /* Light font weight */
   color: #999;
+}
+
+.hint--always.hint--top-left::before {
+  -webkit-transform: translateY(2px) translateX(8px);
+}
+
+.hint--always.hint--top-left::after {
+  transform: translateX(-97%) translateY(2px);
 }

@@ -1,3 +1,13 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ss-accent-color) var(--ss-dark);
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ss-accent-color);
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -10,12 +20,6 @@
   background-color: var(--ss-accent-color);
   border-radius: 10px;
   border: 2px solid var(--ss-dark);
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--ss-accent-color) var(--ss-dark);
-  margin: 0;
 }
 
 img {
