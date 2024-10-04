@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
   const $form = $('#contact-form');
   const $firstName = $('#first-name');
   const $lastName = $('#last-name');
@@ -18,16 +18,16 @@ $(document).ready(function () {
   });
 
   // Validation function
-  function validation() {
+  const validation = () => {
     validSubmit = true;
     validateField($firstName, 'Please enter a valid name');
     validateEmail($email, 'Please enter a valid email');
     validatePhone($phone, 'Please enter a valid phone number');
     validateField($message, 'Please enter a message so I can help you');
-  }
+  };
 
   // General field validation
-  function validateField($field, errorMessage) {
+  const validateField = ($field, errorMessage) => {
     if ($field.val().trim() === '') {
       $field.removeClass('valid');
       $field.addClass('invalid');
@@ -42,10 +42,10 @@ $(document).ready(function () {
         addSuccessIcon($field);
       }
     }
-  }
+  };
 
   // Email validation
-  function validateEmail($field, errorMessage) {
+  const validateEmail = ($field, errorMessage) => {
     const emailValue = $field.val().trim();
     if (emailValue === '' || !regExEmail.test(emailValue)) {
       $field.removeClass('valid');
@@ -61,10 +61,10 @@ $(document).ready(function () {
         addSuccessIcon($field);
       }
     }
-  }
+  };
 
   // Phone validation
-  function validatePhone($field, errorMessage) {
+  const validatePhone = ($field, errorMessage) => {
     const phoneValue = $field.val().trim().replace(/-/g, '');
     if (phoneValue !== '' && !regExPhone.test(phoneValue)) {
       $field.removeClass('valid');
@@ -80,10 +80,10 @@ $(document).ready(function () {
         addSuccessIcon($field);
       }
     }
-  }
+  };
 
   // Add error icon to field
-  function addErrorIcon($input, errorMessage) {
+  const addErrorIcon = ($input, errorMessage) => {
     if ($input.siblings('.form__icon').length === 0) {
       $input.after(`
         <span class="hint--top-left hint--error form__icon" data-hint="${errorMessage}">
@@ -93,14 +93,14 @@ $(document).ready(function () {
     } else {
       $input.siblings('.form__icon').attr('data-hint', errorMessage).show();
     }
-  }
+  };
 
   // Remove error icon from field
-  function removeErrorIcon($input) {
+  const removeErrorIcon = ($input) => {
     $input.siblings('.form__icon').remove();
-  }
+  };
 
-  function addSuccessIcon($input) {
+  const addSuccessIcon = ($input) => {
     if ($input.siblings('.form__icon').length === 0) {
       $input.after(`
         <span class="hint--top-left hint--success form__icon" data-hint="looks good!">
@@ -110,15 +110,14 @@ $(document).ready(function () {
     } else {
       $input.siblings('.form__icon').attr('data-hint', 'looks good!').show();
     }
-  }
+  };
 
-  function removeSuccessIcon($input) {
+  const removeSuccessIcon = ($input) => {
     $input.siblings('.form__icon').remove();
-  }
-
+  };
 
   // Form submission
-  $form.on('submit', function (e) {
+  $form.on('submit', (e) => {
     e.preventDefault();
     validation();
 
@@ -130,7 +129,7 @@ $(document).ready(function () {
   });
 
   // Handle email submission via EmailJS
-  function handleEmailSubmission() {
+  const handleEmailSubmission = () => {
     $submitElement.find('.cta__btn').addClass('disabled');
     $submitElement.append('<p class="form__loading">Sending<span class="dots"></span></p>');
     $submitElement.find('.form__error, .form__success').remove();
@@ -148,10 +147,10 @@ $(document).ready(function () {
     emailjs.send('service_j49rkds', 'template_3034ad5', templateParams)
       .then(handleSuccess)
       .catch(handleError);
-  }
+  };
 
   // Success handler
-  function handleSuccess(response) {
+  const handleSuccess = (response) => {
     $submitElement.find('.form__loading').remove();
     $submitElement.append('<p class="form__success form__result"><i class="icon icon--check"></i> Your message has been sent. Thank you! We will get back to you shortly.</p>');
     setTimeout(() => {
@@ -162,10 +161,10 @@ $(document).ready(function () {
 
     $('.valid').removeClass('valid');
     $('.hint--top-left').remove();
-  }
+  };
 
   // Error handler
-  function handleError(error) {
+  const handleError = (error) => {
     $submitElement.find('.form__loading').remove();
     $submitElement.append('<p class="form__error form__result"><i class="icon icon--exclamation"></i> Something went wrong. Please reload the page and try again.</p>');
     setTimeout(() => {
@@ -176,9 +175,9 @@ $(document).ready(function () {
 
     $('.valid').removeClass('valid');
     $('.hint--top-left').remove();
-  }
+  };
 
-  function highlightInvalidFields() {
+  const highlightInvalidFields = () => {
     const $firstInvalid = $('.form__input.invalid').eq(0);
     const $fieldInvalids = $('.form__input.invalid');
 
@@ -197,6 +196,6 @@ $(document).ready(function () {
     $fieldInvalids.on('input', validation);
     // Optionally: Ensure the input field is focused (to draw user's attention)
     $firstInvalid.focus();
-  }
+  };
 
 });
