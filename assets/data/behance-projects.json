@@ -1,0 +1,47 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Fitness",
+      "description": "A fitness project aimed at promoting healthy living.",
+      "covers": {
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cff8d8209171653.66fb1e8d9bc4d.jpg"
+      },
+      "url": "https://www.behance.net/gallery/209171653/Fitness",
+      "fields": [
+        "UI/UX",
+        "Web Design"
+      ],
+      "stats": {
+        "views": 5,
+        "comments": 0
+      },
+      "appreciations": 2
+    },
+    {
+      "id": 999,
+      "name": "Coming Soon",
+      "description": "Work in Progress",
+      "covers": {
+        "202": "assets/img/coming-soon-thumbnail.jpg",
+        "404": "assets/img/coming-soon-thumbnail.jpg",
+        "808": "assets/img/coming-soon-thumbnail.jpg",
+        "original": "assets/img/coming-soon.jpg"
+      },
+      "fields": [
+        "UI/UX",
+        "Web Design",
+        "Logo Design",
+        "Apps"
+      ],
+      "stats": {
+        "views": 0,
+        "comments": 0
+      },
+      "appreciations": 0
+    }
+  ]
+}

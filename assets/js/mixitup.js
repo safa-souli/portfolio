@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  const mixer = mixitup('#portfolio-grid', {
+  const mixer = mixitup('#behance-projects', {
     selectors: {
       target: '.portfolio__item'
     },

@@ -154,3 +154,19 @@
 .icon--check {
   --icon-url: url("../../icons/check.svg");
 }
+
+.icon--eye {
+  --icon-url: url("../../icons/eye.svg");
+}
+
+.icon--like {
+  --icon-url: url("../../icons/like.svg");
+}
+
+.icon--comments {
+  --icon-url: url("../../icons/comments.svg");
+}
+
+.icon--tools {
+  --icon-url: url("../../icons/tools.svg");
+}
