@@ -193,7 +193,7 @@ $(document).ready(function () {
     }, 0);
 
     // Add bounce to the hint as well
-    $firstInvalid.next('[class*="hint"]').addClass('bounce');
+    $firstInvalid.next('[class*="hint"]').addClass('bounce hint--always');
     $fieldInvalids.on('input', validation);
     // Optionally: Ensure the input field is focused (to draw user's attention)
     $firstInvalid.focus();

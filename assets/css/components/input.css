@@ -3,7 +3,7 @@
   display: block;
   background: var(--ss-dark);
   border: hidden;
-  border-bottom:1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   outline: unset;
   box-shadow: unset;
   border-radius: 7px;
@@ -157,6 +157,13 @@ textarea.form__input+.hint--top-left {
 .form__optional-text {
   font-size: 0.8rem;
   font-weight: 300;
-  /* Light font weight */
   color: #999;
+}
+
+.hint--always.hint--top-left::before {
+  -webkit-transform: translateY(2px) translateX(8px);
+}
+
+.hint--always.hint--top-left::after {
+  transform: translateX(-97%) translateY(2px);
 }
