@@ -410,35 +410,37 @@
             <div class="form__group">
               <label class="form__label" for="first-name">First Name</label>
               <div class="input__wrapper">
-                <input class="form__input" type="text" id="first-name" placeholder="e.g., Safa">
+                <input class="form__input" id="first-name" name="first-name" autocomplete="given-name"
+                  placeholder="e.g., Safa">
               </div>
             </div>
             <div class="form__group form__group--icon">
               <label class="form__label" for="last-name">Last Name <span
                   class="form__optional-text">(optional)</span></label>
               <div class="input__wrapper">
-                <input class="form__input" type="text" id="last-name" placeholder="e.g., Souli">
+                <input class="form__input" id="last-name" name="last-name" autocomplete="family-name"
+                  placeholder="e.g., Souli">
               </div>
             </div>
             <div class="form__group">
               <label class="form__label" for="email">Email</label>
               <div class="input__wrapper">
-                <input class="form__input" type="text" id="email" placeholder="e.g., safa.souli@yahoo.com">
+                <input class="form__input" id="email" name="email" autocomplete="email"
+                  placeholder="e.g., safa.souli@yahoo.com">
               </div>
             </div>
             <div class="form__group">
               <label class="form__label" for="phone">Phone <span class="form__optional-text">(optional)</span></label>
               <div class="input__wrapper input__wrapper--phone">
                 <span class="form__addon">(+216)</span>
-                <input class="form__input" type="text" id="phone" placeholder="e.g., XX-XXX-XXX">
+                <input class="form__input" id="phone" name="phone" autocomplete="tel" placeholder="e.g., XX-XXX-XXX">
               </div>
             </div>
             <div class="form__group full-width">
-              <label class="form__label" for="subject">
-                Subject <span class="form__optional-text">(optional)</span>
-              </label>
+              <label class="form__label" for="subject">Subject <span
+                  class="form__optional-text">(optional)</span></label>
               <div class="form__select-wrapper input__wrapper">
-                <select class="form__select" id="subject">
+                <select class="form__select" id="subject" name="subject">
                   <option disabled selected>Choose a subject</option>
                   <option value="brand">Branding Design</option>
                   <option value="ux-ui">UX/UI Design</option>
@@ -451,13 +453,15 @@
             <div class="form__group full-width">
               <label class="form__label" for="message">Message</label>
               <div class="input__wrapper">
-                <textarea class="form__input" id="message" placeholder="How can I help you?" rows="5"></textarea>
+                <textarea class="form__input" id="message" name="message" autocomplete="off"
+                  placeholder="How can I help you?" rows="5"></textarea>
               </div>
             </div>
             <div class="form__group full-width form__group--submit">
               <button class="cta__btn" type="submit">Send Message</button>
             </div>
           </form>
+
         </div>
       </div>
     </contact>
