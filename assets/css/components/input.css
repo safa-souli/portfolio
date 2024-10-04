@@ -101,17 +101,30 @@ textarea.form__input {
   border-left-color: #de0000;
 }
 
+.input__wrapper--phone {
+  position: relative;
+}
+
 .form__addon {
   display: grid;
   place-content: center;
   padding: var(--ss-space-xs) var(--ss-space-s);
   background-color: var(--ss-dark);
   color: var(--ss-body-color);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-right: hidden;
-  border-radius: 7px 0 0 7px;
+  border-radius: 7px;
   line-height: 1;
+  padding-right: 0;
+  position: absolute;
+  z-index: 1;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
 }
+
+#phone {
+  padding-left: 73px;
+}
+
 
 .input__wrapper [class*="hint"] {
   color: var(--ss-danger);
