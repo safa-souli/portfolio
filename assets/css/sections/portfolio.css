@@ -119,10 +119,14 @@
   align-self: center;
   grid-area: btn;
   line-height: 1;
-  color: wheat;
   padding: 0;
-  background: no-repeat;
-  color: var(--ss-accent-color);
+  background: var(--ss-accent-gradient);
+  font-size: 14px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  border-radius: 0;
+  padding-bottom: 1px;
 }
 
 .portfolio__content hr {
@@ -132,6 +136,7 @@
 }
 
 .portfolio__content .cta__btn .icon {
+  --icon-gradient: var(--ss-accent-gradient);
   --icon-height: 12px;
 }
 
@@ -168,10 +173,17 @@
   margin-top: var(--ss-space-xl);
 }
 
+.portfolio__item-title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  row-gap: var(--ss-space-xs-s);
+}
+
 .portfolio__tags {
   display: inline-flex;
   flex-wrap: wrap;
   place-items: center;
+  transform: translateY(2px);
 }
 
 .portfolio .portfolio__item.UI-UX.Web-Design.Logo-Design.Apps:last-child .portfolio__tags {

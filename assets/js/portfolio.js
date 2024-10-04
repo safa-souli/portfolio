@@ -10,7 +10,7 @@ $(document).ready(function () {
 
       const projectElement = `
         <div class="portfolio__item ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}">
-          <a class="portfolio__link" href="${project.covers['404']}" data-fancybox="gallery" data-caption="${project.name}">
+          <a class="portfolio__link" href="${project.covers['original']}" data-fancybox="gallery" data-caption="${project.name}">
             <picture class="portfolio__picture" style="aspect-ratio: 404/316">
               <source srcset="" type="image/webp">
               <source srcset="${project.covers['202']} 202w, ${project.covers['404']} 404w, ${project.covers['808']} 808w" type="image/jpg">
