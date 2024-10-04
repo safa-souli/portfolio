@@ -26,9 +26,9 @@
       "name": "Coming Soon",
       "description": "Work in Progress",
       "covers": {
-        "202": "assets/img/coming-soon-thumbnail.jpg",
-        "404": "assets/img/coming-soon-thumbnail.jpg",
-        "808": "assets/img/coming-soon-thumbnail.jpg",
+        "202": "assets/img/coming-soon-thumbnail-202.jpg",
+        "404": "assets/img/coming-soon-thumbnail-404.jpg",
+        "808": "assets/img/coming-soon-thumbnail-808.jpg",
         "original": "assets/img/coming-soon.jpg"
       },
       "fields": [
