@@ -39,6 +39,10 @@ textarea.form__input {
   box-shadow: 0 0 5px 1px #de0000a8 !important;
 }
 
+.form__error {
+  color: var(--ss-danger);
+}
+
 .form__select {
   padding-right: var(--ss-space-l);
 }

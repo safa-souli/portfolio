@@ -120,3 +120,17 @@
 .bounce {
   animation: bounce 0.5s ease;
 }
+
+.form__group--submit {
+  display: flex;
+  place-items: center;
+  gap: var(--ss-space-xs-s);
+  flex-wrap: wrap;
+}
+
+.form__success .icon,
+.form__error .icon {
+
+  margin-right: var(--ss-space-3xs);
+  transform: translateY(-2px);
+}

@@ -12,6 +12,7 @@
   mask-size: contain;
   height: var(--icon-height, 16px);
   width: var(--icon-width, var(--icon-height, 16px));
+  vertical-align: middle;
 }
 
 .icon--message {
@@ -144,4 +145,12 @@
 
 .icon--exclamation {
   --icon-url: url("../../icons/exclamation.svg");
+}
+
+.icon--close {
+  --icon-url: url("../../icons/close.svg");
+}
+
+.icon--check {
+  --icon-url: url("../../icons/check.svg");
 }

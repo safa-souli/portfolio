@@ -8,6 +8,7 @@ $(document).ready(function () {
   const $subject = $('#subject');
   const regExEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const regExPhone = /^[234579]\d{1}\s?\d{3}\s?\d{3}$/;
+  var $submitElement = $('.form__group--submit');
   var validSubmit;
 
   function validation() {
@@ -73,6 +74,9 @@ $(document).ready(function () {
 
     if (validSubmit) {
       // Send email
+      $submitElement.find('.cta__btn').addClass('disabled');
+      $submitElement.append('<p class="form__loading"> Sending...</p>');
+      $submitElement.find('.form__error, .form__success').remove();
       emailjs.init("6Bp3l4e9EcjzFPEaZ");
       const templateParams = {
         from_name: $firstName.val() + ' ' + $lastName.val(),
@@ -84,10 +88,14 @@ $(document).ready(function () {
 
       emailjs.send('service_j49rkds', 'template_3034ad5', templateParams)
         .then(function (response) {
-          alert('Your message has been sent successfully!');
+          $submitElement.find('.form__loading').remove();
+          $submitElement.append('<p class="form__success"><i class="icon icon--check"></i> Your message has been sent. Thank you! We will get back to you shortly.</p>');
+          $submitElement.find('.cta__btn').removeClass('disabled');
         }, function (error) {
-          alert('Failed to send the message. Please try again later.');
-          console.log('FAILED...', error);
+          // console.log('FAILED...', error);
+          $submitElement.find('.form__loading').remove();
+          $submitElement.append('<p class="form__error"><i class="icon icon--exclamation"></i> Something went wrong. Please reload the page and try again.</p>');
+          $submitElement.find('.cta__btn').removeClass('disabled');
         });
     } else {
       $('.form__input.invalid').eq(0).addClass('bounce');
