@@ -443,51 +443,63 @@
               </li>
             </ul>
           </div>
-          <form class="contact__form">
+          <form class="contact__form" id="contact-form">
             <div class="form__group">
-              <label class="form__label" for="name">First Name</label>
-              <input class="form__input" type="text" id="name" placeholder="e.p, Safa">
+              <label class="form__label" for="first-name">First Name</label>
+              <div class="input__wrapper">
+                <input class="form__input" type="text" id="first-name" placeholder="e.p, Safa">
+              </div>
             </div>
-            <div class="form__group">
-              <label class="form__label" for="name">Last Name</label>
-              <input class="form__input" type="text" id="name" placeholder="e.p, Souli">
+            <div class="form__group form__group--icon">
+              <label class="form__label" for="last-name">Last Name <span
+                  class="form__optional-text">(optional)</span></label>
+              <div class="input__wrapper">
+                <input class="form__input" type="text" id="last-name" placeholder="e.p, Souli">
+              </div>
             </div>
             <div class="form__group">
               <label class="form__label" for="email">Email</label>
-              <input class="form__input" type="email" id="email" placeholder="e.p, safa.souli@yahoo.com">
+              <div class="input__wrapper">
+                <input class="form__input" type="text" id="email" placeholder="e.p, safa.souli@yahoo.com">
+              </div>
             </div>
             <div class="form__group">
-              <label class="form__label" for="phone">Phone</label>
-              <input class="form__input" type="tel" id="phone" placeholder="e.p, (+216) 52 110 104">
+              <label class="form__label" for="phone">Phone <span class="form__optional-text">(optional)</span></label>
+              <div class="form__input-wrapper">
+                <span class="form__addon">(+216)</span>
+                <div class="input__wrapper">
+                  <input class="form__input" type="text" id="phone" placeholder="e.p, 52 110 104">
+                </div>
+              </div>
             </div>
             <div class="form__group full-width">
-              <label class="form__label" for="subject">Subject</label>
-              <div class="form__select-wrapper">
+              <label class="form__label" for="subject">
+                Subject <span class="form__optional-text">(optional)</span>
+              </label>
+              <div class="form__select-wrapper input__wrapper">
                 <select class="form__select" id="subject">
                   <option disabled selected>Select a subject</option>
-                  <option value="design">Branding Design</option>
-                  <option value="design">UX/UI Design</option>
-                  <option value="design">Frontend Developpement</option>
-                  <option value="development">App Development</option>
+                  <option value="brand">Branding Design</option>
+                  <option value="ux-ui">UX/UI Design</option>
+                  <option value="design">Web Design</option>
+                  <option value="development">Web Development</option>
                   <option value="other">Other</option>
                 </select>
               </div>
             </div>
             <div class="form__group full-width">
               <label class="form__label" for="message">Message</label>
-              <textarea class="form__input" id="message" placeholder="Your message"></textarea>
+              <div class="input__wrapper">
+                <textarea class="form__input" id="message" placeholder="Your message" rows="5"></textarea>
+              </div>
             </div>
             <div class="form__group">
-              <div class="hint--right hint--large"
-                aria-label="This feature is not available yet, we are working on it, thank you for your patience.">
-                <button class="cta__btn disabled" type="submit">Send Message</button>
-              </div>
+              <button class="cta__btn" type="submit">Send Message</button>
             </div>
           </form>
         </div>
       </div>
     </contact>
-
 
     <footer class="footer ds-inner-px">
       <div class="container">
@@ -546,6 +558,7 @@
     Fancybox.bind("[data-fancybox='gallery']", {
     });
   </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="assets/js/mixitup.js"></script>
   <script src="assets/js/contact.js"></script>

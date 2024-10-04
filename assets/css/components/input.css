@@ -20,6 +20,10 @@
   border-width: 1px;
 }
 
+textarea.form__input {
+  line-height: 1.7;
+}
+
 .form__select.valid,
 .form__input.valid,
 .form__select:focus,
@@ -118,6 +122,11 @@
   display: grid;
   place-content: center;
   margin-block: unset !important;
+}
+
+textarea.form__input+.hint--top-left {
+  padding-top: var(--ss-space-s);
+  place-content: start;
 }
 
 .input__wrapper .hint--top-left:hover::after {

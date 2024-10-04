@@ -72,7 +72,23 @@ $(document).ready(function () {
     validation();
 
     if (validSubmit) {
-      alert('Your message has been sent');
+      // Send email
+      emailjs.init("6Bp3l4e9EcjzFPEaZ");
+      const templateParams = {
+        from_name: $firstName.val() + ' ' + $lastName.val(),
+        from_email: $email.val(),
+        phone_number: $phone.val(),
+        message: $message.val(),
+        subject: $subject.val()
+      };
+
+      emailjs.send('service_j49rkds', 'template_3034ad5', templateParams)
+        .then(function (response) {
+          alert('Your message has been sent successfully!');
+        }, function (error) {
+          alert('Failed to send the message. Please try again later.');
+          console.log('FAILED...', error);
+        });
     } else {
       $('.form__input.invalid').eq(0).addClass('bounce');
       $('.form__input.invalid').eq(0).next('[class*="hint"]').addClass('bounce');
