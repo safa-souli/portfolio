@@ -13,6 +13,7 @@
   gap: var(--ss-space-3xs-2xs);
   place-items: baseline;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .cta__btn.loading {

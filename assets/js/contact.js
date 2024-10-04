@@ -85,11 +85,15 @@ $(document).ready(() => {
   // Add error icon to field
   const addErrorIcon = ($input, errorMessage) => {
     if ($input.siblings('.form__icon').length === 0) {
-      $input.after(`
-        <span class="hint--top-left hint--error form__icon" data-hint="${errorMessage}">
-          <i class="icon icon--exclamation"></i>
-        </span>
-      `);
+      const errorIcon = $(`
+      <span class="hint--top-left hint--error form__icon" data-hint="${errorMessage}">
+        <i class="icon icon--exclamation"></i>
+      </span>
+    `);
+      $input.after(errorIcon);
+      setTimeout(() => {
+        errorIcon.addClass('show');
+      }, 100);
     } else {
       $input.siblings('.form__icon').attr('data-hint', errorMessage).show();
     }
@@ -102,11 +106,15 @@ $(document).ready(() => {
 
   const addSuccessIcon = ($input) => {
     if ($input.siblings('.form__icon').length === 0) {
-      $input.after(`
+      const successIcon = $(`
         <span class="hint--top-left hint--success form__icon" data-hint="looks good!">
           <i class="icon icon--check"></i>
         </span>
       `);
+      $input.after(successIcon);
+      setTimeout(() => {
+        successIcon.addClass('show');
+      }, 100);
     } else {
       $input.siblings('.form__icon').attr('data-hint', 'looks good!').show();
     }
@@ -181,20 +189,15 @@ $(document).ready(() => {
     const $firstInvalid = $('.form__input.invalid').eq(0);
     const $fieldInvalids = $('.form__input.invalid');
 
-    // Remove and reapply bounce class to trigger animation
     $firstInvalid.removeClass('bounce');
-
     $fieldInvalids.attr('autocomplete', 'off');
 
-    // Use a small timeout to force reflow, then reapply the bounce class
     setTimeout(function () {
       $firstInvalid.addClass('bounce');
     }, 0);
 
-    // Add bounce to the hint as well
     $firstInvalid.next('[class*="hint"]').addClass('bounce hint--always');
     $fieldInvalids.on('input', validation);
-    // Optionally: Ensure the input field is focused (to draw user's attention)
     $firstInvalid.focus();
   };
 
