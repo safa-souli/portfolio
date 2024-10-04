@@ -130,7 +130,40 @@
 
 .form__success .icon,
 .form__error .icon {
-
   margin-right: var(--ss-space-3xs);
   transform: translateY(-2px);
+}
+
+.form__group--submit .form__error::before,
+.form__group--submit .form__success::before {
+  content: "";
+  position: absolute;
+  inset: -16px -46px -46px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: -1;
+}
+
+.form__group--submit .form__error,
+.form__group--submit .form__success {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--ss-space-2xs);
+  font-size: 14px;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.contact__form {
+  overflow: hidden;
+}
+
+.form__result {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1s ease;
+}
+
+.form__result.show {
+  opacity: 1;
+  transform: translateY(16px);
 }

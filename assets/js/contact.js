@@ -86,7 +86,7 @@ $(document).ready(function () {
     $submitElement.append('<p class="form__loading"> Sending...</p>');
     $submitElement.find('.form__error, .form__success').remove();
 
-    emailjs.init("6Bp3l4e9EcjzFPEZ"); // Ensure this is initialized once globally, if possible.
+    emailjs.init("6Bp3l4e9EcjzFPEaZ");
 
     const templateParams = {
       from_name: `${$firstName.val()} ${$lastName.val()}`,
@@ -104,24 +104,33 @@ $(document).ready(function () {
   // Handle successful email submission
   function handleSuccess(response) {
     $submitElement.find('.form__loading').remove();
-    $submitElement.append('<p class="form__success"><i class="icon icon--check"></i> Your message has been sent. Thank you! We will get back to you shortly.</p>');
+    $submitElement.append('<p class="form__success form__result"><i class="icon icon--check"></i> Your message has been sent. Thank you! We will get back to you shortly.</p>');
+    setTimeout(() => {
+      $submitElement.find('.form__success').addClass('show');
+    }, 10);
     $submitElement.find('.cta__btn').removeClass('disabled');
-    $form[0].reset(); // Optionally reset the form after success
+    $form[0].reset();
   }
 
   // Handle email submission error
   function handleError(error) {
     $submitElement.find('.form__loading').remove();
-    $submitElement.append('<p class="form__error"><i class="icon icon--exclamation"></i> Something went wrong. Please reload the page and try again.</p>');
+    $submitElement.append('<p class="form__error form__result"><i class="icon icon--exclamation"></i> Something went wrong. Please reload the page and try again.</p>');
+
+    setTimeout(() => {
+      $submitElement.find('.form__error').addClass('show');
+    }, 10);
+
     $submitElement.find('.cta__btn').removeClass('disabled');
-    console.error('Email sending failed:', error); // Improved logging for debugging
+    console.error('Email sending failed:', error);
   }
+
 
   // Highlight invalid fields
   function highlightInvalidFields() {
     const $firstInvalid = $('.form__input.invalid').eq(0);
     $firstInvalid.addClass('bounce');
     $firstInvalid.next('[class*="hint"]').addClass('bounce');
-    $firstInvalid.on('input', validation); // Re-validate when user starts typing again
+    $firstInvalid.on('input', validation);
   }
 });
