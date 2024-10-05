@@ -107,7 +107,7 @@ cta {
   position: fixed;
   bottom: var(--ss-space-xs-s);
   right: 0;
-  transform: translateX(75%) rotate(-90deg);
+  transform: translate(57%, -275%) rotate(-90deg);
   transform-origin: left;
   display: grid;
   grid-template-columns: 50px auto;
@@ -143,7 +143,7 @@ cta {
   inset: 0;
   background-color: var(--ss-dark);
   mask-image: radial-gradient(circle at center center, transparent 0%, var(--ss-body-bg) 0%);
-  z-index: 999;
+  z-index: 2000000010;
   opacity: 1;
   transition: none;
 }

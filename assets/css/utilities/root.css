@@ -4,7 +4,7 @@
   --ss-body-font-family: 'Sora', system-ui;
   --ss-body-font-weight: 400;
   --ss-body-line-height: 2;
-  --ss-heading-color: #fff;
+  --ss-heading-color: #f1f1f1;
   --ss-heading-font-family: 'Sora', system-ui;
   --ss-heading-font-weight: 700;
   --ss-heading-line-height: 1.1;
@@ -72,9 +72,17 @@
   --ss-grid-columns: 11;
 
   /* colors */
-  --ss-accent-color: #4DFFAF;
-  --ss-accent-color-rgb: 77, 255, 175;
-  --ss-accent-gradient: linear-gradient(90deg, var(--ss-accent-color) 0%, #3EAD7B 100%);
+  --ss-accent-color: #43E29B;
+  --ss-accent-color-rgb: 67,226,155;
+  --ss-accent-color-hue: 153;
+  --ss-accent-color-saturation: 73.3%;
+  --ss-accent-color-lightness: 57.5%;
+
+  --ss-accent-dark-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 20%) calc(var(--ss-accent-color-lightness) - 20%));
+  --ss-accent-light-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 10%) calc(var(--ss-accent-color-lightness) + 20%));
+  --ss-accent-subtle-color: hsl(calc(var(--ss-accent-color-hue) - 10) var(--ss-accent-color-saturation) calc(var(--ss-accent-color-lightness) - 10%));
+
+  --ss-accent-gradient: linear-gradient(125deg, var(--ss-accent-color) 0%, var(--ss-accent-dark-color) 100%);
 
   /* buttons */
   --ss-btn-font-weight: 600;

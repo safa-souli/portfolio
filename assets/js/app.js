@@ -110,10 +110,17 @@ $(document).ready(function () {
           --ss-grid-gutter: var(--space-s-s, clamp(0.875rem, 0.8365rem + 0.1923vw, 1rem));
           --ss-grid-columns: 11;
 
-          /* colors */
-          --ss-accent-color: #4DFFAF;
-          --ss-accent-color-rgb: 77, 255, 175;
-          --ss-accent-gradient: linear-gradient(90deg, var(--ss-accent-color) 0%, #3EAD7B 100%);
+          --ss-accent-color: #43E29B;
+          --ss-accent-color-rgb: 67,226,155;
+          --ss-accent-color-hue: 153;
+          --ss-accent-color-saturation: 73.3%;
+          --ss-accent-color-lightness: 57.5%;
+
+          --ss-accent-dark-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 20%) calc(var(--ss-accent-color-lightness) - 20%));
+          --ss-accent-light-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 10%) calc(var(--ss-accent-color-lightness) + 20%));
+          --ss-accent-subtle-color: hsl(calc(var(--ss-accent-color-hue) - 10) var(--ss-accent-color-saturation) calc(var(--ss-accent-color-lightness) - 10%));
+          --ss-accent-gradient:linear-gradient(to right, var(--ss-accent-color) 0%, var(--ss-accent-dark-color) 100%);
+
 
           /* buttons */
           --ss-btn-font-weight: 600;
@@ -218,8 +225,20 @@ $(document).ready(function () {
           height: 18px;
         }
 
-        .tawk-footer {          
-          border-color: #ffffff2b;
+        .tawk-overlay {
+          border: 1px solid #171717e3;
+        }
+
+        .tawk-router-view {
+          background-color: var(--ss-body-bg);
+        }
+
+        button {
+          font-weight: 600;
+        }
+
+        .tawk-footer {
+          border-color: #fff0;
         }
 
         .tawk-agent-name.tawk-text-truncate {
@@ -231,6 +250,8 @@ $(document).ready(function () {
           background: var(--ss-accent-color) !important;
         }
 
+        .card-container:first-child::before,
+        .tawk-overlay .tawk-overlay-header,
         .tawk-card-primary {
           background: var(--ss-accent-gradient);
         }
@@ -275,6 +296,10 @@ $(document).ready(function () {
           border: none;
           background-color: transparent !important;
           border: 3px solid #ffffff21;
+        }
+
+        .tawk-agent-image .tawk-avatar {
+          border: 1px solid #040404fa;
         }
 
         .tawk-icon.tawk-icon-hamburger-menu {
@@ -424,6 +449,14 @@ $(document).ready(function () {
         .tawk-emoji-preview {
           background: var(--ss-card-bg);
         }
+
+        .tawk-agent-chat-bubble-dots {
+          background: #6f6f6f !important;
+        }
+
+        .tawk-chat-message-container {
+          padding-top: 24px;
+        }
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
@@ -516,7 +549,7 @@ $(document).ready(function () {
       ease: 'power1.out',
       onComplete: () => {
         gsap.delayedCall(0, () => {
-          gsap.set($maskedCircle, { zIndex: -999 });
+          gsap.set($maskedCircle, { zIndex: -2000000010 });
         });
         $maskedCircle.removeClass('loading');
       },
@@ -532,7 +565,7 @@ $(document).ready(function () {
       duration: 1,
       maskImage: 'radial-gradient(circle at center center, transparent 0%, var(--ss-body-bg) 0%)',
       ease: 'power1.in',
-      onStart: () => gsap.set($maskedCircle, { zIndex: 999 }),
+      onStart: () => gsap.set($maskedCircle, { zIndex: 2000000010 }),
     });
   };
 
