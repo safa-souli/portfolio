@@ -6,42 +6,119 @@ $(document).ready(function () {
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
 
+  function pollIframeLoad(node) {
+    var pollInterval = setInterval(function () {
+      if (node.contentWindow && node.contentDocument.readyState === 'complete') {
+        console.log('Iframe loaded (polling):', node);
+        clearInterval(pollInterval); // Stop polling once the iframe is loaded
+        injectStylesInIframe(node);
+      }
+    }, 100); // Poll every 100ms
+  }
+
+  // Function to handle iframe load or start polling
+  function handleIframe(node) {
+    if (node.contentWindow && node.contentDocument.readyState === 'complete') {
+      injectStylesInIframe(node); // If iframe is already loaded
+    } else {
+      pollIframeLoad(node); // Start polling as a fallback
+    }
+  }
+
   // Function to inject custom styles into the iframe once it's fully loaded
   function injectStylesInIframe(iframe) {
     try {
       var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-      // Function to extract all computed styles from the root and apply them as CSS variables in the iframe
-      function getRootComputedStyles() {
-        // Ensure we're targeting the root element (document.documentElement or :root)
-        var rootElement = document.documentElement;
-        var rootComputedStyles = window.getComputedStyle(rootElement); // Get computed styles from <html>
-        var cssVariables = '';
-
-        // Iterate over all computed styles and look for CSS variables (properties starting with "--")
-        for (var i = 0; i < rootComputedStyles.length; i++) {
-          var propertyName = rootComputedStyles[i];
-          var propertyValue = rootComputedStyles.getPropertyValue(propertyName);
-
-          // Only include CSS variables (those that start with "--")
-          if (propertyName.startsWith('--')) {
-            cssVariables += `${propertyName}: ${propertyValue.trim()};\n`; // Trimming the value to avoid extra spaces
-          }
-        }
-
-        return cssVariables; // Return all root variables as a string
+      if (!iframeDoc) {
+        console.error('Cannot access iframe document due to cross-origin restrictions.');
+        return;
       }
 
 
-      // Call the function to get CSS variables from root
-      var rootStyles = `
-            :root {
-                ${getRootComputedStyles()}
-            }
-        `;
-
-      // Define your custom styles that use the root variables
       var customStyles = `
+        :root {
+          --ss-body-bg: #0d0d0d;
+          --ss-body-color: #e7e7e7;
+          --ss-body-font-family: 'Sora', system-ui;
+          --ss-body-font-weight: 400;
+          --ss-body-line-height: 2;
+          --ss-heading-color: #fff;
+          --ss-heading-font-family: 'Sora', system-ui;
+          --ss-heading-font-weight: 700;
+          --ss-heading-line-height: 1.1;
+          --ss-card-bg: #1f1f1f;
+          --ss-border-radius: 14px;
+          --ss-dark: black;
+          --ss-danger: #b34e4d;
+          --ss-success: #458746;
+          --ss-dark-rgb: 0, 0, 0;
+
+          /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
+
+          --ss-step--2: clamp(0.5739rem, 0.6194rem + -0.0586vw, 0.6076rem);
+          --ss-step--1: clamp(0.7292rem, 0.7193rem + 0.0494vw, 0.7576rem);
+          --ss-step-0: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+          --ss-step-1: clamp(1.05rem, 0.9561rem + 0.4696vw, 1.32rem);
+          --ss-step-2: clamp(1.26rem, 1.0922rem + 0.839vw, 1.7424rem);
+          --ss-step-3: clamp(1.512rem, 1.2379rem + 1.3704vw, 2.3rem);
+          --ss-step-4: clamp(1.8144rem, 1.3895rem + 2.1244vw, 3.036rem);
+          --ss-step-5: clamp(2.1773rem, 1.5407rem + 3.1829vw, 4.0075rem);
+
+
+          /* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
+
+          --ss-space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
+          --ss-space-2xs: clamp(0.4375rem, 0.4158rem + 0.1087vw, 0.5rem);
+          --ss-space-xs: clamp(0.6875rem, 0.6658rem + 0.1087vw, 0.75rem);
+          --ss-space-s: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
+          --ss-space-m: clamp(1.3125rem, 1.2473rem + 0.3261vw, 1.5rem);
+          --ss-space-l: clamp(1.75rem, 1.663rem + 0.4348vw, 2rem);
+          --ss-space-xl: clamp(2.625rem, 2.4946rem + 0.6522vw, 3rem);
+          --ss-space-2xl: clamp(3.5rem, 3.3261rem + 0.8696vw, 4rem);
+          --ss-space-3xl: clamp(5.25rem, 4.9891rem + 1.3043vw, 6rem);
+          --ss-space-4xl: clamp(6.125rem, 5.8207rem + 1.5217vw, 7rem);
+          --ss-space-5xl: clamp(7rem, 6.6522rem + 1.7391vw, 8rem);
+          --ss-space-6xl: clamp(7.875rem, 7.4837rem + 1.9565vw, 9rem);
+          --ss-space-7xl: clamp(8.75rem, 8.3152rem + 2.1739vw, 10rem);
+          --ss-space-8xl: clamp(9.625rem, 9.1467rem + 2.3913vw, 11rem);
+          --ss-space-9xl: clamp(10.5rem, 9.9783rem + 2.6087vw, 12rem);
+
+          /* One-up pairs */
+          --ss-space-3xs-2xs: clamp(0.25rem, 0.163rem + 0.4348vw, 0.5rem);
+          --ss-space-2xs-xs: clamp(0.4375rem, 0.3288rem + 0.5435vw, 0.75rem);
+          --ss-space-xs-s: clamp(0.6875rem, 0.5788rem + 0.5435vw, 1rem);
+          --ss-space-s-m: clamp(0.875rem, 0.6576rem + 1.087vw, 1.5rem);
+          --ss-space-m-l: clamp(1.3125rem, 1.0734rem + 1.1957vw, 2rem);
+          --ss-space-l-xl: clamp(1.75rem, 1.3152rem + 2.1739vw, 3rem);
+          --ss-space-xl-2xl: clamp(2.625rem, 2.1467rem + 2.3913vw, 4rem);
+          --ss-space-2xl-3xl: clamp(3.5rem, 2.6304rem + 4.3478vw, 6rem);
+          --ss-space-3xl-4xl: clamp(5.25rem, 4.6413rem + 3.0435vw, 7rem);
+          --ss-space-4xl-5xl: clamp(6.125rem, 5.4728rem + 3.2609vw, 8rem);
+          --ss-space-5xl-6xl: clamp(7rem, 6.3043rem + 3.4783vw, 9rem);
+          --ss-space-6xl-7xl: clamp(7.875rem, 7.1359rem + 3.6957vw, 10rem);
+          --ss-space-7xl-8xl: clamp(8.75rem, 7.9674rem + 3.913vw, 11rem);
+          --ss-space-8xl-9xl: clamp(9.625rem, 8.7989rem + 4.1304vw, 12rem);
+
+          /* Custom pairs */
+          --ss-space-s-l: clamp(0.875rem, 0.4837rem + 1.9565vw, 2rem);
+
+          /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,s,3xl,11 */
+
+          --ss-grid-max-width: 78.00rem;
+          --ss-grid-ultimate-width: 50.00rem;
+          --ss-grid-gutter: var(--space-s-s, clamp(0.875rem, 0.8365rem + 0.1923vw, 1rem));
+          --ss-grid-columns: 11;
+
+          /* colors */
+          --ss-accent-color: #4DFFAF;
+          --ss-accent-color-rgb: 77, 255, 175;
+          --ss-accent-gradient: linear-gradient(90deg, var(--ss-accent-color) 0%, #3EAD7B 100%);
+
+          /* buttons */
+          --ss-btn-font-weight: 600;
+
+        }
 
         body.font-lato {
           color: var(--ss-body-color);
@@ -75,7 +152,7 @@ $(document).ready(function () {
         }
 
         .tawk-max-container {
-          border: hidden;
+          border: 1px solid #e9e9e921;
         }
 
         .tawk-card div:first-child {
@@ -351,35 +428,30 @@ $(document).ready(function () {
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
 
-      // Combine root styles and custom styles
-      var combinedStyles = fontFamily + '\n' + rootStyles + customStyles;
+      var combinedStyles = fontFamily + '\n' + customStyles;
 
-      // Create a style element with the combined styles
       var $style = $('<style>').html(combinedStyles);
 
-      // Append the combined styles to the iframe's head
       $(iframeDoc.head).append($style);
     } catch (e) {
-      // Handle cross-origin issues (e.g., trying to access an iframe from a different domain)
       console.error('Cannot access iframe contents due to cross-origin restrictions.');
     }
   }
 
-  // Create a MutationObserver to watch for changes in the DOM
+  // MutationObserver to detect new iframes
   var observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
       mutation.addedNodes.forEach(function (node) {
-        // Check if the added node is an iframe
         if (node.tagName === 'IFRAME') {
-          // Once the iframe is found, wait for it to load its final content
-          $(node).on('load', function () {
-            // Once the iframe has loaded, try injecting styles
-            injectStylesInIframe(node);
-          });
+          console.log('New iframe detected:', node);
+          setTimeout(function () {
+            handleIframe(node); // Use a small delay to ensure iframe is loaded
+          }, 100);
         }
       });
     });
   });
+
 
   // Start observing the document's body for added iframes
   observer.observe(document.body, { childList: true, subtree: true });
@@ -393,6 +465,8 @@ $(document).ready(function () {
     s1.charset = 'UTF-8';
     s0.parentNode.insertBefore(s1, s0);
   })();
+
+
 
   /**
    * Returns true if the given element is in the viewport, false otherwise.
