@@ -76,8 +76,10 @@ $(document).ready(() => {
       if ($field.hasClass('invalid')) {
         $field.removeClass('invalid');
         removeErrorIcon($field);
-        $field.addClass('valid');
-        addSuccessIcon($field);
+        if (phoneValue !== '') {
+          $field.addClass('valid');
+          addSuccessIcon($field);
+        }
       }
     }
   };
@@ -117,6 +119,10 @@ $(document).ready(() => {
       setTimeout(() => {
         successIcon.addClass('show');
       }, 100);
+      
+      setTimeout(() => {
+        successIcon.addClass('hint--always');
+      }, 500);
     } else {
       $input.siblings('.form__icon').attr('data-hint', 'looks good!').show();
     }
@@ -211,6 +217,6 @@ $(document).ready(() => {
     var input = $firstInvalid;
     input.focus();
     var value = input.val();
-    input[0].setSelectionRange(value.length, value.length);  
+    input[0].setSelectionRange(value.length, value.length);
   };
 });
