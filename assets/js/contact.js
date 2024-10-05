@@ -84,6 +84,7 @@ $(document).ready(() => {
 
   // Add error icon to field
   const addErrorIcon = ($input, errorMessage) => {
+    console.log("error icon length", $input.siblings('.form__icon').length);
     if ($input.siblings('.form__icon').length === 0) {
       const errorIcon = $(`
       <span class="hint--top-left hint--error form__icon" data-hint="${errorMessage}">
@@ -101,10 +102,11 @@ $(document).ready(() => {
 
   // Remove error icon from field
   const removeErrorIcon = ($input) => {
-    $input.siblings('.form__icon').remove();
+    $input.siblings('.form__icon.hint--error').remove();
   };
 
   const addSuccessIcon = ($input) => {
+    console.log("error icon length", $input.siblings('.form__icon').length);
     if ($input.siblings('.form__icon').length === 0) {
       const successIcon = $(`
         <span class="hint--top-left hint--success form__icon" data-hint="looks good!">
@@ -121,7 +123,7 @@ $(document).ready(() => {
   };
 
   const removeSuccessIcon = ($input) => {
-    $input.siblings('.form__icon').remove();
+    $input.siblings('.form__icon.hint--success').remove();
   };
 
   // Form submission
@@ -197,8 +199,18 @@ $(document).ready(() => {
     }, 0);
 
     $firstInvalid.next('[class*="hint"]').addClass('bounce hint--always');
-    $fieldInvalids.on('input', validation);
-    $firstInvalid.focus();
-  };
+    $fieldInvalids.on('input', function () {
+      $(this).next('[class*="hint"]').removeClass('hint--always');
+      validation();
+    });
+    $fieldInvalids.on('blur', function () {
+      $(this).next('[class*="hint"]').removeClass('hint--always');
+    });
 
+    // Set cursor to the first invalid field and move it to the end
+    var input = $firstInvalid;
+    input.focus();
+    var value = input.val();
+    input[0].setSelectionRange(value.length, value.length);  
+  };
 });
