@@ -28,7 +28,7 @@ textarea.form__input {
 .form__input.valid,
 .form__select:focus,
 .form__input:focus {
-  border-color: var(--ss-accent-color);
+  border-color: #319C6C;
   outline: 0;
 }
 
