@@ -457,6 +457,13 @@ $(document).ready(function () {
         .tawk-chat-message-container {
           padding-top: 24px;
         }
+
+        .tawk-message-preview-close {
+          margin-bottom: 0;
+          background-color: var(--ss-card-bg);
+          border: 1px solid #ffffff0f;
+        }
+
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
