@@ -105,9 +105,8 @@ cta {
 
 .scroll-to-top {
   position: fixed;
-  bottom: var(--ss-space-xs-s);
-  right: 0;
-  transform: translate(57%, -275%) rotate(-90deg);
+  right: 0px;
+  transform: translate(70%, -149%) rotate(-90deg);
   transform-origin: left;
   display: grid;
   grid-template-columns: 50px auto;
@@ -115,6 +114,21 @@ cta {
   column-gap: var(--ss-space-xs);
   cursor: pointer;
   transition: opacity 0.3s ease;
+  padding: 18px 32px;
+  border-radius: 100vmax;
+  overflow: hidden;
+  bottom: 0;
+  line-height: 1;
+  place-content: center;
+}
+
+.scroll-to-top::after {
+  content: "";
+  background: #ffffff12;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(2rem);
 }
 
 .scroll-to-top__progress {
