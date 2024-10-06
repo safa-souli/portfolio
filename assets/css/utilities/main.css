@@ -106,7 +106,7 @@ cta {
 .scroll-to-top {
   position: fixed;
   right: 0px;
-  transform: translate(70%, -149%) rotate(-90deg);
+  transform: translate(70%, -190%) rotate(-90deg);
   transform-origin: left;
   display: grid;
   grid-template-columns: 50px auto;
@@ -114,7 +114,7 @@ cta {
   column-gap: var(--ss-space-xs);
   cursor: pointer;
   transition: opacity 0.3s ease;
-  padding: 18px 32px;
+  padding: 12px 28px 14px 28px;
   border-radius: 100vmax;
   overflow: hidden;
   bottom: 0;
