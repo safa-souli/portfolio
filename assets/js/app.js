@@ -135,6 +135,10 @@ $(document).ready(function () {
           line-height: var(--ss-body-line-height) !important;       
         }
 
+        body * {
+          font-family: var(--ss-body-font-family) !important;
+        }
+
         .tawk-chat-view .tawk-chat-panel {
           background-color: var(--ss-body-bg) !important;
         }
