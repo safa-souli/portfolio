@@ -503,6 +503,17 @@ $(document).ready(function () {
         .tawk-chat-visible .card-container:first-child::before {
           background: var(--ss-card-bg) !important;
         }
+
+        .tawk-footer {
+          border: 1px solid var(--ss-card-bg) !important;
+          border-radius: 0 0 var(--ss-border-radius) var(--ss-border-radius) !important;
+          transition: border 0.3s ease-in-out;
+        }
+
+        .tawk-footer[style*="box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 8px;"] {
+          border: 1px solid rgba(var(--ss-accent-color-rgb), 60%) !important;
+        }
+
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
