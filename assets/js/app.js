@@ -9,7 +9,6 @@ $(document).ready(function () {
   function pollIframeLoad(node) {
     var pollInterval = setInterval(function () {
       if (node.contentWindow && node.contentDocument.readyState === 'complete') {
-        console.log('Iframe loaded (polling):', node);
         clearInterval(pollInterval); // Stop polling once the iframe is loaded
         injectStylesInIframe(node);
       }
@@ -516,30 +515,42 @@ $(document).ready(function () {
       // Function to check visibility of all chat views
       function checkTawkChatVisibility() {
         var tawkChatViews = $(iframeDoc.body).find('.tawk-chat-view'); // Select all chat view elements
+        var tawkMessagePreview = $(iframeDoc.body).find('#tawk-message-preview'); // Select all chat view elements
 
         // Loop through each .tawk-chat-view to see if any are NOT hidden (i.e., not display: none)
-        var isVisible = false;
+        var isChatViewVisible = false;
         tawkChatViews.each(function () {
           if ($(this).css('display') !== 'none') {
-            isVisible = true; // If any element is NOT display: none, mark it as visible
+            isChatViewVisible = true; // If any element is NOT display: none, mark it as visible
             return false; // Break out of the loop if one is found
           }
         });
 
+        var isMessagePreviewVisible = false;
+        if (tawkMessagePreview.is(':visible')) {
+          isMessagePreviewVisible = true; // If any element is NOT display: none, mark it as visible
+        }
+
         // Add or remove class based on visibility of any .tawk-chat-view
-        if (isVisible) {
+        if (isChatViewVisible) {
           $(iframeDoc.body).addClass('tawk-chat-visible');
-          console.log('At least one chat is visible (not display: none)');
         } else {
           $(iframeDoc.body).removeClass('tawk-chat-visible');
-          console.log('No chats are visible (all display: none)');
+        }
+
+        if (isMessagePreviewVisible) {
+          $(".scroll-to-top").hide();
+        }
+
+        if (!isMessagePreviewVisible && tawkMessagePreview.length > 0  && !$('header').hasClass('in-viewport')) {
+          $(".scroll-to-top").show();
         }
       }
 
       // Run the visibility check at intervals
       setInterval(function () {
         checkTawkChatVisibility();
-      }, 20); // Check visibility every 500ms (adjust as needed)
+      }, 200); // Check visibility every 500ms (adjust as needed)
 
     } catch (e) {
       console.error('Cannot access iframe contents due to cross-origin restrictions.');
@@ -596,12 +607,12 @@ $(document).ready(function () {
     const scrollHeight = $document.height() - $window.height();
     const scrollPercentage = (scrollTop / scrollHeight) * 100;
     $progressBar.css('width', `${scrollPercentage}%`);
-    const fadeInThreshold = $window.height();
-    scrollTop > fadeInThreshold ? $scrollToTopBtn.fadeIn() : $scrollToTopBtn.fadeOut();
     if (isInTheViewport($header)) {
       $header.addClass('in-viewport');
+      $scrollToTopBtn.fadeOut();
     } else {
       $header.removeClass('in-viewport');
+      $scrollToTopBtn.fadeIn()
     }
   };
 
