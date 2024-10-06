@@ -189,3 +189,10 @@
 .portfolio .portfolio__item.UI-UX.Web-Design.Logo-Design.Apps:last-child .portfolio__tags {
   display: none;
 }
+
+@media (width < 768px) {
+  .portfolio__filter {
+    border-radius: 20px;
+    padding: var(--ss-space-xs-s);
+  }
+}

@@ -47,18 +47,6 @@
   font-weight: var(--ss-btn-font-weight);
 }
 
-@media (width < 768px) {
-  .nav {
-    display: none;
-  }
-
-  .brand__logo {
-    height: 36px;
-    width: auto;
-  }
-}
-
-
 #header-fixed {
   position: fixed;
   width: 56px;
@@ -107,9 +95,9 @@
   bottom: 0;
   line-height: 1;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: all 500ms ease;
   padding: var(--ss-space-xs);
-  border: 1px solid #fff3;
+  border: 2px solid #fff3;
 }
 
 #header-fixed .nav__link .icon {
@@ -120,6 +108,11 @@
 #header-fixed .nav__item.active .icon,
 #header-fixed .nav__item:hover .icon {
   --icon-color: var(--ss-accent-color);
+}
+
+#header-fixed .nav__item.active .nav__link,
+#header-fixed .nav__item:hover .nav__link {
+  border-color: #49d9982b;
 }
 
 #header-fixed .nav__link.scroll-to-top {
@@ -138,26 +131,49 @@
 #header-fixed [class*="hint--"]::after {
   background: var(--ss-card-bg);
   color: var(--ss-accent-color);
-  border: 1px solid #ffffff24;
+  border: 2px solid #49d9982b;
+  padding-bottom: 12px;
+}
+
+#header-fixed .hint--left:hover::after,
+#header-fixed .hint--left:hover::before {
+  transform: translateX(-8px) translateY(3px);
 }
 
 @media (width < 768px) {
+  .nav {
+    display: none;
+  }
+
+  .brand__logo {
+    width: auto;
+    height: 24px;
+  }
+
+  header .brand__logo {
+    margin-left: var(--ss-space-xs);
+  }
+
   #header-fixed .nav__list {
     flex-direction: row;
-    gap: var(--ss-space-m-l);
+    gap: 8px;
+    place-content: space-around;
   }
 
   #header-fixed {
-    width: fit-content;
-    right: 0;
+    width: calc(100% - var(--ss-grid-gutter) - 56px);
+    right: calc(var(--ss-grid-gutter) + 56px);
+    left: calc(var(--ss-grid-gutter) * 1.5);
     bottom: 24px;
-    left: 0;
-    margin-inline: auto;
     padding: var(--ss-space-s) var(--ss-space-xl) var(--ss-space-s) var(--ss-space-m);
     border-radius: 100vmax;
     opacity: 1 !important;
     transform: translate(0) !important;
     border: 1px solid #ffffff29;
+  }
+
+  .tawk-message-visible #header-fixed {
+    opacity: 1 !important;
   }
 
   #header-fixed::after {
@@ -168,10 +184,6 @@
     z-index: -1;
     backdrop-filter: blur(2rem);
     border-radius: 100vmax;
-  }
-
-  #header-fixed .nav__link .icon {
-    --icon-height: 18px;
   }
 
   #header-fixed .nav__link {
@@ -187,5 +199,9 @@
   #header-fixed .hint--left::before,
   #header-fixed .hint--left::after {
     display: none;
+  }
+
+  .footer {
+    padding-bottom: 102px;
   }
 }

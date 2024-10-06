@@ -1,7 +1,7 @@
 .counter {
   display: block;
   background: var(--ss-card-bg);
-  padding: var(--ss-space-l-xl);
+  padding-block: var(--ss-space-l-xl);
 }
 
 .counter__wrapper {
@@ -17,7 +17,6 @@
 @media (400px < width <=768px) {
   .counter__wrapper {
     grid-template-columns: 1fr 1fr;
-    text-align: center;
   }
 
   .counter__item {
@@ -30,7 +29,17 @@
   }
 }
 
-@media (width > 768px) {
+@media (width < 768px) {
+  .counter__item:nth-child(1),
+  .counter__item:nth-child(2) {
+    border: 1px solid #ffffff26;
+    border-radius: var(--ss-border-radius);
+    padding: var(--ss-space-xs-s);
+    margin-top: var(--ss-space-s-m);
+  }
+}
+
+@media (width >= 768px) {
   .counter__number.aboutme {
     display: none;
   }

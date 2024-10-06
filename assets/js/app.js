@@ -36,11 +36,11 @@ $(document).ready(function () {
       var customStyles = `
         :root {
           --ss-body-bg: #0d0d0d;
-          --ss-body-color: #e7e7e7;
+          --ss-body-color: #fff;
           --ss-body-font-family: 'Sora', system-ui;
           --ss-body-font-weight: 400;
           --ss-body-line-height: 2;
-          --ss-heading-color: #fff;
+          --ss-heading-color: #f1f1f1;
           --ss-heading-font-family: 'Sora', system-ui;
           --ss-heading-font-weight: 700;
           --ss-heading-line-height: 1.1;
@@ -100,13 +100,14 @@ $(document).ready(function () {
           /* Custom pairs */
           --ss-space-s-l: clamp(0.875rem, 0.4837rem + 1.9565vw, 2rem);
 
-          /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,s,3xl,11 */
+          /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=m,m,3xl,11 */
 
-          --ss-grid-max-width: 78.00rem;
-          --ss-grid-ultimate-width: 50.00rem;
-          --ss-grid-gutter: var(--space-s-s, clamp(0.875rem, 0.8365rem + 0.1923vw, 1rem));
+          --ss-grid-max-width: 84.00rem;
+          --ss-grid-ultimate-width: 53.00rem;
+          --ss-grid-gutter: var(--space-m-m, clamp(1.3125rem, 1.2539rem + 0.293vw, 1.5rem));
           --ss-grid-columns: 11;
 
+          /* colors */
           --ss-accent-color: #43E29B;
           --ss-accent-color-rgb: 67,226,155;
           --ss-accent-color-hue: 153;
@@ -116,11 +117,13 @@ $(document).ready(function () {
           --ss-accent-dark-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 20%) calc(var(--ss-accent-color-lightness) - 20%));
           --ss-accent-light-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 10%) calc(var(--ss-accent-color-lightness) + 20%));
           --ss-accent-subtle-color: hsl(calc(var(--ss-accent-color-hue) - 10) var(--ss-accent-color-saturation) calc(var(--ss-accent-color-lightness) - 10%));
-          --ss-accent-gradient:linear-gradient(to right, var(--ss-accent-color) 0%, var(--ss-accent-dark-color) 100%);
 
+          --ss-accent-gradient: linear-gradient(125deg, var(--ss-accent-color) 0%, var(--ss-accent-dark-color) 100%);
 
           /* buttons */
           --ss-btn-font-weight: 600;
+
+        }
 
         }
 

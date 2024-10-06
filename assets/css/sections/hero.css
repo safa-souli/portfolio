@@ -21,3 +21,26 @@
 .hero__subtitle {
   margin-bottom: var(--ss-space-xs-s);
 }
+
+.hero .cta__btn--outline {
+  min-width: 225px;
+  border: 2px solid #19523859;
+}
+
+@media (width < 768px) {
+  .hero {
+    text-align: start;
+  }
+
+  .hero__cta {
+    margin-top: var(--ss-space-l);
+    justify-content: start;
+  }
+}
+
+@media (width > 1400px) {
+  .hero__text,
+  .hero__cta {
+    font-size: 17px;
+  }
+}
