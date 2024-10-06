@@ -161,6 +161,8 @@ cta {
 [class*='hint']::after {
   font-family: inherit !important;
   border-radius: 7px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* about page style */
@@ -259,7 +261,7 @@ cta {
 
 @media (width > 1600px) {
   .page--about .callout__title {
-    font-size: 6.99vw;
+    font-size: 6.81vw;
   }
 }
 
@@ -308,4 +310,3 @@ cta {
 .page--portfolio .portfolio__filter {
   background: var(--ss-dark);
 }
-

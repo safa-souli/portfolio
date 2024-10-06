@@ -117,7 +117,8 @@
   transition: all 500ms ease;
 }
 
-#header-fixed .nav__link:hover .icon {
+#header-fixed .nav__item.active .icon,
+#header-fixed .nav__item:hover .icon {
   --icon-color: var(--ss-accent-color);
 }
 
