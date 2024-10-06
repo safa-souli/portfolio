@@ -64,7 +64,7 @@
   /* Custom pairs */
   --ss-space-s-l: clamp(0.875rem, 0.4837rem + 1.9565vw, 2rem);
 
-  /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,s,3xl,11 */
+  /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=m,m,3xl,11 */
 
   --ss-grid-max-width: 84.00rem;
   --ss-grid-ultimate-width: 53.00rem;
