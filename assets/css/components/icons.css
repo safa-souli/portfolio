@@ -170,3 +170,31 @@
 .icon--tools {
   --icon-url: url("../../icons/tools.svg");
 }
+
+.icon--user {
+  --icon-url: url("../../icons/user.svg");
+}
+
+.icon--mail {
+  --icon-url: url("../../icons/mail.svg");
+}
+
+.icon--home {
+  --icon-url: url("../../icons/home.svg");
+}
+
+.icon--computer-user {
+  --icon-url: url("../../icons/computer-user.svg");
+}
+
+.icon--insight {
+  --icon-url: url("../../icons/insight.svg");
+}
+
+.icon--angle-up {
+  --icon-url: url("../../icons/angle-up.svg");
+}
+
+.icon--id-card-clip {
+  --icon-url: url("../../icons/id-card-clip.svg");
+}

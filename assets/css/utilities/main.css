@@ -2,6 +2,8 @@
   scrollbar-width: thin;
   scrollbar-color: var(--ss-accent-color) var(--ss-dark);
   margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :focus-visible {
@@ -103,55 +105,6 @@ cta {
   opacity: 0.5;
 }
 
-.scroll-to-top {
-  position: fixed;
-  right: 0px;
-  transform: translate(70%, -190%) rotate(-90deg);
-  transform-origin: left;
-  display: grid;
-  grid-template-columns: 50px auto;
-  place-items: center;
-  column-gap: var(--ss-space-xs);
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  padding: 12px 28px 14px 28px;
-  border-radius: 100vmax;
-  overflow: hidden;
-  bottom: 0;
-  line-height: 1;
-  place-content: center;
-}
-
-.scroll-to-top::after {
-  content: "";
-  background: #ffffff12;
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  backdrop-filter: blur(2rem);
-}
-
-.scroll-to-top__progress {
-  position: relative;
-  height: 3px;
-  width: 100%;
-  background: #555;
-  transform: translateY(2px) scaleX(-1);
-  border-radius: 100vmax;
-}
-
-#progress-bar {
-  position: absolute;
-  inset: 0;
-  background: var(--ss-accent-color);
-  transition: width 500ms ease-in-out;
-}
-
-.scroll-to-top__text {
-  font-size: var(--ss-step--1);
-  color: var(--ss-accent-color);
-}
-
 .masked-circle {
   position: fixed;
   inset: 0;
@@ -176,6 +129,7 @@ cta {
   animation-delay: 500ms;
   opacity: 0;
 }
+
 
 @keyframes scalingTransition {
   0% {
@@ -354,3 +308,4 @@ cta {
 .page--portfolio .portfolio__filter {
   background: var(--ss-dark);
 }
+
