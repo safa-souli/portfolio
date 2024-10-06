@@ -13,12 +13,6 @@
   gap: var(--ss-space-l-xl) var(--ss-grid-gutter);
 }
 
-@media (min-width: 768px) {
-  .profile__wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .profile__list {
   display: grid;
   gap: var(--ss-grid-gutter);
@@ -53,7 +47,18 @@
   column-gap: var(--ss-space-l);
 }
 
-.profile--aboutme + hr {
+.profile--aboutme+hr {
   margin-block: var(--ss-space-2xl);
   opacity: .2;
+}
+
+@media (min-width: 768px) {
+  .profile__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile__list {
+    height: 100%;
+    grid-template-rows: repeat(3, 1fr);
+  }
 }

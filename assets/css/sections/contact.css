@@ -56,7 +56,7 @@
   grid-area: title;
   font-weight: 600;
   font-size: var(--ss-step-1);
-  line-height: 1;
+  line-height: 1.5;
   color: var(--ss-heading-color);
   transition: color 500ms ease-in-out;
 }
@@ -205,5 +205,15 @@
   80%,
   100% {
     content: '...';
+  }
+}
+
+@media (width < 768px) {
+  .contact__form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__form .full-width {
+    grid-column: 1;
   }
 }

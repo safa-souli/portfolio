@@ -20,3 +20,15 @@
 .callout__text {
   text-wrap: balance;
 }
+
+@media (width < 768px) {
+  .callout__wrapper {
+    place-content: start;
+    text-align: start;
+    place-items: start;
+  }
+
+  .page--about .callout .cta__btn {
+    margin-top: 0;
+  }
+}
