@@ -35,7 +35,6 @@ $(document).ready(function () {
         return;
       }
 
-
       var customStyles = `
         :root {
           --ss-body-bg: #0d0d0d;
@@ -151,11 +150,15 @@ $(document).ready(function () {
         }
 
         .tawk-agent-chat-bubble {
-          background: var(--ss-card-bg) !important;
+          background: var(--ss-accent-gradient) !important;
+          color: var(--ss-body-bg) !important;
+          font-weight: 500;
         }
-
+          
         .tawk-visitor-chat-bubble {
-          background: var(--ss-accent-color) !important;
+          background: transparent !important;
+          color: var(--ss-body-color) !important;
+          border: 1px solid #ffffff1f;
         }
 
         .tawk-max-container {
@@ -251,10 +254,18 @@ $(document).ready(function () {
         }
 
         .card-container:first-child::before,
-        .tawk-overlay .tawk-overlay-header,
         .tawk-card-primary {
           background: var(--ss-accent-gradient);
         }
+
+        .tawk-chat-visible .tawk-overlay .tawk-overlay-header,
+        .tawk-chat-visible .tawk-card-primary {
+          background: var(--ss-card-bg) !important;
+        }
+
+        .tawk-chat-visible .tawk-overlay .tawk-overlay-header *,
+        .tawk-chat-visible .tawk-card-primary * {
+          color: var(--ss-body-color) !important;}
 
         .tawk-message-preview-content .tawk-message {
           background: var(--ss-accent-gradient);
@@ -464,6 +475,35 @@ $(document).ready(function () {
           border: 1px solid #ffffff0f;
         }
 
+        .tawk-timeago {
+          font-family: var(--ss-body-font-family);
+        }
+
+        .card--chat .tawk-button {
+          font-weight: 600;
+        }
+
+        .tawk-overlay-header.tawk-custom-color {
+          border-radius: var(--ss-border-radius) var(--ss-border-radius) 0 0;
+        }
+
+        .tawk-max-container {
+          border-radius: var(--ss-border-radius) !important;
+          background: var(--ss-body-bg);
+        } 
+
+        .tawk-overlay {
+          background-color: transparent;
+        }
+
+        .tawk-max-footer-actions-button.tawk-button.tawk-button-outline.tawk-button-outline-null {
+          border-radius: 0 0 var(--ss-border-radius) var(--ss-border-radius);
+        }
+
+        .tawk-chat-visible .tawk-max-container.tawk-no-toolbar-elements .tawk-main-panel .tawk-chat-panel::before,
+        .tawk-chat-visible .card-container:first-child::before {
+          background: var(--ss-card-bg) !important;
+        }
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
@@ -473,6 +513,34 @@ $(document).ready(function () {
       var $style = $('<style>').html(combinedStyles);
 
       $(iframeDoc.head).append($style);
+      // Function to check visibility of all chat views
+      function checkTawkChatVisibility() {
+        var tawkChatViews = $(iframeDoc.body).find('.tawk-chat-view'); // Select all chat view elements
+
+        // Loop through each .tawk-chat-view to see if any are NOT hidden (i.e., not display: none)
+        var isVisible = false;
+        tawkChatViews.each(function () {
+          if ($(this).css('display') !== 'none') {
+            isVisible = true; // If any element is NOT display: none, mark it as visible
+            return false; // Break out of the loop if one is found
+          }
+        });
+
+        // Add or remove class based on visibility of any .tawk-chat-view
+        if (isVisible) {
+          $(iframeDoc.body).addClass('tawk-chat-visible');
+          console.log('At least one chat is visible (not display: none)');
+        } else {
+          $(iframeDoc.body).removeClass('tawk-chat-visible');
+          console.log('No chats are visible (all display: none)');
+        }
+      }
+
+      // Run the visibility check at intervals
+      setInterval(function () {
+        checkTawkChatVisibility();
+      }, 20); // Check visibility every 500ms (adjust as needed)
+
     } catch (e) {
       console.error('Cannot access iframe contents due to cross-origin restrictions.');
     }
@@ -483,7 +551,6 @@ $(document).ready(function () {
     mutations.forEach(function (mutation) {
       mutation.addedNodes.forEach(function (node) {
         if (node.tagName === 'IFRAME') {
-          console.log('New iframe detected:', node);
           setTimeout(function () {
             handleIframe(node); // Use a small delay to ensure iframe is loaded
           }, 100);
