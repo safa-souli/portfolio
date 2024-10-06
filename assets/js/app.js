@@ -519,6 +519,10 @@ $(document).ready(function () {
         .tawk-footer[style*="box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 8px;"] .tawk-chatinput-button.tawk-chatinput-focused {
           color: #c1c1c1;
         }
+
+        .tawk-chatinput-editor {
+          font-family: var(--ss-body-font-family) !important;
+        }
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
