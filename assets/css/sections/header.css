@@ -57,3 +57,134 @@
     width: auto;
   }
 }
+
+
+#header-fixed {
+  position: fixed;
+  width: 56px;
+  z-index: 999;
+  transition: transform .35s ease-in-out, opacity .35s ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+  height: fit-content;
+  bottom: var(--ss-space-s-m);
+  line-height: 1;
+  border-radius: var(--ss-border-radius);
+  right: 30px;
+  bottom: 90px;
+}
+
+#header-fixed .nav__list {
+  display: flex;
+  flex-direction: column-reverse;
+  place-content: center;
+  place-items: center;
+  gap: var(--ss-space-2xs);
+  padding-left: 0;
+}
+
+#header-fixed .header__wrapper {
+  max-width: var(--ss-grid-max-width);
+  margin-inline: auto;
+}
+
+#header-fixed cta {
+  display: none;
+}
+
+.tawk-message-visible #header-fixed {
+  opacity: 0 !important;
+}
+
+#header-fixed .nav__link {
+  position: relative;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 100vmax;
+  overflow: hidden;
+  bottom: 0;
+  line-height: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  padding: var(--ss-space-xs);
+  border: 1px solid #fff3;
+}
+
+#header-fixed .nav__link .icon {
+  --icon-height: 20px;
+  transition: all 500ms ease;
+}
+
+#header-fixed .nav__link:hover .icon {
+  --icon-color: var(--ss-accent-color);
+}
+
+#header-fixed .nav__link.scroll-to-top {
+  grid-template-columns: 50px auto;
+}
+
+#header-fixed .nav__link::after {
+  content: "";
+  background: #ffffff12;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(2rem);
+}
+
+#header-fixed [class*="hint--"]::after {
+  background: var(--ss-card-bg);
+  color: var(--ss-accent-color);
+  border: 1px solid #ffffff24;
+}
+
+@media (width < 768px) {
+  #header-fixed .nav__list {
+    flex-direction: row;
+    gap: var(--ss-space-m-l);
+  }
+
+  #header-fixed {
+    width: fit-content;
+    right: 0;
+    bottom: 24px;
+    left: 0;
+    margin-inline: auto;
+    padding: var(--ss-space-s) var(--ss-space-xl) var(--ss-space-s) var(--ss-space-m);
+    border-radius: 100vmax;
+    opacity: 1 !important;
+    transform: translate(0) !important;
+    border: 1px solid #ffffff29;
+  }
+
+  #header-fixed::after {
+    content: "";
+    background: #ffffff12;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    backdrop-filter: blur(2rem);
+    border-radius: 100vmax;
+  }
+
+  #header-fixed .nav__link .icon {
+    --icon-height: 18px;
+  }
+
+  #header-fixed .nav__link {
+    padding: 0;
+    border: none;
+    overflow: visible;
+  }
+
+  #header-fixed .nav__link::after {
+    content: unset;
+  }
+
+  #header-fixed .hint--left::before,
+  #header-fixed .hint--left::after {
+    display: none;
+  }
+}

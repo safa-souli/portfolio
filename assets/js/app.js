@@ -5,6 +5,8 @@ $(document).ready(function () {
   const $scrollToTopBtn = $('.scroll-to-top');
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
+  let $fixedHeader;
+  let lastScrollTop = 0;
 
   function pollIframeLoad(node) {
     var pollInterval = setInterval(function () {
@@ -514,6 +516,9 @@ $(document).ready(function () {
           border: 1px solid rgba(var(--ss-accent-color-rgb), 60%) !important;
         }
 
+        .tawk-footer[style*="box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 8px;"] .tawk-chatinput-button.tawk-chatinput-focused {
+          color: #c1c1c1;
+        }
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
@@ -550,11 +555,11 @@ $(document).ready(function () {
         }
 
         if (isMessagePreviewVisible) {
-          $(".scroll-to-top").hide();
+          $("body").addClass('tawk-message-visible');
         }
 
         if (!isMessagePreviewVisible && tawkMessagePreview.length > 0  && !$('header').hasClass('in-viewport')) {
-          $(".scroll-to-top").show();
+          $("body").removeClass('tawk-message-visible');
         }
       }
 
@@ -610,29 +615,32 @@ $(document).ready(function () {
     return elementBottom > viewportTop && elementTop < viewportBottom;
   };
 
-  /**
-   * Updates the progress bar based on the current scroll position.
-   */
   const updateProgressBar = () => {
     const scrollTop = $window.scrollTop();
-    const scrollHeight = $document.height() - $window.height();
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-    $progressBar.css('width', `${scrollPercentage}%`);
-    if (isInTheViewport($header)) {
-      $header.addClass('in-viewport');
-      $scrollToTopBtn.fadeOut();
+    $fixedHeader = $('#header-fixed'); 
+
+    // Detect scroll direction
+    if (scrollTop < lastScrollTop) {
+      // User is scrolling up
+      if (!isInTheViewport($header)) {
+        // Slide down the fixed header if the original header is out of the viewport
+        $fixedHeader.css({
+          transform: 'translateY(0)',
+          opacity: 1
+        });
+      }
     } else {
-      $header.removeClass('in-viewport');
-      $scrollToTopBtn.fadeIn()
+      // User is scrolling down
+      $fixedHeader.css({
+        transform: 'translateY(30px)',
+        opacity: 0
+      });
     }
+
+    // Update the last scroll position
+    lastScrollTop = scrollTop;
   };
 
-  /**
-   * Scrolls the page to the top with an animation.
-   */
-  const scrollToTop = () => {
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
-  };
 
   /**
    * Animates the masked circle to reveal the content.
@@ -685,7 +693,6 @@ $(document).ready(function () {
    */
   const registerEventListeners = () => {
     $window.on('scroll', updateProgressBar);
-    $scrollToTopBtn.on('click', scrollToTop);
     $('a.animate-page').on('click', handleLinkClick);
   };
 
