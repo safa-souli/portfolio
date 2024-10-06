@@ -1,8 +1,5 @@
 $(document).ready(function () {
   const $window = $(window);
-  const $document = $(document);
-  const $progressBar = $('#progress-bar');
-  const $scrollToTopBtn = $('.scroll-to-top');
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
   let $fixedHeader;
