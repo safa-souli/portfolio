@@ -38,15 +38,13 @@
   opacity: 0;
 }
 
-.cta__btn:hover::before {
-  opacity: 0;
-}
-
 .cta__btn--outline {
   background-image: var(--ss-accent-gradient);
   outline-color: #29c27b59;
 }
 
+.cta__btn--outline:active,
+.cta__btn:active,
 .cta__btn--outline:hover,
 .cta__btn:hover {
   color: transparent;
@@ -67,11 +65,6 @@
 .cta__btn--outline:hover .icon {
   --icon-color: var(--ss-accent-color);
   --icon-gradient: none;
-}
-
-.cta__btn--outline:active,
-.cta__btn:active {
-  transform: scale(0.98);
 }
 
 .cta__btn.loading {
