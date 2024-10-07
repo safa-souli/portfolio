@@ -157,6 +157,7 @@
   font-weight: 600;
   font-family: var(--ss-body-font-family);
   margin-right: var(--ss-space-3xs);
+  margin-bottom: var(--ss-space-3xs);
   font-size: var(--ss-step-0);
   cursor: pointer;
   min-width: 72px;
