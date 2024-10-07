@@ -1,5 +1,6 @@
 .cta__btn--outline,
 .cta__btn {
+  position: relative;
   padding: var(--ss-space-xs-s) var(--ss-space-m);
   border-radius: 100vmax;
   line-height: 1;
@@ -8,12 +9,69 @@
   place-content: center;
   font-weight: var(--ss-btn-font-weight);
   font-family: var(--ss-body-font-family);
-  background-image: var(--ss-accent-gradient);
   grid-auto-flow: column;
   gap: var(--ss-space-3xs-2xs);
   place-items: baseline;
   overflow: hidden;
   cursor: pointer;
+  transition: all 0.3s ease;
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 var(--ss-accent-color);
+  color: var(--ss-body-bg);
+  border: none;
+  z-index: 1;
+}
+
+.cta__btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--ss-accent-color);
+  clip-path: circle(150% at 50% 50%);
+  transition: clip-path 0.4s ease, opacity 0.4s ease;
+  z-index: -1;
+  opacity: 1;
+}
+
+.cta__btn:hover::before {
+  clip-path: circle(0% at 50% 50%);
+  opacity: 0;
+}
+
+.cta__btn:hover::before {
+  opacity: 0;
+}
+
+.cta__btn--outline {
+  background-image: var(--ss-accent-gradient);
+  outline-color: #29c27b59;
+}
+
+.cta__btn--outline:hover,
+.cta__btn:hover {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  outline-color: 2px solid #43E29BA8;
+  color: var(--ss-body-color);
+  box-shadow: 0px 0px 1px var(--ss-accent-color),
+    0px 0px 10px var(--ss-accent-color),
+    0px 0px 20px var(--ss-accent-color);
+}
+
+.cta__btn--outline .icon {
+  --icon-gradient: var(--ss-accent-gradient);
+}
+
+.cta__btn:hover .icon,
+.cta__btn--outline:hover .icon {
+  --icon-color: var(--ss-accent-color);
+  --icon-gradient: none;
+}
+
+.cta__btn--outline:active,
+.cta__btn:active {
+  transform: scale(0.98);
 }
 
 .cta__btn.loading {
@@ -21,14 +79,9 @@
   opacity: 0.5;
 }
 
-
 .cta__btn .icon,
 .cta__btn--outline .icon {
   --icon-height: 14px;
-}
-
-.cta__btn {
-  color: var(--ss-body-bg);
 }
 
 .cta__btn.disabled {
@@ -43,11 +96,6 @@
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  border: 1px solid #19523859;
-}
-
-.cta__btn--outline .icon {
-  --icon-gradient: var(--ss-accent-gradient);
 }
 
 .cta__btn--outline.disabled {
