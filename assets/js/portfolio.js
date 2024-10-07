@@ -9,7 +9,7 @@ $(document).ready(function () {
       const hasStats = project.stats && (project.stats.views || project.appreciations || project.stats.comments);
 
       const projectElement = `
-        <div class="portfolio__item ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}">
+        <div class="portfolio__item fade-up--project ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}">
           <a class="portfolio__link" href="${project.covers['original']}" data-fancybox="gallery" data-caption="${project.name}">
             <picture class="portfolio__picture" style="aspect-ratio: 404/316">
               <source srcset="" type="image/webp">
@@ -60,6 +60,22 @@ $(document).ready(function () {
       $projectsContainer.append(projectElement);
     });
 
+
+    // Portfolio Section
+    gsap.from(".portfolio .fade-up--project", {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".portfolio__grid",
+        start: "top 70%",
+        toggleActions: "play none none none"
+      }
+    });
+
+
     // Initialize MixItUp after projects are appended
     mixitup('#behance-projects', {
       selectors: {
@@ -71,9 +87,33 @@ $(document).ready(function () {
     });
 
     // Filter button active state
+    var $activeBtn = $('.portfolio__filter-btn.active');
+    updateHighlightPosition($activeBtn);
+
+    // On button click, move the highlight
     $('.portfolio__filter-btn').on('click', function () {
+      // Remove the 'active' class from all buttons
       $('.portfolio__filter-btn').removeClass('active');
+      // Add the 'active' class to the clicked button
       $(this).addClass('active');
+
+      // Update highlight position
+      updateHighlightPosition($(this));
     });
+
+    // Function to update the highlight position and size
+    function updateHighlightPosition($element) {
+      var btnPosition = $element.position();
+      var btnWidth = $element.outerWidth();
+      var btnHeight = $element.outerHeight();
+
+      // Move and resize the highlight
+      $('.highlight').css({
+        left: btnPosition.left + 'px',
+        top: btnPosition.top + 'px',
+        width: btnWidth + 'px',
+        height: btnHeight + 'px'
+      });
+    }
   });
 });
