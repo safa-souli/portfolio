@@ -15,7 +15,7 @@
   --ss-success: #458746;
   --ss-dark-rgb: 0, 0, 0;
 
-  /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
+  /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,10,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
 
   --ss-step--2: clamp(0.5739rem, 0.6194rem + -0.0586vw, 0.6076rem);
   --ss-step--1: clamp(0.7292rem, 0.7193rem + 0.0494vw, 0.7576rem);
@@ -25,7 +25,11 @@
   --ss-step-3: clamp(1.512rem, 1.2379rem + 1.3704vw, 2.3rem);
   --ss-step-4: clamp(1.8144rem, 1.3895rem + 2.1244vw, 3.036rem);
   --ss-step-5: clamp(2.1773rem, 1.5407rem + 3.1829vw, 4.0075rem);
-
+  --ss-step-6: clamp(2.6127rem, 1.6816rem + 4.6559vw, 5.2899rem);
+  --ss-step-7: clamp(3.1353rem, 1.7971rem + 6.691vw, 6.9826rem);
+  --ss-step-8: clamp(3.7623rem, 1.8651rem + 9.4864vw, 9.217rem);
+  --ss-step-9: clamp(4.5148rem, 1.8534rem + 13.3073vw, 12.1665rem);
+  --ss-step-10: clamp(5.4178rem, 1.7162rem + 18.5078vw, 16.0598rem);
 
   /* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
 
@@ -73,7 +77,7 @@
 
   /* colors */
   --ss-accent-color: #43E29B;
-  --ss-accent-color-rgb: 67,226,155;
+  --ss-accent-color-rgb: 67, 226, 155;
   --ss-accent-color-hue: 153;
   --ss-accent-color-saturation: 73.3%;
   --ss-accent-color-lightness: 57.5%;
