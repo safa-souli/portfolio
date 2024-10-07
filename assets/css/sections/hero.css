@@ -27,6 +27,16 @@
   border: 2px solid #19523859;
 }
 
+@media (width < 600px) {
+  .hero .cta__btn--outline {
+    min-width: 100%;
+  }
+
+  .hero__cta {
+    flex-direction: column;
+  }
+}
+
 @media (width < 768px) {
   .hero {
     text-align: start;
@@ -39,6 +49,7 @@
 }
 
 @media (width > 1400px) {
+
   .hero__text,
   .hero__cta {
     font-size: 17px;
