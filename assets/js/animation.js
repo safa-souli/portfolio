@@ -1,34 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger);
+  const animateCounter = (element, targetNumber) => {
+    gsap.fromTo(element,
+      { innerText: 0 },
+      {
+        innerText: targetNumber,
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+        snap: { innerText: 1 },
+        onUpdate: function () {
+          let currentValue = Math.ceil(this.targets()[0].innerText);
+          let formattedValue = currentValue < 10 ? `0${currentValue}` : currentValue;
+          element.innerText = `${formattedValue}+`;
+        }
+      });
+  };
 
-    const animateCounter = (element, targetNumber) => {
-      gsap.fromTo(element,
-        { innerText: 0 },
-        {
-          innerText: targetNumber,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 90%",
-            toggleActions: "play none none none",
-          },
-          snap: { innerText: 1 },
-          onUpdate: function () {
-            let currentValue = Math.ceil(this.targets()[0].innerText);
-            let formattedValue = currentValue < 10 ? `0${currentValue}` : currentValue;
-            element.innerText = `${formattedValue}+`;
-          }
-        });
-    };
+  document.querySelectorAll('.counter__number').forEach(counter => {
 
-    document.querySelectorAll('.counter__number').forEach(counter => {
-      const targetNumber = parseInt(counter.getAttribute('data-target'));
-      animateCounter(counter, targetNumber);
-    });
+    const targetNumber = parseInt(counter.getAttribute('data-target'));
+    animateCounter(counter, targetNumber);
   });
 
   // Service Section
