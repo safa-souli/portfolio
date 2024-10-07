@@ -29,6 +29,10 @@
 }
 
 @media (width < 600px) {
+  h1 {
+    font-size: var(--ss-step-6);
+  }
+
   .hero .cta__btn--outline {
     min-width: 100%;
     padding-bottom: 14px;
