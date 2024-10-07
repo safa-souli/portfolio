@@ -16,6 +16,7 @@
 
 .hero__cta {
   margin-top: var(--ss-space-s-l);
+  gap: var(--ss-space-s-m);
 }
 
 .hero__subtitle {
@@ -29,6 +30,7 @@
 @media (width < 600px) {
   .hero .cta__btn--outline {
     min-width: 100%;
+    padding-bottom: 14px;
   }
 
   .hero__cta {
@@ -36,9 +38,28 @@
   }
 
   .hero .cta__btn--outline:first-child {
-    background: var(--ss-accent-gradient);
+    outline-color: transparent;
     color: var(--ss-body-bg);
-    border: hidden;
+  }
+
+  .hero .cta__btn--outline:hover:first-child {
+    color: var(--ss-body-color);
+  }
+
+  .hero .cta__btn--outline:first-child::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--ss-accent-color);
+    clip-path: circle(150% at 50% 50%);
+    transition: clip-path 0.4s ease, opacity 0.4s ease;
+    z-index: -1;
+    opacity: 1;
+  }
+
+  .hero .cta__btn--outline:first-child:hover::before {
+    clip-path: circle(0% at 50% 50%);
+    opacity: 0;
   }
 
   .hero .cta__btn--outline:first-child .icon {
