@@ -35,6 +35,16 @@
   .hero__cta {
     flex-direction: column;
   }
+
+  .hero .cta__btn--outline:first-child {
+    background: var(--ss-accent-gradient);
+    color: var(--ss-body-bg);
+    border: hidden;
+  }
+
+  .hero .cta__btn--outline:first-child .icon {
+    --icon-gradient: none;
+  }
 }
 
 @media (width < 768px) {
