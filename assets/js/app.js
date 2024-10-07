@@ -123,9 +123,7 @@ $(document).ready(function () {
           /* buttons */
           --ss-btn-font-weight: 600;
 
-        }
-
-        }
+        }        
 
         body.font-lato {
           color: var(--ss-body-color);
