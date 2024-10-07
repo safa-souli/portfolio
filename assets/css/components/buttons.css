@@ -14,7 +14,7 @@
   place-items: baseline;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, box-shadow .5s ease;
   outline: 2px solid transparent;
   box-shadow: 0 0 0 var(--ss-accent-color);
   color: var(--ss-body-bg);
