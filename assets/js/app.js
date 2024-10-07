@@ -137,6 +137,7 @@ $(document).ready(function () {
 
         body * {
           font-family: var(--ss-body-font-family) !important;
+          line-height: 1.6;
         }
 
         .tawk-chat-view .tawk-chat-panel {
@@ -527,6 +528,24 @@ $(document).ready(function () {
         .tawk-chatinput-editor {
           font-family: var(--ss-body-font-family) !important;
         }
+
+        .tawk-button.tawk-button-circle .tawk-min-chat-icon {
+          transform: scaleX(1);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .tawk-button.tawk-button-circle:hover .tawk-min-chat-icon {
+          transform: scaleX(-1);
+        }
+
+        .tawk-button.tawk-button-circle {
+          background: var(--ss-accent-gradient);
+        }
+
+        .tawk-header-text.tawk-button.tawk-tooltip:hover {
+          background: #ffffff1a;
+        }
+
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
