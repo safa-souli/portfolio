@@ -24,7 +24,6 @@
 
 .hero .cta__btn--outline {
   min-width: 225px;
-  border: 2px solid #19523859;
 }
 
 @media (width < 600px) {
