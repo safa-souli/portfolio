@@ -62,18 +62,18 @@ $(document).ready(function () {
 
 
     // Portfolio Section
-    gsap.from(".portfolio .fade-up--project", {
-      opacity: 0,
-      y: 40,
-      duration: 1,
-      ease: "power2.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".portfolio__grid",
-        start: "top 70%",
-        toggleActions: "play none none none"
-      }
-    });
+    // gsap.from(".portfolio .fade-up--project", {
+    //   opacity: 0,
+    //   y: 40,
+    //   duration: 1,
+    //   ease: "power2.out",
+    //   stagger: 0.2,
+    //   scrollTrigger: {
+    //     trigger: ".portfolio__grid",
+    //     start: "top 70%",
+    //     toggleActions: "play none none none"
+    //   }
+    // });
 
 
     // Initialize MixItUp after projects are appended

@@ -132,45 +132,111 @@ cta {
   transition: none;
 }
 
-.masked-circle.loading::before {
-  content: 'loading';
+.masked-circle__content {
   display: grid;
   place-content: center;
-  position: absolute;
-  inset: 0;
-  font-size: 20px;
+  text-align: center;
+  place-items: center;
+  grid-template-rows: 45vh auto var(--ss-space-3xl) auto auto 1fr;
+  grid-template-areas: '..' 'loading' '..''message'  'action''..';
+  height: 100vh;
+  height: 100dvh;
+}
+
+.masked-circle__action {
+  color: gray;
+  display: block;
+  grid-area: action;
+}
+
+.masked-circle .masked-circle__loading-text {
   text-transform: uppercase;
-  font-weight: lighter;
-  letter-spacing: 26px;
-  animation: scalingTransition 5s infinite ease-in-out;
+  font-weight: 400;
+  letter-spacing: 22px;
   animation-delay: 500ms;
+  transform: scale(.8);
+  margin-left: 12px;
   opacity: 0;
+  background-image: var(--ss-accent-gradient);
+  color: transparent;
+  -webkit-transition: .1s .2s;
+  -webkit-background-clip: text;
+  animation: scalingTransition 3s infinite linear;
+  align-self: end;
+  grid-area: loading;
+  font-size: var(--ss-step-4);
+}
+
+.masked-circle .masked-circle__message,
+.masked-circle .masked-circle__action {
+  opacity: 0;
+  font-size: 17px;
+}
+
+.masked-circle .masked-circle__message,
+.masked-circle .masked-circle__action {
+  animation: fadeIn 1s ease-in 5s forwards;
+}
+
+.masked-circle .masked-circle__message {
+  font-weight: 500;
+  color: #e5e5e5;
+  margin-top: var(--ss-space-2xl);
+  grid-area: message;
+}
+
+.masked-circle .masked-circle__action {
+  color: #b2b2b2;
+  font-weight: 400;
+  margin-top: var(--ss-space-m);
+}
+
+.masked-circle .masked-circle__action:hover {
+  color: var(--ss-accent-color);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.masked-circle .cta__btn--cancel {
+  opacity: 0;
+  animation-delay: 20s;
+  animation: opacity 10s ease-in;
+}
+
+.masked-circle.loading .cta__btn--cancel {
+  opacity: 1;
 }
 
 
 @keyframes scalingTransition {
   0% {
-    transform: scale(0);
-    opacity: 1;
+    transform: scale(0.8);
+    opacity: 0;
   }
 
   25% {
-    transform: scale(0.5);
-    opacity: 1;
-  }
-
-  50% {
     transform: scale(1);
     opacity: 1;
   }
 
+  50% {
+    transform: scale(1.2);
+  }
+
   75% {
-    transform: scale(0.5);
-    opacity: 1;
+    transform: scale(1);
   }
 
   100% {
-    transform: scale(0);
+    transform: scale(0.8);
     opacity: 1;
   }
 }
