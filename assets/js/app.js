@@ -583,7 +583,7 @@ $(document).ready(function () {
           $("body").addClass('tawk-message-visible');
         }
 
-        if (!isMessagePreviewVisible && tawkMessagePreview.length > 0  && !$('header').hasClass('in-viewport')) {
+        if (!isMessagePreviewVisible && tawkMessagePreview.length > 0 && !$('header').hasClass('in-viewport')) {
           $("body").removeClass('tawk-message-visible');
         }
       }
@@ -615,17 +615,6 @@ $(document).ready(function () {
   // Start observing the document's body for added iframes
   observer.observe(document.body, { childList: true, subtree: true });
 
-  // Embed the Tawk.to chat script as usual
-  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-  (function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6701056537379df10df216e4/1i9dvq5s5';
-    s1.charset = 'UTF-8';
-    s0.parentNode.insertBefore(s1, s0);
-  })();
-
-
 
   /**
    * Returns true if the given element is in the viewport, false otherwise.
@@ -642,7 +631,7 @@ $(document).ready(function () {
 
   const updateProgressBar = () => {
     const scrollTop = $window.scrollTop();
-    $fixedHeader = $('#header-fixed'); 
+    $fixedHeader = $('#header-fixed');
 
     // Detect scroll direction
     if (scrollTop < lastScrollTop) {
@@ -721,6 +710,17 @@ $(document).ready(function () {
     $('a.animate-page').on('click', handleLinkClick);
   };
 
+  const removeLoader = () => {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/6701056537379df10df216e4/1i9dvq5s5';
+    s1.charset = 'UTF-8';
+    s0.parentNode.insertBefore(s1, s0);
+
+    contentAnimation();
+    $maskedCircle.removeClass('loading');
+  };
+
   /**
    * Initializes the page by calling the content animation, updating the progress bar, and
    * registering event listeners. Hides the masked circle after the page is fully loaded.
@@ -729,18 +729,21 @@ $(document).ready(function () {
     updateProgressBar();
     registerEventListeners();
     $maskedCircle.addClass('loading');
+
+    $('#cancelLoadingBtn').on('click', (event) => {
+      event.preventDefault();
+      removeLoader();
+    });
+
     if (document.readyState === 'complete') {
-      contentAnimation();
-      $maskedCircle.removeClass('loading');
+      removeLoader();
     } else {
       $(window).on('load', () => {
-        contentAnimation();
-        $maskedCircle.removeClass('loading');
+        removeLoader();
       });
       setTimeout(() => {
         if (document.readyState === 'complete') {
-          contentAnimation();
-          $maskedCircle.removeClass('loading');
+          removeLoader();
         }
       }, 500);
     }

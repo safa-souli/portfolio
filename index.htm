@@ -30,7 +30,14 @@
 </head>
 
 <body>
-  <div class="masked-circle"></div>
+  <div class="masked-circle">
+    <div class="masked-circle__content">
+      <p class="masked-circle__loading-text">Loading</p>
+      <p class="masked-circle__message">Taking too long? Click Cancel </p>
+      <a id="cancelLoadingBtn" class="masked-circle__action" href="index.htm">Cancel</a>
+    </div>
+  </div>
+
   <div id="page-content" class="page__content page--home">
     <header class="header">
       <div class="header__wrapper">
@@ -567,7 +574,7 @@
   <script src="assets/js/app.js"></script>
   <script src="assets/js/portfolio.js"></script>
   <script src="assets/js/contact.js"></script>
-  <script src="assets/js/animation.js"></script>
+  <!-- <script src="assets/js/tawk-to.js"></script> -->
 </body>
 
 </html>
