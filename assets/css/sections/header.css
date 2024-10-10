@@ -182,7 +182,7 @@
     width: calc(100% - var(--ss-grid-gutter) - 56px);
     right: calc(var(--ss-grid-gutter) + 56px);
     left: calc(var(--ss-grid-gutter) * 1.5);
-    bottom: 24px;
+    bottom: 24px !important;
     padding: var(--ss-space-s) var(--ss-space-xl) var(--ss-space-s) var(--ss-space-m);
     border-radius: 100vmax;
     opacity: 1 !important;

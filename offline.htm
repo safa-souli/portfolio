@@ -4,18 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Souli</title>
+  <title>Offline | Souli</title>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <link rel="preload" href="assets/font/Sora/Sora-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="assets/font/Sora/Sora-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="assets/font/Sora/Sora-ExtraLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="assets/font/Sora/Sora-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="assets/font/Sora/Sora-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="assets/font/Sora/Sora-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="assets/font/Sora/Sora-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="assets/font/Sora/Sora-Bold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/font/Sora/Sora-ExtraBold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/font/Sora/Sora-ExtraLight.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/font/Sora/Sora-Light.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/font/Sora/Sora-Medium.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/font/Sora/Sora-Italic.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/font/Sora/Sora-Regular.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="assets/font/Sora/Sora-SemiBold.woff2" as="font" type="font/woff2">
   <link rel="preload" href="assets/font/Sora/stylesheet.css" as="style" onload="this.rel='stylesheet'">
 
   <style>
@@ -249,17 +250,13 @@
     }
   </style>
 
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.min.css"
-    integrity="sha512-s4DOVHc73MjMnsueMjvJSnYucSU3E7WF0UVGRQFd/QDzeAx0D0BNuAX9fbZSLkrYW7V2Ly0/BKHSER04bCJgtQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" as="style" onload="this.rel='stylesheet'" />
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.6.0/hint.min.css" as="style"
-    onload="this.rel='stylesheet'">
-
-  <link href="assets/css/style.css" rel="preload" as="style" onload="this.rel='stylesheet'">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
+  <link rel="preload" href="assets/plugins/@fancyapps/ui/dist/fancybox/fancybox.css" as="style"
+    onload="this.rel='stylesheet'" />
+  <link rel="preload" href="assets/plugins/hint.css/hint.min.css" as="style" onload="this.rel='stylesheet'">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
 </head>
+
 
 <body>
   <div class="masked-circle">
@@ -280,37 +277,8 @@
     </offline>
   </div>
 
-  <!-- External Scripts with 'defer' -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"
-    integrity="sha512-nKZDK+ztK6Ug+2B6DZx+QtgeyAmo9YThZob8O3xgjqhw2IVQdAITFasl/jqbyDwclMkLXFOZRiytnUrXk/PM6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js"
-    integrity="sha512-v80Z62SYCVHA3UxmFG69Vclopt+3ngQDocRjtxnB3htcTs6l9mnXc6SixuDae1rJ3L2J6p2KAuG+soHbhVd+6g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js"
-    integrity="sha512-F5Ul1uuyFlGnIT1dk2c4kB4DBdi5wnBJjVhL7gQlGh46Xn0VhvD8kgxLtjdZ5YN83gybk/aASUAlpdoWUjRR3g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
   <!-- Your Custom Scripts -->
   <script src="assets/js/app.js" defer></script>
-  <script src="assets/js/portfolio.js" defer></script>
-  <script src="assets/js/contact.js" defer></script>
-  <script>
-
-  </script>
-
 </body>
 
 </html>

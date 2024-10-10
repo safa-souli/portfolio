@@ -5,21 +5,6 @@ $(document).ready(function () {
   let $fixedHeader;
   let lastScrollTop = 0;
 
-  if ('serviceWorker' in navigator) {
-    console.debug('Service Worker is supported');
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
-        .then((registration) => {
-          console.debug('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.debug('Service Worker registration failed:', error);
-        });
-    });
-  } else {
-    console.debug('Service Worker is not supported');
-  }
-
   if (document.querySelector("[data-fancybox='gallery']")) {
     Fancybox.bind("[data-fancybox='gallery']", {});
   }
@@ -805,6 +790,22 @@ $(document).ready(function () {
         }
       }, 500);
     }
+
+    if ('serviceWorker' in navigator) {
+      console.debug('Service Worker is supported');
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('../sw.js', { scope: '/' })
+          .then((registration) => {
+            console.debug('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.debug('Service Worker registration failed:', error);
+          });
+      });
+    } else {
+      console.debug('Service Worker is not supported');
+    }
+
   };
 
   init();

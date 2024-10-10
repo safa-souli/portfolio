@@ -29,6 +29,7 @@ const urlsToCache = [
   '/assets/css/sections/profile.css',
   '/assets/css/sections/service.css',
   '/assets/css/sections/skill.css',
+  '/assets/css/sections/offline.css',
   '/assets/css/sections/index.css',
   '/assets/css/utilities/base.css',
   '/assets/css/utilities/index.css',
@@ -40,12 +41,21 @@ const urlsToCache = [
 
   // Local Font Files
   '/assets/font/Sora/Sora-Bold.woff2',
+  '/assets/font/Sora/Sora-BoldItalic.woff2',
   '/assets/font/Sora/Sora-ExtraBold.woff2',
+  '/assets/font/Sora/Sora-ExtraBoldItalic.woff2',
   '/assets/font/Sora/Sora-ExtraLight.woff2',
+  '/assets/font/Sora/Sora-ExtraLightItalic.woff2',
+  '/assets/font/Sora/Sora-Italic.woff2',
   '/assets/font/Sora/Sora-Light.woff2',
+  '/assets/font/Sora/Sora-LightItalic.woff2',
   '/assets/font/Sora/Sora-Medium.woff2',
+  '/assets/font/Sora/Sora-MediumItalic.woff2',
   '/assets/font/Sora/Sora-Regular.woff2',
   '/assets/font/Sora/Sora-SemiBold.woff2',
+  '/assets/font/Sora/Sora-SemiBoldItalic.woff2',
+  '/assets/font/Sora/Sora-Thin.woff2',
+  '/assets/font/Sora/Sora-ThinItalic.woff2',
   '/assets/font/Sora/stylesheet.css',
 
   // Local JavaScript Files
@@ -55,6 +65,7 @@ const urlsToCache = [
   '/assets/js/animation.js',
 
   // External JavaScript Files
+  '/assets/plugins/jquery/dist/jquery.min.js',
   '/assets/plugins/gsap/dist/gsap.min.js',
   '/assets/plugins/gsap/dist/ScrollTrigger.min.js',
   '/assets/plugins/mixitup/dist/mixitup.min.js',
@@ -67,9 +78,9 @@ const urlsToCache = [
 
   // Images files
   '/assets/img/logo.svg',
-  '/assets/img/breadcrumb.png',
-  '/assets/img/coming-soon.png',
-  '/assets/img/coming-soon-thumbnail.png',
+  '/assets/img/breadcrumb.jpg',
+  '/assets/img/coming-soon.jpg',
+  '/assets/img/coming-soon-thumbnail.jpg',
   '/assets/img/coming-soon-thumbnail-202.jpg',
   '/assets/img/coming-soon-thumbnail-404.jpg',
   '/assets/img/coming-soon-thumbnail-808.jpg',
@@ -83,6 +94,7 @@ const urlsToCache = [
   '/assets/icons/arrow-up-right-from-square.svg',
   '/assets/icons/book.svg',
   '/assets/icons/bootstrap.svg',
+  '/assets/icons/briefcase.svg',
   '/assets/icons/bullseye-pointer.svg',
   '/assets/icons/check.svg',
   '/assets/icons/close.svg',
@@ -112,6 +124,7 @@ const urlsToCache = [
   '/assets/icons/mail.svg',
   '/assets/icons/map.svg',
   '/assets/icons/message.svg',
+  '/assets/icons/off-btn.svg',
   '/assets/icons/phone.svg',
   '/assets/icons/php.svg',
   '/assets/icons/sass.svg',
@@ -120,13 +133,17 @@ const urlsToCache = [
   '/assets/icons/tools.svg',
   '/assets/icons/ui-design.svg',
   '/assets/icons/user.svg',
+  '/assets/icons/ux-design.svg',
   '/assets/icons/webpage-layout.svg',
-  '/assets/icons/off-btn.svg',
+  '/assets/icons/wifi-slash.svg',
 
   // Favicon files
+  '/assets/favicon/android-chrome-192x192.png',
+  '/assets/favicon/android-chrome-512x512.png',
   '/assets/favicon/apple-touch-icon.png',
-  '/assets/favicon/favicon-32x32.png',
   '/assets/favicon/favicon-16x16.png',
+  '/assets/favicon/favicon-32x32.png',
+  '/assets/favicon/favicon.ico',
   '/assets/favicon/site.webmanifest',
 
   // PDF files
@@ -173,23 +190,43 @@ self.addEventListener('activate', event => {
 // Fetch event: Serve from cache if available, fallback to network
 self.addEventListener('fetch', event => {
   if (event.request.method === 'GET') {
-    event.respondWith(
-      caches.match(event.request).then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request).then(networkResponse => {
-          return caches.open(CACHE_NAME).then(cache => {
-            if (networkResponse.status === 200) {
-              cache.put(event.request, networkResponse.clone());
+    const requestURL = new URL(event.request.url);
+
+    // Check if the request is for an external URL (i.e., not from your domain)
+    if (requestURL.origin !== location.origin) {
+      // For external requests, just fetch from the network
+      event.respondWith(fetch(event.request));
+    } else if (urlsToCache.includes(requestURL.pathname)) {
+      // Handle cached resources
+      event.respondWith(
+        caches.match(event.request).then(response => {
+          if (response) {
+            return response;
+          }
+          return fetch(event.request).then(networkResponse => {
+            if (networkResponse && networkResponse.status === 200) {
+              return caches.open(CACHE_NAME).then(cache => {
+                cache.put(event.request, networkResponse.clone());
+                return networkResponse;
+              });
             }
             return networkResponse;
-          });
-        });
-      }).catch(() => caches.match('/offline.htm'))
-    );
+          }).catch(() => caches.match('/offline.htm'));
+        })
+      );
+    } else {
+      // For uncached internal resources, attempt network fetch, then fallback to offline page
+      event.respondWith(
+        fetch(event.request).catch(() => {
+          if (event.request.mode === 'navigate') {
+            return caches.match('/offline.htm');
+          }
+        })
+      );
+    }
   }
 });
+
 
 /**
  * Fetch the JSON file, extract image URLs, and cache the images.

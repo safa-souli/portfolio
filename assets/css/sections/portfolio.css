@@ -85,6 +85,7 @@
 
 .portfolio__link {
   display: block;
+  text-decoration: none;
 }
 
 .portfolio__picture {
@@ -115,18 +116,25 @@
   }
 }
 
-.portfolio__content .cta__btn {
+.portfolio__content .cta__link {
+  display: flex;
+  place-items: self-end;
+  gap: var(--ss-space-3xs-2xs);
   align-self: center;
   grid-area: btn;
   line-height: 1;
   padding: 0;
-  background: var(--ss-accent-gradient);
   font-size: 14px;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  border-radius: 0;
+  color: var(--ss-accent-color);
   padding-bottom: 1px;
+  margin-bottom: -1px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.portfolio__content .cta__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .portfolio__content hr {
@@ -135,8 +143,8 @@
   margin-block: var(--ss-space-s) var(--ss-space-xs);
 }
 
-.portfolio__content .cta__btn .icon {
-  --icon-gradient: var(--ss-accent-gradient);
+.portfolio__content .cta__link .icon {
+  --icon-color: var(--ss-accent-color);
   --icon-height: 12px;
 }
 
@@ -149,8 +157,9 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--ss-space-3xs);
+  gap: var(--ss-space-2xs);
 }
+
 .portfolio__filter-btn {
   background-color: white;
   background-image: -webkit-linear-gradient(left, var(--ss-accent-color) 0%, var(--ss-accent-dark-color) 50%, transparent 50%);
@@ -165,8 +174,6 @@
   line-height: 1;
   font-weight: 600;
   font-family: var(--ss-body-font-family);
-  margin-right: var(--ss-space-3xs);
-  margin-bottom: var(--ss-space-3xs);
   font-size: var(--ss-step-0);
   cursor: pointer;
   min-width: 72px;
