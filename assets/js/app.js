@@ -666,6 +666,7 @@ $(document).ready(function () {
       maskImage: 'radial-gradient(circle at center center, transparent 100%, var(--ss-body-bg) 0%)',
       ease: 'power1.out',
       onComplete: () => {
+        $maskedCircle.html('');
         gsap.delayedCall(0, () => {
           gsap.set($maskedCircle, { zIndex: -2000000010 });
         });
