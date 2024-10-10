@@ -121,6 +121,7 @@ const urlsToCache = [
   '/assets/icons/ui-design.svg',
   '/assets/icons/user.svg',
   '/assets/icons/webpage-layout.svg',
+  '/assets/icons/off-btn.svg',
 
   // Favicon files
   '/assets/favicon/apple-touch-icon.png',
