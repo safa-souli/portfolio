@@ -5,6 +5,25 @@ $(document).ready(function () {
   let $fixedHeader;
   let lastScrollTop = 0;
 
+  if ('serviceWorker' in navigator) {
+    console.debug('Service Worker is supported');
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        .then((registration) => {
+          console.debug('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.debug('Service Worker registration failed:', error);
+        });
+    });
+  } else {
+    console.debug('Service Worker is not supported');
+  }
+
+  if (document.querySelector("[data-fancybox='gallery']")) {
+    Fancybox.bind("[data-fancybox='gallery']", {});
+  }
+
   function pollIframeLoad(node) {
     var pollInterval = setInterval(function () {
       if (node.contentWindow && node.contentDocument.readyState === 'complete') {
@@ -604,8 +623,8 @@ $(document).ready(function () {
       mutation.addedNodes.forEach(function (node) {
         if (node.tagName === 'IFRAME') {
           setTimeout(function () {
-            handleIframe(node); // Use a small delay to ensure iframe is loaded
-          }, 100);
+            handleIframe(node);
+          }, 200);
         }
       });
     });
@@ -712,15 +731,53 @@ $(document).ready(function () {
   };
 
   const removeLoader = () => {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6701056537379df10df216e4/1i9dvq5s5';
-    s1.charset = 'UTF-8';
-    s0.parentNode.insertBefore(s1, s0);
+    // Check if the user is online
+    if (navigator.onLine) {
+      console.log("Connected to the internet");
+      console.log($('script[src*="https://embed.tawk.to"]').length === 0);
+      // Check if the script is already loaded by searching for its URL
+      if ($('script[src*="https://embed.tawk.to"]').length === 0) {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
 
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6701056537379df10df216e4/1i9dvq5s5';
+        s1.charset = 'UTF-8';
+
+        // Detect if the script is loaded successfully
+        s1.onload = () => {
+          $('body').removeClass('tawk-offline').addClass('tawk-online');
+        };
+
+        s0.parentNode.insertBefore(s1, s0);
+      } else {
+        // Script is already loaded, apply the class directly
+        $('body').removeClass('tawk-offline').addClass('tawk-online');
+      }
+
+    } else {
+      // User is offline - handle it gracefully
+      console.log("No internet connection. Live chat is unavailable.");
+      // Optionally, show a message or UI indicating the live chat is unavailable
+      $('body').addClass('tawk-offline'); // Example for styling offline state
+      $('body iframe').hide();
+    }
+
+    // Perform the rest of the operations regardless of the connection state
     contentAnimation();
     $maskedCircle.removeClass('loading');
   };
+
+  // Optional: Listen for network status changes
+  window.addEventListener('online', removeLoader);
+  window.addEventListener('offline', () => {
+    $('body').removeClass('tawk-online').addClass('tawk-offline');
+    $('body iframe').hide();
+    console.log("You are offline. Live chat is unavailable.");
+    contentAnimation();
+    $maskedCircle.removeClass('loading');
+  });
+
 
   /**
    * Initializes the page by calling the content animation, updating the progress bar, and
