@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'my-portfolio-cache-v0.0.2'; //first cache
+const CACHE_NAME = 'my-portfolio-cache-v0.0.3';
 
 const urlsToCache = [
   // HTML pages
@@ -150,6 +150,7 @@ const urlsToCache = [
   '/assets/pdf/resume.pdf',
 ];
 
+
 // Install event: Cache the resources
 self.addEventListener('install', event => {
   console.debug('Service Worker installing.');
@@ -190,43 +191,23 @@ self.addEventListener('activate', event => {
 // Fetch event: Serve from cache if available, fallback to network
 self.addEventListener('fetch', event => {
   if (event.request.method === 'GET') {
-    const requestURL = new URL(event.request.url);
-
-    // Check if the request is for an external URL (i.e., not from your domain)
-    if (requestURL.origin !== location.origin) {
-      // For external requests, just fetch from the network
-      event.respondWith(fetch(event.request));
-    } else if (urlsToCache.includes(requestURL.pathname)) {
-      // Handle cached resources
-      event.respondWith(
-        caches.match(event.request).then(response => {
-          if (response) {
-            return response;
-          }
-          return fetch(event.request).then(networkResponse => {
-            if (networkResponse && networkResponse.status === 200) {
-              return caches.open(CACHE_NAME).then(cache => {
-                cache.put(event.request, networkResponse.clone());
-                return networkResponse;
-              });
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request).then(networkResponse => {
+          return caches.open(CACHE_NAME).then(cache => {
+            if (networkResponse.status === 200) {
+              cache.put(event.request, networkResponse.clone());
             }
             return networkResponse;
-          }).catch(() => caches.match('/offline.htm'));
-        })
-      );
-    } else {
-      // For uncached internal resources, attempt network fetch, then fallback to offline page
-      event.respondWith(
-        fetch(event.request).catch(() => {
-          if (event.request.mode === 'navigate') {
-            return caches.match('/offline.htm');
-          }
-        })
-      );
-    }
+          });
+        });
+      }).catch(() => caches.match('/offline.htm'))
+    );
   }
 });
-
 
 /**
  * Fetch the JSON file, extract image URLs, and cache the images.
