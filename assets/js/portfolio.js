@@ -14,7 +14,7 @@ $(document).ready(function () {
             <picture class="portfolio__picture" style="aspect-ratio: 404/316">
               <source srcset="" type="image/webp">
               <source srcset="${project.covers['202']} 202w, ${project.covers['404']} 404w, ${project.covers['808']} 808w" type="image/jpg">
-              <img sizes="404px" src="${project.covers['404']}" class="portfolio__image" alt="${project.name}" draggable="false">
+              <img sizes="404px" src="${project.covers['404']}" class="portfolio__image" alt="Behance Thumbnail Image of ${project.name} Project" draggable="false">
             </picture>
           </a>
           <div class="portfolio__content">
@@ -30,7 +30,7 @@ $(document).ready(function () {
               ${hasBehanceUrl || hasStats ? '<hr>' : ''}  <!-- Conditionally add <hr> -->
 
               ${hasBehanceUrl ? `
-                <a class="cta__btn" href="${project.url}" target="_blank">
+                <a id="viewOnBehance" class="cta__link" href="${project.url}" target="_blank">
                   View on Behance <i class="icon icon--arrow-up-right-from-square"></i>
                 </a>
               ` : ''}
@@ -58,23 +58,14 @@ $(document).ready(function () {
 
       // Append the created HTML to the container
       $projectsContainer.append(projectElement);
+
+      $('#viewOnBehance').on('click', function (event) {
+        if (!navigator.onLine) {
+          event.preventDefault();
+          window.location.href = '/offline.htm';
+        }
+      });
     });
-
-
-    // Portfolio Section
-    // gsap.from(".portfolio .fade-up--project", {
-    //   opacity: 0,
-    //   y: 40,
-    //   duration: 1,
-    //   ease: "power2.out",
-    //   stagger: 0.2,
-    //   scrollTrigger: {
-    //     trigger: ".portfolio__grid",
-    //     start: "top 70%",
-    //     toggleActions: "play none none none"
-    //   }
-    // });
-
 
     // Initialize MixItUp after projects are appended
     mixitup('#behance-projects', {
