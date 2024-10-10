@@ -733,8 +733,8 @@ $(document).ready(function () {
   const removeLoader = () => {
     // Check if the user is online
     if (navigator.onLine) {
-      console.log("Connected to the internet");
-      console.log($('script[src*="https://embed.tawk.to"]').length === 0);
+      // console.log("Connected to the internet");
+      // console.log($('script[src*="https://embed.tawk.to"]').length === 0);
       // Check if the script is already loaded by searching for its URL
       if ($('script[src*="https://embed.tawk.to"]').length === 0) {
         var s1 = document.createElement("script"),
@@ -757,7 +757,7 @@ $(document).ready(function () {
 
     } else {
       // User is offline - handle it gracefully
-      console.log("No internet connection. Live chat is unavailable.");
+      // console.log("No internet connection. Live chat is unavailable.");
       // Optionally, show a message or UI indicating the live chat is unavailable
       $('body').addClass('tawk-offline'); // Example for styling offline state
       $('body iframe').hide();
@@ -773,7 +773,7 @@ $(document).ready(function () {
   window.addEventListener('offline', () => {
     $('body').removeClass('tawk-online').addClass('tawk-offline');
     $('body iframe').hide();
-    console.log("You are offline. Live chat is unavailable.");
+    // console.log("You are offline. Live chat is unavailable.");
     contentAnimation();
     $maskedCircle.removeClass('loading');
   });
