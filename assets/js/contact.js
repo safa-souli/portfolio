@@ -11,11 +11,14 @@ $(document).ready(() => {
   const $submitElement = $('.form__group--submit');
   let validSubmit = false;
 
-  // Phone number input mask
-  $("#phone").inputmask("99-999-999", {
+  // Select your phone input element
+  var phoneInput = document.getElementById('phone');
+
+  // Apply the Inputmask
+  Inputmask("99-999-999", {
     placeholder: "_",
     clearMaskOnLostFocus: true
-  });
+  }).mask(phoneInput);
 
   // Validation function
   const validation = () => {
@@ -117,7 +120,7 @@ $(document).ready(() => {
       setTimeout(() => {
         successIcon.addClass('show');
       }, 100);
-      
+
       setTimeout(() => {
         successIcon.addClass('hint--always');
       }, 500);
