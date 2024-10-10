@@ -150,7 +150,6 @@ const urlsToCache = [
   '/assets/pdf/resume.pdf',
 ];
 
-
 // Install event: Cache the resources
 self.addEventListener('install', event => {
   console.debug('Service Worker installing.');
