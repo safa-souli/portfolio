@@ -198,3 +198,11 @@
 .icon--id-card-clip {
   --icon-url: url("../../icons/id-card-clip.svg");
 }
+
+.icon--wifi-slash {
+  --icon-url: url("../../icons/wifi-slash.svg");
+}
+
+.icon--off-btn {
+  --icon-url: url("../../icons/off-btn.svg");
+}

@@ -64,7 +64,7 @@
   position: fixed;
   width: 56px;
   z-index: 999;
-  transition: transform .35s ease-in-out, opacity .35s ease-in-out;
+  transition: bottom .35s ease-in-out, transform .35s ease-in-out, opacity .35s ease-in-out;
   transform: translateY(30px);
   opacity: 0;
   height: fit-content;
@@ -72,8 +72,13 @@
   line-height: 1;
   border-radius: var(--ss-border-radius);
   right: 30px;
+  bottom: 24vh;
+}
+
+.tawk-online #header-fixed {
   bottom: 90px;
 }
+
 
 #header-fixed .nav__list {
   display: flex;
