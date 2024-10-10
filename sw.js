@@ -34,6 +34,10 @@ const urlsToCache = [
   '/assets/css/utilities/index.css',
   '/assets/css/style.css',
 
+  // External CSS Files
+  '/assets/plugins/@fancyapps/ui/dist/fancybox/fancybox.css',
+  '/assets/plugins/hint.css/hint.min.css',
+
   // Local Font Files
   '/assets/font/Sora/Sora-Bold.woff2',
   '/assets/font/Sora/Sora-ExtraBold.woff2',
@@ -44,27 +48,22 @@ const urlsToCache = [
   '/assets/font/Sora/Sora-SemiBold.woff2',
   '/assets/font/Sora/stylesheet.css',
 
-  // External CSS
-  'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.min.css',
-  'https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.6.0/hint.min.css',
-
   // Local JavaScript Files
   '/assets/js/app.js',
   '/assets/js/portfolio.js',
   '/assets/js/contact.js',
   '/assets/js/animation.js',
 
+  // External JavaScript Files
+  '/assets/plugins/gsap/dist/gsap.min.js',
+  '/assets/plugins/gsap/dist/ScrollTrigger.min.js',
+  '/assets/plugins/mixitup/dist/mixitup.min.js',
+  '/assets/plugins/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
+  '/assets/plugins/@emailjs/browser/dist/email.min.js',
+  '/assets/plugins/inputmask/dist/inputmask.min.js',
+
   // Data files
   '/assets/data/behance-projects.json',
-
-  // External JavaScript
-  'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js',
-  'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js',
-  'https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js',
 
   // Images files
   '/assets/img/logo.svg',
