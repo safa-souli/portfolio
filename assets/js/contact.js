@@ -86,7 +86,6 @@ $(document).ready(() => {
 
   // Add error icon to field
   const addErrorIcon = ($input, errorMessage) => {
-    console.log("error icon length", $input.siblings('.form__icon').length);
     if ($input.siblings('.form__icon').length === 0) {
       const errorIcon = $(`
       <span class="hint--top-left hint--error form__icon" data-hint="${errorMessage}">
@@ -108,7 +107,6 @@ $(document).ready(() => {
   };
 
   const addSuccessIcon = ($input) => {
-    console.log("error icon length", $input.siblings('.form__icon').length);
     if ($input.siblings('.form__icon').length === 0) {
       const successIcon = $(`
         <span class="hint--top-left hint--success form__icon" data-hint="looks good!">
