@@ -3,6 +3,7 @@ const CACHE_NAME = 'my-portfolio-cache-v0.0.1'; //first cache
 
 const urlsToCache = [
   // HTML pages
+  '/',
   '/index.htm',
   '/contact.htm',
   '/portfolio.htm',
