@@ -62,7 +62,7 @@ $(document).ready(function () {
       $('#viewOnBehance').on('click', function (event) {
         if (!navigator.onLine) {
           event.preventDefault();
-          window.location.href = '../offline.htm';
+          window.location.href = '/portfolio/offline.htm';
         }
       });
     });
