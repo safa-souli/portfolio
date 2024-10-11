@@ -208,13 +208,13 @@ self.addEventListener('fetch', event => {
             }
 
             // Check if offline.htm is already cached before fetching
-            return caches.match('/offline.htm').then(cachedOfflinePage => {
+            return caches.match('offline.htm').then(cachedOfflinePage => {
               if (!cachedOfflinePage) {
                 // Fetch and cache offline.htm only if it's not already cached
-                return fetch('/offline.htm').then(offlineResponse => {
+                return fetch('offline.htm').then(offlineResponse => {
                   if (offlineResponse.status === 200) {
                     console.debug('Caching offline.htm for the first time');
-                    cache.put('/offline.htm', offlineResponse.clone());
+                    cache.put('offline.htm', offlineResponse.clone());
                   }
                 }).catch(error => {
                   console.error('Failed to fetch offline.htm:', error);
@@ -230,7 +230,7 @@ self.addEventListener('fetch', event => {
 
       }).catch(() => {
         console.debug('Offline, serving fallback page for:', event.request.url);
-        return caches.match('/offline.htm'); // Serve offline.htm as the fallback
+        return caches.match('offline.htm'); // Serve offline.htm as the fallback
       })
     );
   }
