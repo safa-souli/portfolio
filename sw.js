@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'my-portfolio-cache-v0.0.6';
+const CACHE_NAME = 'my-portfolio-cache-v0.0.9';
 
 const urlsToCache = [
   // HTML pages
@@ -9,7 +9,6 @@ const urlsToCache = [
   '/portfolio.htm',
   '/service.htm',
   '/about.htm',
-  '/offline.htm',
 
   // Local CSS Files
   '/assets/css/components/buttons.css',
@@ -187,7 +186,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch event: Serve from cache if available, fallback to network
+// Fetch event: Handle normal fetch and cache urlsToCache resources if not already cached
 self.addEventListener('fetch', event => {
   if (event.request.method === 'GET') {
     console.debug(event.request.url);
@@ -196,25 +195,42 @@ self.addEventListener('fetch', event => {
       caches.match(event.request).then(response => {
         if (response) {
           console.debug('Serving from cache:', event.request.url);
-          return response; // Serving the cached response
+          return response; // Serve from cache if available
         }
 
         console.debug('Fetching from network:', event.request.url);
         return fetch(event.request).then(networkResponse => {
           return caches.open(CACHE_NAME).then(cache => {
-            // Only cache successful network responses (status 200)
+            // Cache the requested URL if the response is successful
             if (networkResponse.status === 200) {
               console.debug('Caching new resource:', event.request.url);
               cache.put(event.request, networkResponse.clone());
-            } else {
-              console.error('Network response not OK:', event.request.url, 'Status:', networkResponse.status);
             }
-            return networkResponse; // Return the network response
+
+            // Check if offline.htm is already cached before fetching
+            return caches.match('/offline.htm').then(cachedOfflinePage => {
+              if (!cachedOfflinePage) {
+                // Fetch and cache offline.htm only if it's not already cached
+                return fetch('/offline.htm').then(offlineResponse => {
+                  if (offlineResponse.status === 200) {
+                    console.debug('Caching offline.htm for the first time');
+                    cache.put('/offline.htm', offlineResponse.clone());
+                  }
+                }).catch(error => {
+                  console.error('Failed to fetch offline.htm:', error);
+                });
+              } else {
+                console.debug('offline.htm is already cached');
+              }
+            }).then(() => {
+              return networkResponse; // Return the network response
+            });
           });
         });
+
       }).catch(() => {
         console.debug('Offline, serving fallback page for:', event.request.url);
-        return caches.match('/offline.htm'); // Serve the fallback page when offline
+        return caches.match('/offline.htm'); // Serve offline.htm as the fallback
       })
     );
   }
