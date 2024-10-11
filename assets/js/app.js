@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
+      navigator.serviceWorker.register('../sw.js', { scope: '/' })
         .then((registration) => {
           console.debug('Service Worker registered with scope:', registration.scope);
         })
