@@ -9,6 +9,10 @@
   z-index: 300000000000;
 }
 
+.offline__content {
+  padding-inline: var(--ss-grid-gutter);
+}
+
 .offline__title {
   font-size: var(--ss-step-5);
   line-height: 1;
@@ -18,13 +22,23 @@
 
 .offline__message {
   margin-bottom: var(--ss-space-xs-s);
+  max-width: 55ch;
 }
 
 .offline__action {
-  margin-top: var(--ss-space-s)
+  margin-top: var(--ss-space-l);
+  display: flex;
+  gap: var(--ss-space-xs-s);
+  place-items: center;
+  place-content: center;
 }
 
 
-.offline__title .icon--off-btn {
-  --icon-height: 37px;
+.offline__title .icon--off {
+  height: var(--ss-step-3);
+  margin-right: 3px;
+}
+
+.offline__action .cta__btn--outline {
+  border-width: 2px;
 }
