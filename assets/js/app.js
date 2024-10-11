@@ -6,7 +6,6 @@ $(document).ready(function () {
   let lastScrollTop = 0;
 
   if ('serviceWorker' in navigator) {
-    console.debug('Service Worker is supported');
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
         .then((registration) => {

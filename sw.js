@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'my-portfolio-cache-v0.0.5';
+const CACHE_NAME = 'my-portfolio-cache-v0.0.6';
 
 const urlsToCache = [
   // HTML pages
@@ -190,20 +190,32 @@ self.addEventListener('activate', event => {
 // Fetch event: Serve from cache if available, fallback to network
 self.addEventListener('fetch', event => {
   if (event.request.method === 'GET') {
+    console.debug(event.request.url);
+
     event.respondWith(
       caches.match(event.request).then(response => {
         if (response) {
-          return response;
+          console.debug('Serving from cache:', event.request.url);
+          return response; // Serving the cached response
         }
+
+        console.debug('Fetching from network:', event.request.url);
         return fetch(event.request).then(networkResponse => {
           return caches.open(CACHE_NAME).then(cache => {
+            // Only cache successful network responses (status 200)
             if (networkResponse.status === 200) {
+              console.debug('Caching new resource:', event.request.url);
               cache.put(event.request, networkResponse.clone());
+            } else {
+              console.error('Network response not OK:', event.request.url, 'Status:', networkResponse.status);
             }
-            return networkResponse;
+            return networkResponse; // Return the network response
           });
         });
-      }).catch(() => caches.match('/offline.htm'))
+      }).catch(() => {
+        console.debug('Offline, serving fallback page for:', event.request.url);
+        return caches.match('/offline.htm'); // Serve the fallback page when offline
+      })
     );
   }
 });
