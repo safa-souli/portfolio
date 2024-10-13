@@ -1,3 +1,7 @@
+.contact {
+  overflow: hidden;
+}
+
 .contact__wrapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -18,7 +22,7 @@
 .contact__item {
   display: flex;
   align-items: center;
-  margin-bottom: var(--ss-space-xs-s);
+  margin-bottom: var(--ss-space-m);
 }
 
 .contact__icon {
@@ -33,7 +37,6 @@
 }
 
 .contact__icon .icon {
-  --icon-heigh: ;
   --icon-height: 24px;
   --icon-gradient: var(--ss-accent-gradient);
 }
@@ -92,6 +95,10 @@
   .contact__wrapper {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+  }
+
+  .contact__icon {
+    background-color: var(--ss-card-bg);
   }
 }
 
@@ -215,5 +222,15 @@
 
   .contact__form .full-width {
     grid-column: 1;
+  }
+
+  .contact__list {
+    background-color: var(--ss-card-bg);
+    border-radius: var(--ss-border-radius);
+    padding: var(--ss-space-l);
+  }
+
+  .contact__item:last-child {
+    margin-bottom: 0;
   }
 }

@@ -82,7 +82,7 @@
 
 #header-fixed .nav__list {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   place-content: center;
   place-items: center;
   gap: var(--ss-space-2xs);
@@ -159,17 +159,14 @@
 }
 
 @media (width < 768px) {
-  .nav {
+  header .nav {
     display: none;
   }
 
   .brand__logo {
     width: auto;
-    height: 24px;
-  }
-
-  header .brand__logo {
-    margin-left: var(--ss-space-xs);
+    height: 32px;
+    margin-left: var(--ss-space-2xs);
   }
 
   #header-fixed .nav__list {

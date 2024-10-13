@@ -1,5 +1,6 @@
 .skill {
   background-color: var(--ss-dark);
+  overflow: hidden;
 }
 
 .skill__figure {
@@ -28,9 +29,14 @@
   color: var(--ss-accent-color);
 }
 
+.skill__caption {
+  margin-top: var(--ss-space-xs-s);
+}
+
 @media (width < 768px) {
   .skill__list {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    margin-top: var(--ss-space-l);
   }
 
   .skill__item .icon {

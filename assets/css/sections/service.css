@@ -1,5 +1,6 @@
 .service {
   display: block;
+  overflow: hidden;
 }
 
 .service__item {

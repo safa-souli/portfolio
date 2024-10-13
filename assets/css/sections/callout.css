@@ -1,5 +1,6 @@
 .callout {
   background-color: var(--ss-card-bg);
+  overflow: hidden;
 }
 
 .callout__wrapper {
@@ -26,6 +27,8 @@
     place-content: start;
     text-align: start;
     place-items: start;
+    padding-inline: var(--ss-space-s);
+    padding-block: var(--ss-space-s);
   }
 
   .page--about .callout .cta__btn {

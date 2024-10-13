@@ -1,5 +1,6 @@
 .portfolio {
   background-color: var(--ss-dark);
+  overflow: hidden;
 }
 
 .portfolio__item {
@@ -230,5 +231,13 @@
   .portfolio__filter {
     border-radius: 20px;
     padding: var(--ss-space-xs-s);
+  }
+
+  .portfolio__content {
+    position: static;
+  }
+
+  .portfolio__content-box {
+    padding-inline: 0;
   }
 }

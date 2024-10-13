@@ -1,16 +1,23 @@
 .profile__title {
   font-size: var(--ss-step-3);
+  overflow: hidden;
 }
 
 .profile__title .icon {
-  --icon-height: calc(var(--ss-step-3) - 6px);
+  --icon-height: calc(var(--ss-step-3) - 4px);
   margin-right: var(--ss-space-2xs);
+}
+
+.profile__title {
+  display: flex;
+  place-items: center;
+  padding-inline: var(--ss-space-s-l);
 }
 
 .profile__wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--ss-space-l-xl) var(--ss-grid-gutter);
+  gap: var(--ss-space-xl-2xl) var(--ss-grid-gutter);
 }
 
 .profile__list {

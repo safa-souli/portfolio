@@ -1,9 +1,9 @@
 .hero {
   min-height: 100vh;
-  min-height: 100dvh;
   display: grid;
   place-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero__wrapper {
@@ -80,6 +80,10 @@
   .hero__cta {
     margin-top: var(--ss-space-l);
     justify-content: start;
+  }
+
+  .hero__wrapper {
+    padding-inline: var(--ss-space-s);
   }
 }
 

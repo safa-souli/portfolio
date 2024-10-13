@@ -4,8 +4,9 @@ $(document).ready(function () {
   const $header = $('.header');
   let $fixedHeader;
   let lastScrollTop = 0;
+  let mode = "dev";
 
-  if ('serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator && mode === 'prod') {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
         .then((registration) => {

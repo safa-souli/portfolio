@@ -81,6 +81,7 @@ cta {
   .ds-header {
     place-content: start;
     text-align: start;
+    padding-inline: var(--ss-space-s);
   }
 }
 
