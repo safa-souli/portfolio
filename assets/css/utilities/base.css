@@ -10,6 +10,20 @@
   outline: 2px solid var(--ss-accent-color);
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ss-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ss-accent-color);
+  border-radius: 10px;
+  border: 2px solid var(--ss-dark);
+}
+
 img {
   width: 100%;
   max-width: 100%;

@@ -2,8 +2,9 @@ $(document).ready(function () {
   const $window = $(window);
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
+  const mode = "dev";
   let $fixedHeader;
-  let mode = "dev";
+
 
   if ('serviceWorker' in navigator && mode === 'prod') {
     window.addEventListener('load', () => {
@@ -562,6 +563,11 @@ $(document).ready(function () {
           background: #ffffff1a;
         }
 
+        .tawk-new-messages-notification.tawk-box-shadow-small.tawk-button.tawk-button-circle {
+          border-color: #3d3d3d;
+          background: var(--ss-card-bg);
+        }
+
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
@@ -759,9 +765,7 @@ $(document).ready(function () {
       $('body iframe').hide();
     }
 
-    // Perform the rest of the operations regardless of the connection state
     contentAnimation();
-    $maskedCircle.removeClass('loading');
   };
 
   // Optional: Listen for network status changes
@@ -771,7 +775,6 @@ $(document).ready(function () {
     $('body iframe').hide();
     // console.log("You are offline. Live chat is unavailable.");
     contentAnimation();
-    $maskedCircle.removeClass('loading');
   });
 
 
@@ -782,7 +785,6 @@ $(document).ready(function () {
   const init = () => {
     updateProgressBar();
     registerEventListeners();
-    $maskedCircle.addClass('loading');
 
     $('#cancelLoadingBtn').on('click', (event) => {
       event.preventDefault();

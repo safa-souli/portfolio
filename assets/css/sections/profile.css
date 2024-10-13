@@ -11,6 +11,9 @@
 .profile__title {
   display: flex;
   place-items: center;
+}
+
+.page--home .profile__title {
   padding-inline: var(--ss-space-s-l);
 }
 
