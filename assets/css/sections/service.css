@@ -4,7 +4,6 @@
 }
 
 .service__item {
-  background-color: var(--ss-card-bg);
   border-radius: var(--ss-border-radius);
   padding: var(--ss-space-s-l);
 }

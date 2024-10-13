@@ -1,10 +1,11 @@
 :root {
-  --ss-body-bg: #0d0d0d;
-  --ss-body-color: #fff;
+  --ss-body-bg: #0F0F0F;
+  --ss-body-color: #E0E0E0;
+  --ss-body-color: #ccc;
   --ss-body-font-family: 'Sora', system-ui;
   --ss-body-font-weight: 400;
   --ss-body-line-height: 2;
-  --ss-heading-color: #f1f1f1;
+  --ss-heading-color: #ebebeb;
   --ss-heading-font-family: 'Sora', system-ui;
   --ss-heading-font-weight: 700;
   --ss-heading-line-height: 1.1;

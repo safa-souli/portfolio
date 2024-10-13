@@ -1,6 +1,10 @@
 .callout {
-  background-color: var(--ss-card-bg);
   overflow: hidden;
+}
+
+.callout__content {
+  border-radius: var(--ss-border-radius);
+  padding-block: var(--ss-space-s-l);
 }
 
 .callout__wrapper {

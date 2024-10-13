@@ -13,6 +13,10 @@
   text-align: start;
 }
 
+.contact__subtitle {
+  margin-left: 8px;
+}
+
 .contact__list {
   padding-left: 0;
   list-style-type: none;
@@ -69,7 +73,6 @@
 }
 
 .contact__form {
-  background: var(--ss-card-bg);
   padding: var(--ss-space-l);
   border-radius: var(--ss-border-radius);
   display: grid;
@@ -225,12 +228,17 @@
   }
 
   .contact__list {
-    background-color: var(--ss-card-bg);
     border-radius: var(--ss-border-radius);
     padding: var(--ss-space-l);
   }
 
   .contact__item:last-child {
     margin-bottom: 0;
+  }
+}
+
+@media (width >= 768px) {
+  .contact__list::after {
+    content: unset;
   }
 }

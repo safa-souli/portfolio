@@ -2,6 +2,7 @@
   position: relative;
   display: block;
   overflow: hidden;
+  margin-top: 0 !important;
   z-index: 1;
 }
 
@@ -58,7 +59,7 @@
 }
 
 .hero__subtitle {
-  margin-bottom: var(--ss-space-xs-s);
+  margin-bottom: var(--ss-space-m);
 }
 
 .hero .cta__btn--outline {

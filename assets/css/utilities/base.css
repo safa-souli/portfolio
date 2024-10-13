@@ -97,6 +97,10 @@ cta {
     text-align: start;
     padding-inline: var(--ss-space-s);
   }
+
+  .subtitle {
+    margin-left: 8px;
+  }
 }
 
 .ds-grid {
@@ -139,11 +143,16 @@ cta {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(2rem);
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: inherit;
   z-index: -1;
+}
+
+#page-content>* {
+  display: block;
+  margin-top: var(--ss-space-5xl);
 }

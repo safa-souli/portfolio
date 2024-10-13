@@ -26,6 +26,26 @@ h6 {
   aspect-ratio: 1/1;
 }
 
+.subtitle {
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: var(--ss-space-2xs);
+  z-index: 1;
+}
+
+.subtitle::before {
+  content: "";
+  position: absolute;
+  height: 170%;
+  aspect-ratio: 1/1;
+  background: rgba(var(--ss-accent-color-rgb), .15);
+  z-index: -1;
+  border-radius: 100vmax;
+  top: -27%;
+  left: -9%;
+}
+
 h1 {
   font-size: var(--ss-step-5);
 }

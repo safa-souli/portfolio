@@ -1,9 +1,5 @@
 
 /* about page style */
-.page--about .profile__item {
-  background-color: var(--ss-body-bg);
-  border: 1px solid #ffffff29;
-}
 
 @media (width > 768px) {
   .page--about .counter__wrapper {
@@ -67,14 +63,6 @@
   }
 }
 
-.page--about .skill {
-  padding-block: var(--ss-space-5xl) var(--ss-space-2xl);
-}
-
-.page--about .callout {
-  background-color: rgba(24, 24, 24, 0);
-}
-
 .page--about .callout__title {
   font-size: 9.6vw;
   margin-top: var(--ss-space-s-m);
@@ -93,28 +81,21 @@
 }
 
 .page--about .counter {
-  background: var(--ss-dark);
   padding: 0;
 }
 
 .page--about .counter__wrapper {
-  border-top: 1px solid #ffffff2b;
-  padding-block: var(--ss-space-2xl) var(--ss-space-5xl);
+  padding-block: 0;
+}
+
+.page--about .callout .subtitle {
+  margin-left: var(--ss-space-m);
 }
 
 @media (width > 992px) {
   .page--service .ds-grid {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-.page--service .service__item {
-  background-color: var(--ss-body-bg);
-  border: 1px solid #ffffff29;
-}
-
-.page--service .service__icon {
-  background: var(--ss-card-bg);
 }
 
 .page--service .service__text {
@@ -133,8 +114,4 @@
 
 .page--portfolio .portfolio {
   background-color: revert;
-}
-
-.page--portfolio .portfolio__filter {
-  background: var(--ss-dark);
 }

@@ -8,6 +8,7 @@
   left: var(--ss-grid-gutter);
   right: var(--ss-grid-gutter);
   padding: var(--ss-space-2xs);
+  margin-top: 0 !important;
 }
 
 .header__wrapper {
@@ -114,7 +115,7 @@
   opacity: 1;
   transition: all 500ms ease;
   padding: var(--ss-space-xs);
-  border: 2px solid #fff3;
+  border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 #header-fixed .nav__link .icon {
@@ -129,7 +130,7 @@
 
 #header-fixed .nav__item.active .nav__link,
 #header-fixed .nav__item:hover .nav__link {
-  border-color: #49d9982b;
+  border: 2px solid #49d9982b;
 }
 
 #header-fixed .nav__link.scroll-to-top {

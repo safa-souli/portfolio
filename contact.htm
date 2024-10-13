@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color:#000;height: 100vh;">
+<html lang="en" style="background-color:#0F0F0F;height: 100vh;">
 
 <head>
   <meta charset="UTF-8">
@@ -23,8 +23,8 @@
     .masked-circle {
       position: fixed;
       inset: 0;
-      background-color: #000;
-      mask-image: radial-gradient(circle at center center, transparent 0%, #000 0%);
+      background-color: #0F0F0F;
+      mask-image: radial-gradient(circle at center center, transparent 0%, #0F0F0F 0%);
       z-index: 2000000010;
       opacity: 1;
       transition: none;
@@ -44,7 +44,7 @@
 
 
   <div id="page-content" class="page__content page--contact">
-    <header class="header">
+    <header class="header bg-blur">
       <div class="header__wrapper">
         <brand class="brand">
           <a class="brand__link animate-page" href="index.htm">
@@ -93,7 +93,7 @@
       </div>
     </breadcrumb>
 
-    <contact class="contact ds-outer-px">
+    <contact class="contact">
       <div class="container">
         <div class="contact__wrapper">
           <div class="contact__info">
@@ -101,7 +101,7 @@
               <h2 class="contact__title title">Let's get in touch</h2>
               <h3 class="contact__subtitle subtitle">Wanna work togetter?</h3>
             </div>
-            <ul class="contact__list">
+            <ul class="contact__list bg-blur">
               <li class="contact__item">
                 <a class="contact__link" href="tel:+212 52 110 104">
                   <span class="contact__icon"><i class="icon icon--phone"></i></span>
@@ -127,7 +127,7 @@
               </li>
             </ul>
           </div>
-          <form class="contact__form" id="contact-form">
+          <form class="contact__form bg-blur" id="contact-form">
             <div class="form__group">
               <label class="form__label" for="first-name">First Name</label>
               <div class="input__wrapper">
@@ -187,7 +187,7 @@
       </div>
     </contact>
 
-    <footer class="footer ds-inner-px">
+    <footer class="footer bg-blur">
       <div class="container">
         <div class="footer__wrapper">
           <nav class="nav">

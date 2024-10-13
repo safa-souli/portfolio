@@ -32,7 +32,6 @@
 
 .profile__item {
   display: grid;
-  background-color: var(--ss-card-bg);
   border-radius: var(--ss-border-radius);
   padding: var(--ss-space-s-l);
   align-content: space-evenly;
@@ -60,6 +59,14 @@
 .profile--aboutme+hr {
   margin-block: var(--ss-space-2xl);
   opacity: .2;
+}
+
+.profile__subtitle {
+  margin-left: 0;
+}
+
+.profile__subtitle::before {
+  content: unset;
 }
 
 @media (min-width: 768px) {

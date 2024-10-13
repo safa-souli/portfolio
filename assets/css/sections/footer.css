@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--ss-card-bg);
+  padding-block: var(--ss-space-xl);
   overflow: hidden;
 }
 

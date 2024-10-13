@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color:#000;height: 100vh;">
+<html lang="en" style="background-color:#0F0F0F;height: 100vh;">
 
 <head>
   <meta charset="UTF-8">
@@ -23,8 +23,8 @@
     .masked-circle {
       position: fixed;
       inset: 0;
-      background-color: #000;
-      mask-image: radial-gradient(circle at center center, transparent 0%, #000 0%);
+      background-color: #0F0F0F;
+      mask-image: radial-gradient(circle at center center, transparent 0%, #0F0F0F 0%);
       z-index: 2000000010;
       opacity: 1;
       transition: none;
@@ -44,7 +44,7 @@
   <div class="masked-circle"></div>
 
   <div id="page-content" class="page__content page--about">
-    <header class="header">
+    <header class="header bg-blur">
       <div class="header__wrapper">
         <brand class="brand">
           <a class="brand__link animate-page" href="index.htm">
@@ -93,7 +93,7 @@
       </div>
     </breadcrumb>
 
-    <profile class="profile ds-outer-px">
+    <profile class="profile">
       <div class="container">
         <div class="profile__wrapper">
           <div class="profile__content profile--resume">
@@ -127,17 +127,17 @@
               <h3 class="profile__subtitle subtitle">What I do and where I work?</h3>
             </div>
             <ul class="profile__list">
-              <li class="profile__item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Front-end developer</h3>
                 <h4 class="profile__item-date">2021 - Present</h4>
                 <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
               </li>
-              <li class="profile__item" style="min-height: 130px;">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Web designer (UX/UI designer)</h3>
                 <h4 class="profile__item-date">2021 - Present</h4>
                 <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
               </li>
-              <li class="profile__item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Symfony developer / Back-end developer</h3>
                 <h4 class="profile__item-date">2021 - Present</h4>
                 <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
@@ -153,17 +153,17 @@
               <h3 class="profile__subtitle subtitle">What did I study and where?</h3>
             </div>
             <ul class="profile__list">
-              <li class="profile__item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Master’s degree in E-COMMERCE</h3>
                 <h4 class="profile__item-date">2018 - 2020</h4>
                 <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
               </li>
-              <li class="profile__item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Bachelor’s Degree in Applied Computer Science for Management</h3>
                 <h4 class="profile__item-date">2015 - 2018</h4>
                 <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
               </li>
-              <li class="profile__item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">High School Diploma in Computer Science</h3>
                 <h4 class="profile__item-date">2014 - 2015</h4>
                 <p class="profile__item-text">Liberty High School - Jendouba, Tunisia </p>
@@ -174,7 +174,9 @@
       </div>
     </profile>
 
-    <skill class="skill ds-outer-px">
+    <hr>
+
+    <skill class="skill">
       <div class="container">
         <div class="skill__wrapper">
           <div class="skill__content">
@@ -184,35 +186,35 @@
             </div>
             <ul class="skill__list">
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--html5"></i>
                   <figcaption class="skill__caption">85%</figcaption>
                 </figure>
                 <p class="skill__text">HTML5</p>
               </li>
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--css3"></i>
                   <figcaption class="skill__caption">90%</figcaption>
                 </figure>
                 <p class="skill__text">CSS3</p>
               </li>
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--sass"></i>
                   <figcaption class="skill__caption">85%</figcaption>
                 </figure>
                 <p class="skill__text">SASS</p>
               </li>
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--javascript"></i>
                   <figcaption class="skill__caption">70%</figcaption>
                 </figure>
                 <p class="skill__text">JavaScript</p>
               </li>
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--jquery"></i>
                   <figcaption class="skill__caption">80%</figcaption>
                 </figure>
@@ -220,7 +222,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--bootstrap"></i>
                   <figcaption class="skill__caption">87%</figcaption>
                 </figure>
@@ -228,7 +230,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--git"></i>
                   <figcaption class="skill__caption">80%</figcaption>
                 </figure>
@@ -236,7 +238,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--github"></i>
                   <figcaption class="skill__caption">85%</figcaption>
                 </figure>
@@ -244,7 +246,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--figma"></i>
                   <figcaption class="skill__caption">88%</figcaption>
                 </figure>
@@ -252,7 +254,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--illustrator"></i>
                   <figcaption class="skill__caption">60%</figcaption>
                 </figure>
@@ -260,7 +262,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--framer"></i>
                   <figcaption class="skill__caption">50%</figcaption>
                 </figure>
@@ -268,7 +270,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--sql"></i>
                   <figcaption class="skill__caption">65%</figcaption>
                 </figure>
@@ -276,7 +278,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--php"></i>
                   <figcaption class="skill__caption">70%</figcaption>
                 </figure>
@@ -284,7 +286,7 @@
               </li>
 
               <li class="skill__item">
-                <figure class="skill__figure">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--symfony"></i>
                   <figcaption class="skill__caption">65%</figcaption>
                 </figure>
@@ -295,6 +297,8 @@
         </div>
       </div>
     </skill>
+
+    <hr>
 
     <counter class="counter">
       <div class="container">
@@ -320,7 +324,9 @@
       </div>
     </counter>
 
-    <callout class="callout ds-inner-px">
+    <hr>
+
+    <callout class="callout">
       <div class="container">
         <div class="callout__wrapper">
           <h2 class="callout__title title">Let's get in touch?</h2>
@@ -363,7 +369,7 @@
     </header>
 
 
-    <footer class="footer ds-inner-px">
+    <footer class="footer bg-blur">
       <div class="container">
         <div class="footer__wrapper">
           <nav class="nav">

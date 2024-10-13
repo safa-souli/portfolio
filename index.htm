@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color:#000;height: 100vh;">
+<html lang="en" style="background-color:#0F0F0F;height: 100vh;">
 
 <head>
   <meta charset="UTF-8">
@@ -24,8 +24,8 @@
     .masked-circle {
       position: fixed;
       inset: 0;
-      background-color: #000;
-      mask-image: radial-gradient(circle at center center, transparent 0%, #000 0%);
+      background-color: #0F0F0F;
+      mask-image: radial-gradient(circle at center center, transparent 0%, #0F0F0F 0%);
       z-index: 2000000010;
       opacity: 1;
       transition: none;
@@ -129,14 +129,14 @@
     </hero>
 
 
-    <service class="service ds-outer-px">
+    <service class="service">
       <div class="container">
         <div class="service__header ds-header">
           <h2 class="service__title title fade-up">My quality of Service</h2>
           <h3 class="service__subtitle subtitle fade-up">What can I do?</h2>
         </div>
         <div class="service__body ds-grid">
-          <div class="service__item fade-up--item">
+          <div class="service__item bg-blur">
             <div class="service__icon">
               <i class="icon icon--computer-brush"></i>
             </div>
@@ -148,7 +148,7 @@
                 seamless user experience</p>
             </div>
           </div>
-          <div class="service__item fade-up--item">
+          <div class="service__item bg-blur">
             <div class="service__icon">
               <i class="icon icon--webpage-layout"></i>
             </div>
@@ -160,7 +160,7 @@
                 experiences</p>
             </div>
           </div>
-          <div class="service__item fade-up--item">
+          <div class="service__item bg-blur">
             <div class="service__icon">
               <i class="icon icon--computer-code"></i>
             </div>
@@ -175,16 +175,16 @@
       </div>
     </service>
 
-    <portfolio class="portfolio ds-outer-px">
+    <portfolio class="portfolio">
       <div class="container">
         <div class="portfolio__header ds-header">
-          <h2 class="portfolio__title title fade-up">My recent Work</h2>
-          <h3 class="portfolio__subtitle subtitle fade-up">What am I capable of?</h2>
+          <h2 class="portfolio__title title">My recent Work</h2>
+          <h3 class="portfolio__subtitle subtitle">What am I capable of?</h2>
         </div>
 
         <div class="portfolio__body">
 
-          <div class="portfolio__filter fade-up">
+          <div class="portfolio__filter bg-blur">
             <button class="portfolio__filter-btn active" data-filter="*">All Projects</button>
             <button class="portfolio__filter-btn" data-filter=".Web-Design">Web Design</button>
             <button class="portfolio__filter-btn" data-filter=".UI-UX">UX/UI Design</button>
@@ -198,27 +198,30 @@
       </div>
     </portfolio>
 
-    <callout class="callout ds-inner-px">
-      <div class="u-container">
-        <div class="callout__wrapper">
-          <h2 class="callout__title title fade-up">Wanna work togetter?</h2>
-          <p class="callout__text fade-up">I am a UI designer and web developer, skilled in creating intuitive, visually
-            engaging
-            interfaces and seamless digital
-            experiences. With expertise in front-end development and intermediate English, I deliver user-centered
-            solutions. Let's
-            collaborate to bring your ideas to life!</p>
-          <div class="callout__cta fade-up">
-            <a class="cta__btn animate-page" href="contact.htm"><i class="icon icon--message"></i>Get in
-              touch</a>
+    <callout class="callout">
+      <div class="container">
+        <div class="callout__content bg-blur">
+          <div class="u-container">
+            <div class="callout__wrapper">
+              <h2 class="callout__title title fade-up">Wanna work togetter?</h2>
+              <p class="callout__text fade-up">I am a UI designer and web developer, skilled in creating intuitive,
+                visually
+                engaging
+                interfaces and seamless digital
+                experiences. With expertise in front-end development and intermediate English, I deliver user-centered
+                solutions. Let's
+                collaborate to bring your ideas to life!</p>
+              <div class="callout__cta fade-up">
+                <a class="cta__btn animate-page" href="contact.htm"><i class="icon icon--message"></i>Get in
+                  touch</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-
     </callout>
 
-    <profile class="profile ds-outer-px">
+    <profile class="profile">
       <div class="container">
         <div class="profile__wrapper">
           <div class="profile__content profile--experience">
@@ -226,17 +229,17 @@
               <h2 class="profile__title title fade-left"><i class="icon icon--briefcase"></i> Experience</h2>
             </div>
             <ul class="profile__list">
-              <li class="profile__item fade-left--item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Front-end developer</h3>
                 <h4 class="profile__item-date">2021 - Present</h4>
                 <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
               </li>
-              <li class="profile__item fade-left--item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Web designer (UX/UI designer)</h3>
                 <h4 class="profile__item-date">2021 - Present</h4>
                 <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
               </li>
-              <li class="profile__item fade-left--item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Symfony developer / Back-end developer</h3>
                 <h4 class="profile__item-date">2021 - Present</h4>
                 <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
@@ -249,17 +252,17 @@
               <h2 class="profile__title title fade-left"><i class="icon icon--graduation-cap"></i> Education</h2>
             </div>
             <ul class="profile__list">
-              <li class="profile__item fade-left--item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Master’s degree in E-COMMERCE</h3>
                 <h4 class="profile__item-date">2018 - 2020</h4>
                 <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
               </li>
-              <li class="profile__item fade-left--item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">Bachelor’s Degree in Applied Computer Science for Management</h3>
                 <h4 class="profile__item-date">2015 - 2018</h4>
                 <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
               </li>
-              <li class="profile__item fade-left--item">
+              <li class="profile__item bg-blur">
                 <h3 class="profile__item-title">High School Diploma in Computer Science</h3>
                 <h4 class="profile__item-date">2014 - 2015</h4>
                 <p class="profile__item-text">Liberty High School - Jendouba, Tunisia </p>
@@ -270,7 +273,7 @@
       </div>
     </profile>
 
-    <skill class="skill ds-outer-px">
+    <skill class="skill">
       <div class="container">
         <div class="skill__wrapper">
           <div class="skill__content">
@@ -279,108 +282,108 @@
               <h3 class="skill__subtitle subtitle fade-up">What am I capable of?</h3>
             </div>
             <ul class="skill__list">
-              <li class="skill__item fade-up--item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--html5"></i>
                   <figcaption class="skill__caption">85%</figcaption>
                 </figure>
                 <p class="skill__text">HTML5</p>
               </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--css3"></i>
                   <figcaption class="skill__caption">90%</figcaption>
                 </figure>
                 <p class="skill__text">CSS3</p>
               </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--sass"></i>
                   <figcaption class="skill__caption">85%</figcaption>
                 </figure>
                 <p class="skill__text">SASS</p>
               </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--javascript"></i>
                   <figcaption class="skill__caption">70%</figcaption>
                 </figure>
                 <p class="skill__text">JavaScript</p>
               </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--jquery"></i>
                   <figcaption class="skill__caption">80%</figcaption>
                 </figure>
                 <p class="skill__text">jQuery</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--bootstrap"></i>
                   <figcaption class="skill__caption">87%</figcaption>
                 </figure>
                 <p class="skill__text">Bootstrap</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--git"></i>
                   <figcaption class="skill__caption">80%</figcaption>
                 </figure>
                 <p class="skill__text">Git</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--github"></i>
                   <figcaption class="skill__caption">85%</figcaption>
                 </figure>
                 <p class="skill__text">GitHub</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--figma"></i>
                   <figcaption class="skill__caption">88%</figcaption>
                 </figure>
                 <p class="skill__text">Figma</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--illustrator"></i>
                   <figcaption class="skill__caption">60%</figcaption>
                 </figure>
                 <p class="skill__text">Illustrator</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--framer"></i>
                   <figcaption class="skill__caption">50%</figcaption>
                 </figure>
                 <p class="skill__text">Framer</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--sql"></i>
                   <figcaption class="skill__caption">65%</figcaption>
                 </figure>
                 <p class="skill__text">SQL</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--php"></i>
                   <figcaption class="skill__caption">70%</figcaption>
                 </figure>
                 <p class="skill__text">PHP</p>
               </li>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
+              <li class="skill__item">
+                <figure class="skill__figure bg-blur">
                   <i class="icon icon--symfony"></i>
                   <figcaption class="skill__caption">65%</figcaption>
                 </figure>
@@ -392,7 +395,7 @@
       </div>
     </skill>
 
-    <contact class="contact ds-outer-px">
+    <contact class="contact">
       <div class="container">
         <div class="contact__wrapper">
           <div class="contact__info">
@@ -400,7 +403,7 @@
               <h2 class="contact__title title fade-left--item">Let's get in touch</h2>
               <h3 class="contact__subtitle subtitle fade-left--item">Wanna work togetter?</h3>
             </div>
-            <ul class="contact__list">
+            <ul class="contact__list bg-blur">
               <li class="contact__item fade-left--item">
                 <a class="contact__link" href="tel:+212 52 110 104">
                   <span class="contact__icon"><i class="icon icon--phone"></i></span>
@@ -426,7 +429,7 @@
               </li>
             </ul>
           </div>
-          <form class="contact__form" id="contact-form">
+          <form class="contact__form bg-blur" id="contact-form">
             <div class="form__group">
               <label class="form__label" for="first-name">First Name</label>
               <div class="input__wrapper">
@@ -515,8 +518,7 @@
       </ul>
     </header>
 
-
-    <footer class="footer ds-inner-px">
+    <footer class="footer bg-blur">
       <div class="container">
         <div class="footer__wrapper">
           <nav class="nav">
