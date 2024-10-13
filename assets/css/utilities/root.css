@@ -71,7 +71,7 @@
   /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=m,m,3xl,11 */
 
   --ss-grid-max-width: 84.00rem;
-  --ss-grid-ultimate-width: 53.00rem;
+  --ss-grid-ultimate-width: 54.00rem;
   --ss-grid-gutter: var(--space-m-m, clamp(1.3125rem, 1.2539rem + 0.293vw, 1.5rem));
   --ss-grid-columns: 11;
 

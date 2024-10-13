@@ -3,7 +3,6 @@
   top: var(--ss-space-xl);
   z-index: 998;
   border-radius: 100vmax;
-  background-color: var(--ss-card-bg);
   max-width: var(--ss-grid-max-width);
   margin: 0 auto;
   left: var(--ss-grid-gutter);
