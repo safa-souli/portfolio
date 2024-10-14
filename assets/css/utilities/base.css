@@ -154,7 +154,7 @@ cta {
   z-index: -1;
 }
 
-#page-content>*:not(.hero, .header, .breadcrumb, .footer) {
+#page-content>*:not(.hero, .header, .breadcrumb, .footer, #header-fixed) {
   display: block;
   padding-top: var(--ss-space-5xl);
 }
