@@ -8,7 +8,6 @@
   left: var(--ss-grid-gutter);
   right: var(--ss-grid-gutter);
   padding: var(--ss-space-2xs);
-  margin-top: 0 !important;
 }
 
 .header__wrapper {

@@ -1,4 +1,5 @@
 .footer {
+  margin-top: var(--ss-space-5xl);
   padding-block: var(--ss-space-xl);
   overflow: hidden;
 }
