@@ -23,10 +23,16 @@
   gap: var(--ss-space-xl-2xl) var(--ss-grid-gutter);
 }
 
+.profile__content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: auto;
+  row-gap: var(--ss-space-s-m);
+}
+
 .profile__list {
   display: grid;
   gap: var(--ss-grid-gutter);
-  margin-top: var(--ss-space-s-m);
   padding-left: 0;
 }
 

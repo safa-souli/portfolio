@@ -1,3 +1,10 @@
+.page--home .counter.bg-blur::after {
+  backdrop-filter: blur(6px);
+}
+
+.header.bg-blur::after {
+  backdrop-filter: blur(3px);
+}
 
 /* about page style */
 
