@@ -1,0 +1,126 @@
+.page--home .counter.bg-blur::after {
+  backdrop-filter: blur(6px);
+}
+
+.header.bg-blur::after {
+  backdrop-filter: blur(3px);
+}
+
+/* about page style */
+
+@media (width > 768px) {
+  .page--about .counter__wrapper {
+    grid-template-columns: 1fr 1fr 3.5fr;
+  }
+}
+
+.page--about .profile__wrapper {
+  grid-template-columns: 1fr;
+}
+
+.page--about .profile__content {
+  display: grid;
+  gap: var(--ss-grid-gutter);
+}
+
+.page--about .profile__header.ds-header {
+  text-align: start;
+  place-items: start;
+  place-content: start;
+}
+
+.page--about .profile__title {
+  margin-bottom: var(--ss-space-xs);
+  display: flex;
+  place-items: center;
+}
+
+.page--about .profile__header .subtitle {
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.page--about .profile__header>* {
+  max-width: 284px;
+}
+
+.page--about hr {
+  opacity: 0.2;
+  border-width: 0;
+  border-bottom-width: 1px;
+}
+
+
+@media (width > 768px) {
+
+  .page--about .callout__wrapper {
+    place-content: start;
+    text-align: start;
+    place-items: start;
+  }
+
+  .page--about .callout .cta__btn {
+    place-self: end;
+  }
+
+  .page--about .profile__content {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .page--about .profile__list {
+    margin-top: 0;
+  }
+}
+
+.page--about .callout__title {
+  font-size: 9.6vw;
+  margin-top: var(--ss-space-s-m);
+}
+
+@media (width > 1440px) {
+  .page--about .callout__title {
+    font-size: 8.74vw;
+  }
+}
+
+@media (width > 1600px) {
+  .page--about .callout__title {
+    font-size: 7.25vw;
+  }
+}
+
+.page--about .counter {
+  padding: 0;
+}
+
+.page--about .counter__wrapper {
+  padding-block: 0;
+}
+
+.page--about .callout .subtitle {
+  margin-left: var(--ss-space-m);
+}
+
+@media (width > 992px) {
+  .page--service .ds-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.page--service .service__text {
+  font-weight: 300;
+}
+
+.page--service .service__title.title {
+  font-size: var(--ss-step-3);
+}
+
+/* portfolio page style */
+
+.page--portfolio .portfolio__title {
+  font-size: var(--ss-step-3);
+}
+
+.page--portfolio .portfolio {
+  background-color: revert;
+}

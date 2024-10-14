@@ -9,7 +9,7 @@ $(document).ready(function () {
       const hasStats = project.stats && (project.stats.views || project.appreciations || project.stats.comments);
 
       const projectElement = `
-        <div class="portfolio__item fade-up--project ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}">
+        <div class="portfolio__item bg-blur ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}">
           <a class="portfolio__link" href="${project.covers['original']}" data-fancybox="gallery" data-caption="${project.name}">
             <picture class="portfolio__picture" style="aspect-ratio: 404/316">
               <source srcset="" type="image/webp">
@@ -18,7 +18,7 @@ $(document).ready(function () {
             </picture>
           </a>
           <div class="portfolio__content">
-            <div class="portfolio__content-box">
+            <div class="portfolio__content-box bg-blur">
               <h4 class="portfolio__item-title">${project.name}
                 <span class="portfolio__tags">
                   ${project.fields.map(field => `<tag class="btn__tag">${field}</tag>`).join('')}

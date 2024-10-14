@@ -1,12 +1,16 @@
 .skill {
-  background-color: var(--ss-dark);
+  position: relative;
+  z-index: 1;
 }
 
 .skill__figure {
-  background: var(--ss-card-bg);
   padding: var(--ss-space-m-l);
   border-radius: var(--ss-border-radius);
   margin-bottom: var(--ss-space-xs);
+}
+
+.skill__figure.bg-blur::after {
+  backdrop-filter: blur(4px);
 }
 
 .skill__list {
@@ -28,9 +32,20 @@
   color: var(--ss-accent-color);
 }
 
+.skill__caption {
+  margin-top: var(--ss-space-s);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.skill .bg-img {
+  top: calc(0px - var(--ss-space-3xs));
+}
+
 @media (width < 768px) {
   .skill__list {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    margin-top: var(--ss-space-l);
   }
 
   .skill__item .icon {

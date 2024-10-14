@@ -2,10 +2,11 @@ $(document).ready(function () {
   const $window = $(window);
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
+  const mode = "dev";
   let $fixedHeader;
-  let lastScrollTop = 0;
 
-  if ('serviceWorker' in navigator) {
+
+  if ('serviceWorker' in navigator && mode === 'prod') {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
         .then((registration) => {
@@ -562,6 +563,11 @@ $(document).ready(function () {
           background: #ffffff1a;
         }
 
+        .tawk-new-messages-notification.tawk-box-shadow-small.tawk-button.tawk-button-circle {
+          border-color: #3d3d3d;
+          background: var(--ss-card-bg);
+        }
+
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
@@ -651,21 +657,18 @@ $(document).ready(function () {
     const scrollTop = $window.scrollTop();
     $fixedHeader = $('#header-fixed');
 
-    // Detect scroll direction
-    if (scrollTop < lastScrollTop) {
-      // User is scrolling up
-      if (!isInTheViewport($header)) {
-        // Slide down the fixed header if the original header is out of the viewport
-        $fixedHeader.css({
-          transform: 'translateY(0)',
-          opacity: 1
-        });
-      }
-    } else {
-      // User is scrolling down
+    // Check if the original header is in the viewport
+    if (isInTheViewport($header)) {
+      // If the original header is visible, hide the fixed header
       $fixedHeader.css({
-        transform: 'translateY(30px)',
-        opacity: 0
+        transform: 'translateY(30px)', // Move it out of view
+        opacity: 0 // Hide it
+      });
+    } else {
+      // If the original header is not in the viewport, show the fixed header
+      $fixedHeader.css({
+        transform: 'translateY(0)', // Move it into view
+        opacity: 1 // Make it visible
       });
     }
 
@@ -762,9 +765,7 @@ $(document).ready(function () {
       $('body iframe').hide();
     }
 
-    // Perform the rest of the operations regardless of the connection state
     contentAnimation();
-    $maskedCircle.removeClass('loading');
   };
 
   // Optional: Listen for network status changes
@@ -774,7 +775,6 @@ $(document).ready(function () {
     $('body iframe').hide();
     // console.log("You are offline. Live chat is unavailable.");
     contentAnimation();
-    $maskedCircle.removeClass('loading');
   });
 
 
@@ -785,7 +785,6 @@ $(document).ready(function () {
   const init = () => {
     updateProgressBar();
     registerEventListeners();
-    $maskedCircle.addClass('loading');
 
     $('#cancelLoadingBtn').on('click', (event) => {
       event.preventDefault();

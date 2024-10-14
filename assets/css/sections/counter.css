@@ -1,7 +1,11 @@
 .counter {
   display: block;
-  background: var(--ss-card-bg);
   padding-block: var(--ss-space-l-xl);
+  overflow: hidden;
+}
+
+.counter.bg-blur {
+  border-inline: hidden;
 }
 
 .counter__wrapper {
@@ -30,6 +34,7 @@
 }
 
 @media (width < 768px) {
+
   .counter__item:nth-child(1),
   .counter__item:nth-child(2) {
     border: 1px solid #ffffff26;
@@ -37,9 +42,17 @@
     padding: var(--ss-space-xs-s);
     margin-top: var(--ss-space-s-m);
   }
+
+  .counter__wrapper {
+    padding-inline: var(--ss-space-s);
+  }
+
+  .counter {
+    padding-block: var(--ss-space-xl);
+  }
 }
 
-@media (width >= 768px) {
+@media (width >=768px) {
   .counter__number.aboutme {
     display: none;
   }

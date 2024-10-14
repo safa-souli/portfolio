@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color:#000;height: 100vh;">
+<html lang="en" style="background-color:#0F0F0F;height: 100vh;">
 
 <head>
   <meta charset="UTF-8">
@@ -21,253 +21,29 @@
   <link rel="preload" href="assets/font/Sora/stylesheet.css" as="style" onload="this.rel='stylesheet'">
 
   <style>
-    :root {
-      --ss-body-bg: #0d0d0d;
-      --ss-body-color: #fff;
-      --ss-body-font-family: 'Sora', system-ui;
-      --ss-body-font-weight: 400;
-      --ss-body-line-height: 2;
-      --ss-heading-color: #f1f1f1;
-      --ss-heading-font-family: 'Sora', system-ui;
-      --ss-heading-font-weight: 700;
-      --ss-heading-line-height: 1.1;
-      --ss-card-bg: #1f1f1f;
-      --ss-border-radius: 14px;
-      --ss-dark: black;
-      --ss-danger: #b34e4d;
-      --ss-success: #458746;
-      --ss-dark-rgb: 0, 0, 0;
-
-      /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,10,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
-
-      --ss-step--2: clamp(0.5739rem, 0.6194rem + -0.0586vw, 0.6076rem);
-      --ss-step--1: clamp(0.7292rem, 0.7193rem + 0.0494vw, 0.7576rem);
-      --ss-step-0: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
-      --ss-step-1: clamp(1.05rem, 0.9561rem + 0.4696vw, 1.32rem);
-      --ss-step-2: clamp(1.26rem, 1.0922rem + 0.839vw, 1.7424rem);
-      --ss-step-3: clamp(1.512rem, 1.2379rem + 1.3704vw, 2.3rem);
-      --ss-step-4: clamp(1.8144rem, 1.3895rem + 2.1244vw, 3.036rem);
-      --ss-step-5: clamp(2.1773rem, 1.5407rem + 3.1829vw, 4.0075rem);
-      --ss-step-6: clamp(2.6127rem, 1.6816rem + 4.6559vw, 5.2899rem);
-      --ss-step-7: clamp(3.1353rem, 1.7971rem + 6.691vw, 6.9826rem);
-      --ss-step-8: clamp(3.7623rem, 1.8651rem + 9.4864vw, 9.217rem);
-      --ss-step-9: clamp(4.5148rem, 1.8534rem + 13.3073vw, 12.1665rem);
-      --ss-step-10: clamp(5.4178rem, 1.7162rem + 18.5078vw, 16.0598rem);
-
-      /* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
-
-      --ss-space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
-      --ss-space-2xs: clamp(0.4375rem, 0.4158rem + 0.1087vw, 0.5rem);
-      --ss-space-xs: clamp(0.6875rem, 0.6658rem + 0.1087vw, 0.75rem);
-      --ss-space-s: clamp(0.875rem, 0.8315rem + 0.2174vw, 1rem);
-      --ss-space-m: clamp(1.3125rem, 1.2473rem + 0.3261vw, 1.5rem);
-      --ss-space-l: clamp(1.75rem, 1.663rem + 0.4348vw, 2rem);
-      --ss-space-xl: clamp(2.625rem, 2.4946rem + 0.6522vw, 3rem);
-      --ss-space-2xl: clamp(3.5rem, 3.3261rem + 0.8696vw, 4rem);
-      --ss-space-3xl: clamp(5.25rem, 4.9891rem + 1.3043vw, 6rem);
-      --ss-space-4xl: clamp(6.125rem, 5.8207rem + 1.5217vw, 7rem);
-      --ss-space-5xl: clamp(7rem, 6.6522rem + 1.7391vw, 8rem);
-      --ss-space-6xl: clamp(7.875rem, 7.4837rem + 1.9565vw, 9rem);
-      --ss-space-7xl: clamp(8.75rem, 8.3152rem + 2.1739vw, 10rem);
-      --ss-space-8xl: clamp(9.625rem, 9.1467rem + 2.3913vw, 11rem);
-      --ss-space-9xl: clamp(10.5rem, 9.9783rem + 2.6087vw, 12rem);
-
-      /* One-up pairs */
-      --ss-space-3xs-2xs: clamp(0.25rem, 0.163rem + 0.4348vw, 0.5rem);
-      --ss-space-2xs-xs: clamp(0.4375rem, 0.3288rem + 0.5435vw, 0.75rem);
-      --ss-space-xs-s: clamp(0.6875rem, 0.5788rem + 0.5435vw, 1rem);
-      --ss-space-s-m: clamp(0.875rem, 0.6576rem + 1.087vw, 1.5rem);
-      --ss-space-m-l: clamp(1.3125rem, 1.0734rem + 1.1957vw, 2rem);
-      --ss-space-l-xl: clamp(1.75rem, 1.3152rem + 2.1739vw, 3rem);
-      --ss-space-xl-2xl: clamp(2.625rem, 2.1467rem + 2.3913vw, 4rem);
-      --ss-space-2xl-3xl: clamp(3.5rem, 2.6304rem + 4.3478vw, 6rem);
-      --ss-space-3xl-4xl: clamp(5.25rem, 4.6413rem + 3.0435vw, 7rem);
-      --ss-space-4xl-5xl: clamp(6.125rem, 5.4728rem + 3.2609vw, 8rem);
-      --ss-space-5xl-6xl: clamp(7rem, 6.3043rem + 3.4783vw, 9rem);
-      --ss-space-6xl-7xl: clamp(7.875rem, 7.1359rem + 3.6957vw, 10rem);
-      --ss-space-7xl-8xl: clamp(8.75rem, 7.9674rem + 3.913vw, 11rem);
-      --ss-space-8xl-9xl: clamp(9.625rem, 8.7989rem + 4.1304vw, 12rem);
-
-      /* Custom pairs */
-      --ss-space-s-l: clamp(0.875rem, 0.4837rem + 1.9565vw, 2rem);
-
-      /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=m,m,3xl,11 */
-
-      --ss-grid-max-width: 84.00rem;
-      --ss-grid-ultimate-width: 53.00rem;
-      --ss-grid-gutter: var(--space-m-m, clamp(1.3125rem, 1.2539rem + 0.293vw, 1.5rem));
-      --ss-grid-columns: 11;
-
-      /* colors */
-      --ss-accent-color: #43E29B;
-      --ss-accent-color-rgb: 67, 226, 155;
-      --ss-accent-color-hue: 153;
-      --ss-accent-color-saturation: 73.3%;
-      --ss-accent-color-lightness: 57.5%;
-
-      --ss-accent-dark-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 20%) calc(var(--ss-accent-color-lightness) - 20%));
-      --ss-accent-light-color: hsl(var(--ss-accent-color-hue) calc(var(--ss-accent-color-saturation) - 10%) calc(var(--ss-accent-color-lightness) + 20%));
-      --ss-accent-subtle-color: hsl(calc(var(--ss-accent-color-hue) - 10) var(--ss-accent-color-saturation) calc(var(--ss-accent-color-lightness) - 10%));
-
-      --ss-accent-gradient: linear-gradient(125deg, var(--ss-accent-color) 0%, var(--ss-accent-dark-color) 100%);
-
-      /* buttons */
-      --ss-btn-font-weight: 600;
-
-    }
-
-    ::-webkit-scrollbar {
-      width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--ss-dark);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: var(--ss-accent-color);
-      border-radius: 10px;
-      border: 2px solid var(--ss-dark);
-    }
-
     .masked-circle {
       position: fixed;
       inset: 0;
-      background-color: var(--ss-dark);
-      mask-image: radial-gradient(circle at center center, transparent 0%, var(--ss-body-bg) 0%);
+      background-color: #0F0F0F;
+      mask-image: radial-gradient(circle at center center, transparent 0%, #0F0F0F 0%);
       z-index: 2000000010;
       opacity: 1;
       transition: none;
-      font-family: var(--ss-body-font-family);
-    }
-
-    .masked-circle__content {
-      display: grid;
-      place-content: center;
-      text-align: center;
-      place-items: center;
-      grid-template-rows: 45vh auto var(--ss-space-3xl) auto auto 1fr;
-      grid-template-areas: '..' 'loading' '..' 'message' 'action' '..';
-      height: 100vh;
-      height: 100dvh;
-    }
-
-    .masked-circle__action {
-      color: gray;
-      display: block;
-      grid-area: action;
-    }
-
-    .masked-circle .masked-circle__loading-text {
-      text-transform: uppercase;
-      font-weight: 400;
-      letter-spacing: 22px;
-      animation-delay: 500ms;
-      transform: scale(.8);
-      margin-left: 12px;
-      opacity: 0;
-      background-image: var(--ss-accent-gradient);
-      color: transparent;
-      -webkit-transition: .1s .2s;
-      -webkit-background-clip: text;
-      animation: scalingTransition 3s infinite linear;
-      align-self: end;
-      grid-area: loading;
-      font-size: var(--ss-step-4);
-    }
-
-    .masked-circle .masked-circle__message,
-    .masked-circle .masked-circle__action {
-      opacity: 0;
-      font-size: 17px;
-    }
-
-    .masked-circle .masked-circle__message,
-    .masked-circle .masked-circle__action {
-      animation: fadeIn 1s ease-in 5s forwards;
-    }
-
-    .masked-circle .masked-circle__message {
-      font-weight: 500;
-      color: #e5e5e5;
-      margin-top: var(--ss-space-2xl);
-      grid-area: message;
-    }
-
-    .masked-circle .masked-circle__action {
-      color: #b2b2b2;
-      font-weight: 400;
-      margin-top: var(--ss-space-m);
-    }
-
-    .masked-circle .masked-circle__action:hover {
-      color: var(--ss-accent-color);
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    .masked-circle .cta__btn--cancel {
-      opacity: 0;
-      animation-delay: 20s;
-      animation: opacity 10s ease-in;
-    }
-
-    .masked-circle.loading .cta__btn--cancel {
-      opacity: 1;
-    }
-
-
-    @keyframes scalingTransition {
-      0% {
-        transform: scale(0.8);
-        opacity: 0;
-      }
-
-      25% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-
-      75% {
-        transform: scale(1);
-      }
-
-      100% {
-        transform: scale(0.8);
-        opacity: 1;
-      }
     }
   </style>
 
-  <link rel="preload" href="assets/plugins/@fancyapps/ui/dist/fancybox/fancybox.css" as="style" onload="this.rel='stylesheet'" />
+  <link rel="preload" href="assets/plugins/@fancyapps/ui/dist/fancybox/fancybox.css" as="style"
+    onload="this.rel='stylesheet'" />
   <link rel="preload" href="assets/plugins/hint.css/hint.min.css" as="style" onload="this.rel='stylesheet'">
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
-  <div class="masked-circle">
-    <div class="masked-circle__content">
-      <p class="masked-circle__loading-text">Loading</p>
-      <p class="masked-circle__message">Taking too long? Click Cancel </p>
-      <a id="cancelLoadingBtn" class="masked-circle__action" href="index.htm">Cancel</a>
-    </div>
-  </div>
+  <div class="masked-circle"></div>
 
   <div id="page-content" class="page__content page--home">
-    <header class="header">
+    <header class="header bg-blur">
       <div class="header__wrapper">
         <brand class="brand">
           <a class="brand__link animate-page" href="index.htm">
@@ -305,111 +81,148 @@
     </header>
 
     <hero class="hero">
-      <div class="container">
-        <div class="hero__content">
-          <div class="u-container">
-            <div class="hero__wrapper">
-              <h1 class="hero__title title">Skilled Web Developer +<br> UI Designer</h1>
-              <h2 class="hero__subtitle subtitle">Hi! I'm Safa Souli</h2>
-              <p class="hero__text">
-                Let's create high-performance websites with stunning, user-friendly interfaces. Partner with a developer
-                who blends
-                creativity and technical expertise for top-tier results
-              </p>
-              <cta class="hero__cta">
-                <a class="cta__btn--outline animate-page" href="portfolio.htm"><i class="icon icon--eye"></i> View
-                  Portfolio
-                </a>
-                <a class="cta__btn--outline" href="assets/pdf/Resume-English.pdf" target="_blank"><i
-                    class="icon icon--download-file"></i> Download CV </a>
+      <div class="hero__content">
+        <div class="container">
+          <div class="hero__wrapper">
+            <h1 class="hero__title title">Skilled Web Developer +<br> UI Designer</h1>
+            <h2 class="hero__subtitle subtitle">Hi! I'm Safa Souli</h2>
+            <p class="hero__text">
+              Let's create high-performance websites with stunning, user-friendly interfaces. Partner with a developer
+              who blends
+              creativity and technical expertise for top-tier results
+            </p>
+            <cta class="hero__cta">
+              <a class="cta__btn--outline animate-page" href="portfolio.htm"><i class="icon icon--eye"></i> View
+                Portfolio
+              </a>
+              <a class="cta__btn--outline" href="assets/pdf/Resume-English.pdf" target="_blank"><i
+                  class="icon icon--download-file"></i> Download CV </a>
 
-              </cta>
+            </cta>
+          </div>
+        </div>
+      </div>
+
+      <counter class="counter bg-blur">
+        <div class="container">
+          <div class="counter__wrapper">
+            <div class="counter__item">
+              <h2 class="counter__number title" data-target="05">05+</h2>
+              <p class="counter__text">Years of Experience</p>
+            </div>
+
+            <div class="counter__item">
+              <h2 class="counter__number title" data-target="50">50+</h2>
+              <p class="counter__text">Project completed</p>
+            </div>
+
+            <div class="counter__item">
+              <h2 class="counter__number title aboutme">About me</h2>
+              <p class="counter__text">As a UI designer and web developer, I create intuitive, visually engaging
+                interfaces.
+                Combining design and front-end
+                expertise, I craft seamless digital experiences.</p>
             </div>
           </div>
         </div>
-      </div>
+      </counter>
     </hero>
 
-    <counter class="counter">
-      <div class="container">
-        <div class="counter__wrapper">
-          <div class="counter__item">
-            <h2 class="counter__number title" data-target="05">05+</h2>
-            <p class="counter__text">Years of Experience</p>
-          </div>
 
-          <div class="counter__item">
-            <h2 class="counter__number title" data-target="50">50+</h2>
-            <p class="counter__text">Project completed</p>
-          </div>
-
-          <div class="counter__item">
-            <h2 class="counter__number title aboutme">About me</h2>
-            <p class="counter__text">As a UI designer and web developer, I create intuitive, visually engaging
-              interfaces.
-              Combining design and front-end
-              expertise, I craft seamless digital experiences.</p>
-          </div>
-        </div>
-      </div>
-    </counter>
-
-    <service class="service ds-outer-px">
+    <service class="service">
       <div class="container">
         <div class="service__header ds-header">
           <h2 class="service__title title fade-up">My quality of Service</h2>
           <h3 class="service__subtitle subtitle fade-up">What can I do?</h2>
         </div>
         <div class="service__body ds-grid">
-          <div class="service__item fade-up--item">
-            <div class="service__icon">
-              <i class="icon icon--computer-brush"></i>
-            </div>
+          <div class="tilt-wrapper">
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <div class="service__item bg-blur tilt-card">
+              <div class="service__icon">
+                <i class="icon icon--computer-brush"></i>
+              </div>
 
-            <div class="service__content">
-              <h4 class="service__item-title">Web Design</h4>
-              <p class="service__text">I design visually engaging, user-centered interfaces with a focus on aesthetics,
-                usability, typography, and layout for a
-                seamless user experience</p>
+              <div class="service__content">
+                <h4 class="service__item-title">Web Design</h4>
+                <p class="service__text">I design visually engaging, user-centered interfaces with a focus on
+                  aesthetics,
+                  usability, typography, and layout for a
+                  seamless user experience</p>
+              </div>
             </div>
           </div>
-          <div class="service__item fade-up--item">
-            <div class="service__icon">
-              <i class="icon icon--webpage-layout"></i>
-            </div>
+          <div class="tilt-wrapper">
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <div class="service__item tilt-card bg-blur">
+              <div class="service__icon">
+                <i class="icon icon--webpage-layout"></i>
+              </div>
 
-            <div class="service__content">
-              <h4 class="service__item-title">Frontend Developpement</h4>
-              <p class="service__text">Skilled in HTML, SCSS, CSS, JavaScript, and jQuery, I create responsive,
-                interactive websites that deliver seamless user
-                experiences</p>
+
+              <div class="service__content">
+                <h4 class="service__item-title">Frontend Developpement</h4>
+                <p class="service__text">Skilled in HTML, SCSS, CSS, JavaScript, and jQuery, I create responsive,
+                  interactive websites that deliver seamless user
+                  experiences</p>
+              </div>
             </div>
           </div>
-          <div class="service__item fade-up--item">
-            <div class="service__icon">
-              <i class="icon icon--computer-code"></i>
-            </div>
+          <div class="tilt-wrapper">
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <span class="tilt-zone"></span>
+            <div class="service__item tilt-card bg-blur">
+              <div class="service__icon">
+                <i class="icon icon--computer-code"></i>
+              </div>
 
-            <div class="service__content">
-              <h4 class="service__item-title">Backend Developpement</h4>
-              <p class="service__text">Highlight your ability to handle both design and technical development, ensuring
-                functionality and aesthetic harmony.</p>
+              <div class="service__content">
+                <h4 class="service__item-title">Backend Developpement</h4>
+                <p class="service__text">Highlight your ability to handle both design and technical development,
+                  ensuring
+                  functionality and aesthetic harmony.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </service>
 
-    <portfolio class="portfolio ds-outer-px">
+    <portfolio class="portfolio bg-img__wrapper">
+      <figure class="bg-img  bg-img--left">
+        <img class="bg-img__img" src="assets/img/abstract-left.svg" alt="abstract-left">
+      </figure>
       <div class="container">
         <div class="portfolio__header ds-header">
-          <h2 class="portfolio__title title fade-up">My recent Work</h2>
-          <h3 class="portfolio__subtitle subtitle fade-up">What am I capable of?</h2>
+          <h2 class="portfolio__title title">My recent Work</h2>
+          <h3 class="portfolio__subtitle subtitle">What am I capable of?</h2>
         </div>
 
         <div class="portfolio__body">
-
-          <div class="portfolio__filter fade-up">
+          <div class="portfolio__filter bg-blur">
             <button class="portfolio__filter-btn active" data-filter="*">All Projects</button>
             <button class="portfolio__filter-btn" data-filter=".Web-Design">Web Design</button>
             <button class="portfolio__filter-btn" data-filter=".UI-UX">UX/UI Design</button>
@@ -418,84 +231,157 @@
             <div class="highlight"></div>
           </div>
 
-          <div class="portfolio__grid ds-grid" id="behance-projects"></div>
+          <div class="portfolio__grid ds-grid" id="behance-projects">
+          </div>
         </div>
       </div>
     </portfolio>
 
-    <callout class="callout ds-inner-px">
-      <div class="u-container">
-        <div class="callout__wrapper">
-          <h2 class="callout__title title fade-up">Wanna work togetter?</h2>
-          <p class="callout__text fade-up">I am a UI designer and web developer, skilled in creating intuitive, visually
-            engaging
-            interfaces and seamless digital
-            experiences. With expertise in front-end development and intermediate English, I deliver user-centered
-            solutions. Let's
-            collaborate to bring your ideas to life!</p>
-          <div class="callout__cta fade-up">
-            <a class="cta__btn animate-page" href="contact.htm"><i class="icon icon--message"></i>Get in
-              touch</a>
+    <callout class="callout">
+      <div class="container">
+        <div class="callout__content bg-blur">
+          <div class="u-container">
+            <div class="callout__wrapper">
+              <h2 class="callout__title title fade-up">Wanna work togetter?</h2>
+              <p class="callout__text fade-up">I am a UI designer and web developer, skilled in creating intuitive,
+                visually
+                engaging
+                interfaces and seamless digital
+                experiences. With expertise in front-end development and intermediate English, I deliver user-centered
+                solutions. Let's
+                collaborate to bring your ideas to life!</p>
+              <div class="callout__cta fade-up">
+                <a class="cta__btn animate-page" href="contact.htm"><i class="icon icon--message"></i>Get in
+                  touch</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-
     </callout>
 
-    <profile class="profile ds-outer-px">
+    <profile class="profile">
       <div class="container">
         <div class="profile__wrapper">
           <div class="profile__content profile--experience">
             <div class="profile__header">
               <h2 class="profile__title title fade-left"><i class="icon icon--briefcase"></i> Experience</h2>
             </div>
-            <ul class="profile__list">
-              <li class="profile__item fade-left--item">
-                <h3 class="profile__item-title">Front-end developer</h3>
-                <h4 class="profile__item-date">2021 - Present</h4>
-                <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
-              </li>
-              <li class="profile__item fade-left--item">
-                <h3 class="profile__item-title">Web designer (UX/UI designer)</h3>
-                <h4 class="profile__item-date">2021 - Present</h4>
-                <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
-              </li>
-              <li class="profile__item fade-left--item">
-                <h3 class="profile__item-title">Symfony developer / Back-end developer</h3>
-                <h4 class="profile__item-date">2021 - Present</h4>
-                <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
-              </li>
-            </ul>
+            <div class="profile__list">
+              <div class="tilt-wrapper">
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <div class="profile__item tilt-card bg-blur">
+                  <h3 class="profile__item-title">Front-end developer</h3>
+                  <h4 class="profile__item-date">2021 - Present</h4>
+                  <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+                </div>
+              </div>
+              <div class="tilt-wrapper">
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <div class="profile__item tilt-card bg-blur">
+                  <h3 class="profile__item-title">Web designer (UX/UI designer)</h3>
+                  <h4 class="profile__item-date">2021 - Present</h4>
+                  <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+                </div>
+              </div>
+              <div class="tilt-wrapper">
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <div class="profile__item tilt-card bg-blur">
+                  <h3 class="profile__item-title">Symfony developer / Back-end developer</h3>
+                  <h4 class="profile__item-date">2021 - Present</h4>
+                  <p class="profile__item-text">TF Téléconception - Jendouba, Tunisia</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="profile__content profile--education">
             <div class="profile__header">
               <h2 class="profile__title title fade-left"><i class="icon icon--graduation-cap"></i> Education</h2>
             </div>
-            <ul class="profile__list">
-              <li class="profile__item fade-left--item">
-                <h3 class="profile__item-title">Master’s degree in E-COMMERCE</h3>
-                <h4 class="profile__item-date">2018 - 2020</h4>
-                <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
-              </li>
-              <li class="profile__item fade-left--item">
-                <h3 class="profile__item-title">Bachelor’s Degree in Applied Computer Science for Management</h3>
-                <h4 class="profile__item-date">2015 - 2018</h4>
-                <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
-              </li>
-              <li class="profile__item fade-left--item">
-                <h3 class="profile__item-title">High School Diploma in Computer Science</h3>
-                <h4 class="profile__item-date">2014 - 2015</h4>
-                <p class="profile__item-text">Liberty High School - Jendouba, Tunisia </p>
-              </li>
-            </ul>
+            <div class="profile__list">
+              <div class="tilt-wrapper">
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <div class="profile__item tilt-card bg-blur">
+                  <h3 class="profile__item-title">Master’s degree in E-COMMERCE</h3>
+                  <h4 class="profile__item-date">2018 - 2020</h4>
+                  <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
+                </div>
+              </div>
+              <div class="tilt-wrapper">
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <div class="profile__item tilt-card bg-blur">
+                  <h3 class="profile__item-title">Bachelor’s Degree in Applied Computer Science for Management</h3>
+                  <h4 class="profile__item-date">2015 - 2018</h4>
+                  <p class="profile__item-text">FSJEGJ - Jendouba, Tunisia </p>
+                </div>
+              </div>
+              <div class="tilt-wrapper">
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <span class="tilt-zone"></span>
+                <div class="profile__item tilt-card bg-blur">
+                  <h3 class="profile__item-title">High School Diploma in Computer Science</h3>
+                  <h4 class="profile__item-date">2014 - 2015</h4>
+                  <p class="profile__item-text">Liberty High School - Jendouba, Tunisia </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </profile>
 
-    <skill class="skill ds-outer-px">
+    <skill class="skill">
+      <figure class="bg-img bg-img--right">
+        <img class="bg-img__img" src="assets/img/abstract-right.svg" alt="abstract-right">
+      </figure>
       <div class="container">
         <div class="skill__wrapper">
           <div class="skill__content">
@@ -503,121 +389,279 @@
               <h2 class="skill__title title fade-up">My skills</h2>
               <h3 class="skill__subtitle subtitle fade-up">What am I capable of?</h3>
             </div>
-            <ul class="skill__list">
-              <li class="skill__item fade-up--item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--html5"></i>
-                  <figcaption class="skill__caption">85%</figcaption>
-                </figure>
+            <div class="skill__list">
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--html5"></i>
+                    <figcaption class="skill__caption">85%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">HTML5</p>
-              </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--css3"></i>
-                  <figcaption class="skill__caption">90%</figcaption>
-                </figure>
+              </div>
+
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--css3"></i>
+                    <figcaption class="skill__caption">90%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">CSS3</p>
-              </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--sass"></i>
-                  <figcaption class="skill__caption">85%</figcaption>
-                </figure>
+              </div>
+
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--sass"></i>
+                    <figcaption class="skill__caption">85%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">SASS</p>
-              </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--javascript"></i>
-                  <figcaption class="skill__caption">70%</figcaption>
-                </figure>
+              </div>
+
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--javascript"></i>
+                    <figcaption class="skill__caption">70%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">JavaScript</p>
-              </li>
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--jquery"></i>
-                  <figcaption class="skill__caption">80%</figcaption>
-                </figure>
+              </div>
+
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--jquery"></i>
+                    <figcaption class="skill__caption">80%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">jQuery</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--bootstrap"></i>
-                  <figcaption class="skill__caption">87%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--bootstrap"></i>
+                    <figcaption class="skill__caption">87%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">Bootstrap</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--git"></i>
-                  <figcaption class="skill__caption">80%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--git"></i>
+                    <figcaption class="skill__caption">80%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">Git</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--github"></i>
-                  <figcaption class="skill__caption">85%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--github"></i>
+                    <figcaption class="skill__caption">85%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">GitHub</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--figma"></i>
-                  <figcaption class="skill__caption">88%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--figma"></i>
+                    <figcaption class="skill__caption">88%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">Figma</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--illustrator"></i>
-                  <figcaption class="skill__caption">60%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--illustrator"></i>
+                    <figcaption class="skill__caption">60%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">Illustrator</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--framer"></i>
-                  <figcaption class="skill__caption">50%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--framer"></i>
+                    <figcaption class="skill__caption">50%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">Framer</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--sql"></i>
-                  <figcaption class="skill__caption">65%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--sql"></i>
+                    <figcaption class="skill__caption">65%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">SQL</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--php"></i>
-                  <figcaption class="skill__caption">70%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--php"></i>
+                    <figcaption class="skill__caption">70%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">PHP</p>
-              </li>
+              </div>
 
-              <li class="skill__item fade-up--item">
-                <figure class="skill__figure">
-                  <i class="icon icon--symfony"></i>
-                  <figcaption class="skill__caption">65%</figcaption>
-                </figure>
+              <div class="skill__item">
+                <div class="tilt-wrapper">
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <span class="tilt-zone"></span>
+                  <figure class="skill__figure tilt-card bg-blur">
+                    <i class="icon icon--symfony"></i>
+                    <figcaption class="skill__caption">65%</figcaption>
+                  </figure>
+                </div>
                 <p class="skill__text">Symfony</p>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </skill>
 
-    <contact class="contact ds-outer-px">
+    <contact class="contact">
       <div class="container">
         <div class="contact__wrapper">
           <div class="contact__info">
@@ -625,7 +669,7 @@
               <h2 class="contact__title title fade-left--item">Let's get in touch</h2>
               <h3 class="contact__subtitle subtitle fade-left--item">Wanna work togetter?</h3>
             </div>
-            <ul class="contact__list">
+            <ul class="contact__list bg-blur">
               <li class="contact__item fade-left--item">
                 <a class="contact__link" href="tel:+212 52 110 104">
                   <span class="contact__icon"><i class="icon icon--phone"></i></span>
@@ -651,7 +695,7 @@
               </li>
             </ul>
           </div>
-          <form class="contact__form" id="contact-form">
+          <form class="contact__form bg-blur" id="contact-form">
             <div class="form__group">
               <label class="form__label" for="first-name">First Name</label>
               <div class="input__wrapper">
@@ -740,8 +784,7 @@
       </ul>
     </header>
 
-
-    <footer class="footer ds-inner-px">
+    <footer class="footer bg-blur">
       <div class="container">
         <div class="footer__wrapper">
           <nav class="nav">

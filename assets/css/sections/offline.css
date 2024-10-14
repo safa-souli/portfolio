@@ -1,12 +1,12 @@
 .offline {
   min-height: 100vh;
-  min-height: 100dvh;
   display: grid;
   place-content: center;
   text-align: center;
   position: relative;
   background-color: var(--ss-dark);
   z-index: 300000000000;
+  overflow: hidden;
 }
 
 .offline__content {

@@ -1,9 +1,9 @@
 .service {
   display: block;
+  overflow: hidden;
 }
 
 .service__item {
-  background-color: var(--ss-card-bg);
   border-radius: var(--ss-border-radius);
   padding: var(--ss-space-s-l);
 }
@@ -26,4 +26,8 @@
 .service__icon .icon {
   --icon-height: 28px;
   --icon-gradient: var(--ss-accent-gradient);
+}
+
+.service__body.ds-grid {
+  row-gap: 0;
 }
