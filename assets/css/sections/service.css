@@ -27,3 +27,7 @@
   --icon-height: 28px;
   --icon-gradient: var(--ss-accent-gradient);
 }
+
+.service__body.ds-grid {
+  row-gap: 0;
+}

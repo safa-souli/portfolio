@@ -32,7 +32,6 @@
 
 .profile__list {
   display: grid;
-  gap: var(--ss-grid-gutter);
   padding-left: 0;
 }
 

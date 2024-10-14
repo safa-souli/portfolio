@@ -46,6 +46,8 @@
 
 .page--about hr {
   opacity: 0.2;
+  border-width: 0;
+  border-bottom-width: 1px;
 }
 
 

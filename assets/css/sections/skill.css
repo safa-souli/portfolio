@@ -1,12 +1,16 @@
 .skill {
-  /* background-color: var(--ss-dark); */
-  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .skill__figure {
   padding: var(--ss-space-m-l);
   border-radius: var(--ss-border-radius);
   margin-bottom: var(--ss-space-xs);
+}
+
+.skill__figure.bg-blur::after {
+  backdrop-filter: blur(4px);
 }
 
 .skill__list {
@@ -32,6 +36,10 @@
   margin-top: var(--ss-space-s);
   font-weight: 600;
   line-height: 1;
+}
+
+.skill .bg-img {
+  top: calc(0px - var(--ss-space-3xs));
 }
 
 @media (width < 768px) {

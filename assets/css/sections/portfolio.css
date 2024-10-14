@@ -1,13 +1,13 @@
-.portfolio {
-  /* background-color: var(--ss-dark); */
-  overflow: hidden;
-}
-
 .portfolio__item {
   border-radius: var(--ss-border-radius);
   padding: var(--ss-space-s-m) var(--ss-space-s-m) 0 var(--ss-space-s-m);
   position: relative;
   overflow: hidden;
+}
+
+.portfolio__item:after {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .portfolio__content {
@@ -59,7 +59,8 @@
 }
 
 .portfolio__content-box::after {
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(4rem);
+  -webkit-backdrop-filter: blur(4rem);
   border-radius: 16px;
 }
 
@@ -170,7 +171,7 @@
   background-clip: text;
   color: transparent;
   border: none;
-  padding: var(--ss-space-xs) var(--ss-space-s);
+  padding: var(--ss-space-s);
   line-height: 1;
   font-weight: 600;
   font-family: var(--ss-body-font-family);
