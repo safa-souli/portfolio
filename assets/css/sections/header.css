@@ -30,8 +30,10 @@
   display: flex;
   gap: var(--ss-space-xl);
   list-style-type: none;
+  padding-left: 0;
 }
 
+.footer .nav__item .nav__link,
 .header .nav__item .nav__link {
   background-color: white;
   background-image: -webkit-linear-gradient(left, var(--ss-accent-color) 0%, var(--ss-accent-dark-color) 50%, transparent 50%);
@@ -42,12 +44,14 @@
   -webkit-background-clip: text;
 }
 
+.footer .nav__item:hover .nav__link:hover,
 .header .nav__item:hover .nav__link:hover {
   background-position: 0 0;
   color: transparent;
   transition: .4s 0;
 }
 
+.footer .nav__item.active .nav__link,
 .header .nav__item.active .nav__link {
   background-image: var(--ss-accent-gradient);
   padding-bottom: var(--ss-space-xs);
@@ -71,10 +75,11 @@
   line-height: 1;
   border-radius: var(--ss-border-radius);
   right: 30px;
-  bottom: 24vh;
 }
 
+
 .tawk-online #header-fixed {
+  top: unset;
   bottom: 90px;
 }
 
@@ -157,7 +162,7 @@
   transform: translateX(-8px) translateY(3px);
 }
 
-@media (width < 768px) {
+@media (width < 992px) {
   header .nav {
     display: none;
   }
@@ -222,5 +227,13 @@
 
   .footer {
     padding-bottom: 102px;
+  }
+}
+
+@media (width >=992px) {
+  #header-fixed {
+    bottom: 0;
+    top: 0;
+    margin-block: auto;
   }
 }

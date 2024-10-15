@@ -2,7 +2,7 @@ $(document).ready(function () {
   const $window = $(window);
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
-  const mode = "dev";
+  const mode = "prod";
   let $fixedHeader;
 
 
@@ -734,7 +734,7 @@ $(document).ready(function () {
 
   const removeLoader = () => {
     // Check if the user is online
-    if (navigator.onLine) {
+    if (navigator.onLine && mode === 'prod') {
       // console.log("Connected to the internet");
       // console.log($('script[src*="https://embed.tawk.to"]').length === 0);
       // Check if the script is already loaded by searching for its URL
