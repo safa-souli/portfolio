@@ -63,7 +63,7 @@ $(document).ready(function () {
 
       // Create the floating project items with random scale and z-index for depth
       let randomX = Math.random(); // Random horizontal position
-      let randomScale = .7 + Math.random() * .9; // Random scaling between 1 and 1.9
+      let randomScale = .7 + Math.random() * .7; // Random scaling between 1 and 1.9
       let randomZIndex = Math.floor(randomScale * 100); // Higher scale = higher z-index (closer to the viewer)
 
       const floatingElement = `

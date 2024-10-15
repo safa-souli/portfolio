@@ -319,11 +319,16 @@ cta {
 .bg-img {
   position: absolute;
   z-index: -1;
-  opacity: .25;
+  opacity: .15;
   width: 100%;
 }
 
-.bg-img--left::before {
+.bg-img--left {
+  opacity: 0.25;
+  top: -24%;
+}
+
+/* .bg-img--left::before {
   content: '';
   inset: 0;
   position: absolute;
@@ -362,7 +367,7 @@ cta {
   height: 53%;
   width: 40%;
   margin-top: auto;
-}
+} */
 
 .noise-wrapper {
   height: 100%;
@@ -428,4 +433,8 @@ cta {
   90% {
     transform: translate(-10%, 10%)
   }
+}
+
+.bg-img.bg-img--right {
+  top: -16%;
 }

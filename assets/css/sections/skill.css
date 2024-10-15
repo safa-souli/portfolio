@@ -38,10 +38,6 @@
   line-height: 1;
 }
 
-.skill .bg-img {
-  top: calc(0px - var(--ss-space-3xs));
-}
-
 @media (width < 768px) {
   .skill__list {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));

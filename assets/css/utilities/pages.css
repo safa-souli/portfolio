@@ -2,8 +2,16 @@
   backdrop-filter: blur(6px);
 }
 
-.header.bg-blur::after {
+.page--home .header.bg-blur::after {
   backdrop-filter: blur(20px);
+}
+
+.page--home .contact {
+  padding-bottom: var(--ss-space-5xl);
+}
+
+.page--home .footer {
+  margin-top: 0;
 }
 
 /* about page style */

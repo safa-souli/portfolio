@@ -11,7 +11,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url(../../img/abstract-11.svg);
+  background-image: url(../../img/waves-line-abstract/5.svg);
   background-size: 100%;
   opacity: 0.2;
 }
@@ -28,16 +28,15 @@
   z-index: 1;
 }
 
-.hero__wrapper::before {
+.hero::after {
   content: '';
   position: absolute;
-  bottom: 0%;
-  top: 0%;
-  inset-inline: 0;
+  inset: 0;
   z-index: -1;
-  background-image: radial-gradient(50% 50% at 50% 50%, #090909 44%, rgba(0, 0, 0, 0) 100%);
+  background-image: radial-gradient(50% 50% at 50% 50%, var(--ss-body-bg) 44%, rgba(0, 0, 0, 0) 100%);
   aspect-ratio: 1/1;
-  transform: translateY(-30%);
+  width: 65%;
+  margin: auto;
 }
 
 .hero__content .container {
