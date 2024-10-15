@@ -6,7 +6,7 @@
       "description": "A fitness project aimed at promoting healthy living.",
       "covers": {
         "202": "https://mir-s3-cdn-cf.behance.net/projects/202/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/202/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
         "808": "https://mir-s3-cdn-cf.behance.net/projects/808/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
         "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cff8d8209171653.66fb1e8d9bc4d.jpg"
       },
@@ -20,6 +20,27 @@
         "comments": 0
       },
       "appreciations": 2
+    },
+    {
+      "id": 2,
+      "name": "WanderNest",
+      "description": "A project providing personalized travel experiences.",
+      "covers": {
+        "202": "assets/img/WanderNest-202.jpg",
+        "404": "assets/img/WanderNest-404.jpg",
+        "808": "assets/img/WanderNest-808.jpg",
+        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/a5f1f0210298925.670ecc6b55f22.jpg"
+      },
+      "url": "https://www.behance.net/gallery/210298925/WanderNest",
+      "fields": [
+        "UI/UX",
+        "Web Design"
+      ],
+      "stats": {
+        "views": 2,
+        "comments": 2
+      },
+      "appreciations": 1
     },
     {
       "id": 999,

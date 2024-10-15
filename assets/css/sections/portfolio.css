@@ -241,3 +241,15 @@
     padding-inline: 0;
   }
 }
+
+.portfolio__image {
+  filter: brightness(0.9) contrast(1.1) saturate(0.9) grayscale(0.05) drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.7));
+}
+
+.portfolio__content-box::after {
+  background: #11432db5;
+}
+
+.portfolio__content-box {
+  border-radius: 16px;
+}
