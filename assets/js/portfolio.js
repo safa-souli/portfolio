@@ -3,11 +3,13 @@ $(document).ready(function () {
 
   $.getJSON(jsonProject, function (data) {
     let $projectsContainer = $('#behance-projects');
+    let $floatingContainer = $('#floating-projects'); // New container for floating projects
 
-    data.projects.forEach(function (project) {
+    data.projects.forEach(function (project, index) {
       const hasBehanceUrl = project.url;
       const hasStats = project.stats && (project.stats.views || project.appreciations || project.stats.comments);
 
+      // Regular portfolio items
       const projectElement = `
         <div class="portfolio__item bg-blur ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}">
           <a class="portfolio__link" href="${project.covers['original']}" data-fancybox="gallery" data-caption="${project.name}">
@@ -56,8 +58,34 @@ $(document).ready(function () {
         </div>
       `;
 
-      // Append the created HTML to the container
+      // Append the created HTML to the portfolio container
       $projectsContainer.append(projectElement);
+
+      // Create the floating project items with random scale and z-index for depth
+      let randomX = Math.random(); // Random horizontal position
+      let randomScale = .7 + Math.random() * .9; // Random scaling between 1 and 1.9
+      let randomZIndex = Math.floor(randomScale * 100); // Higher scale = higher z-index (closer to the viewer)
+
+      const floatingElement = `
+        <div class="floating-item" style="--x:${randomX}; z-index: ${randomZIndex};">
+          <div class="floating-item__content" style="--x:${randomX}; transform: scale(${randomScale});">
+            <figure class="floating-item__image">
+              <img src="${project.covers['404']}" alt="${project.name}">
+            </figure>
+
+            ${hasStats ? `
+              <div class="portfolio__stats">
+                ${project.stats.views ? `<span class="portfolio__stat-item"><i class="icon icon--eye"></i> ${project.stats.views}</span>` : ''}
+                ${project.appreciations ? `<span class="portfolio__stat-item"><i class="icon icon--like"></i> ${project.appreciations}</span>` : ''}
+                ${project.stats.comments ? `<span class="portfolio__stat-item"><i class="icon icon--comments"></i> ${project.stats.comments}</span>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+
+      // Append the floating project HTML to the floating container
+      $floatingContainer.append(floatingElement);
 
       $('#viewOnBehance').on('click', function (event) {
         if (!navigator.onLine) {

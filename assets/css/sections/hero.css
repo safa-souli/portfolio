@@ -3,6 +3,7 @@
   display: block;
   overflow: hidden;
   z-index: 1;
+  background-image: linear-gradient(to bottom, rgba(var(--ss-accent-color-rgb), 5%) 0%, transparent 25%, transparent 82%);
 }
 
 .hero::before {
@@ -10,7 +11,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: url(../../img/abstract.svg);
+  background-image: url(../../img/abstract-11.svg);
   background-size: 100%;
   opacity: 0.2;
 }
@@ -147,5 +148,56 @@
   .hero__text,
   .hero__cta {
     font-size: 17px;
+  }
+}
+
+.floating-projects {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.floating-item {
+  position: absolute;
+  width: 300px;
+  /* Adjust image size if necessary */
+  animation: flowDown 15s infinite linear;
+  /* Make sure the animation is linear for a smooth continuous flow */
+  top: 0;
+  /* Start from the top */
+  left: calc(100% * var(--x));
+  /* Random horizontal position */
+}
+
+.floating-item .portfolio__stats {
+  padding-inline: 2px;
+  font-size: var(--ss-step--1);
+  --icon-height: 12px;
+}
+
+.floating-item__content {
+  border-radius: 10px;
+  padding: var(--ss-space-s);
+  background: linear-gradient(to bottom, #43E29B14 0%, transparent 100%);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 4px 50px var(--ss-body-bg);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.floating-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@keyframes flowDown {
+  0% {
+    transform: translateY(-100%);
+    /* Start above the container */
+  }
+
+  100% {
+    transform: translateY(102vh);
+    /* Move all the way to the bottom of the screen */
   }
 }

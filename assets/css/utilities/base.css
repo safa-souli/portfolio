@@ -220,12 +220,12 @@ cta {
   transform: rotateX(0deg) rotateY(0deg);
   transfrom-style: preserve-3d;
   transition: transform 300ms ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .tilt-wrapper:hover .tilt-card {
   backdrop-filter: blur(1rem);
   background-color: #43E29B1C;
-  border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .tilt-zone {
@@ -362,4 +362,70 @@ cta {
   height: 53%;
   width: 40%;
   margin-top: auto;
+}
+
+.noise-wrapper {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.noise-wrapper .noise-overlay {
+  height: 300%;
+  left: -50%;
+  position: absolute;
+  top: -100%;
+  width: 300%;
+  background: url(../../img/noise.png);
+  background-position: center center;
+  animation: grain 8s steps(10) infinite;
+  opacity: .3;
+}
+
+
+@keyframes grain {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -10%)
+  }
+
+  20% {
+    transform: translate(-15%, 5%)
+  }
+
+  30% {
+    transform: translate(7%, -25%)
+  }
+
+  40% {
+    transform: translate(-5%, 25%)
+  }
+
+  50% {
+    transform: translate(-15%, 10%)
+  }
+
+  60% {
+    transform: translate(15%, 0%)
+  }
+
+  70% {
+    transform: translate(0%, 15%)
+  }
+
+  80% {
+    transform: translate(3%, 35%)
+  }
+
+  90% {
+    transform: translate(-10%, 10%)
+  }
 }

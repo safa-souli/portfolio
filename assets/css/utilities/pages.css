@@ -3,7 +3,7 @@
 }
 
 .header.bg-blur::after {
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(20px);
 }
 
 /* about page style */

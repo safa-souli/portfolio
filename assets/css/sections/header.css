@@ -71,10 +71,13 @@
   line-height: 1;
   border-radius: var(--ss-border-radius);
   right: 30px;
-  bottom: 24vh;
+  bottom: 0;
+  top: 0;
+  margin-block: auto;
 }
 
 .tawk-online #header-fixed {
+  top: unset;
   bottom: 90px;
 }
 
