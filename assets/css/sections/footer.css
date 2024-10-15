@@ -15,3 +15,9 @@
 .footer__text {
   color: var(--ss-accent-color);
 }
+
+@media (width < 992px) {
+  .footer {
+    padding-bottom: var(--ss-space-5xl);
+  }
+}

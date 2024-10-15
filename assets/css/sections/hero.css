@@ -13,6 +13,7 @@
   z-index: -1;
   background-image: url(../../img/waves-line-abstract/5.svg);
   background-size: 100%;
+  background-repeat: no-repeat;
   opacity: 0.2;
 }
 
@@ -113,19 +114,10 @@
   .hero::before {
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: bottom 70%;
     transform: scaleX(-1);
     opacity: 0.6;
     z-index: -2;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-size: 100%;
-    background-image: linear-gradient(to top, black 70%, #0000 78%);
   }
 
   .hero__content {
@@ -143,7 +135,6 @@
 }
 
 @media (width > 1400px) {
-
   .hero__text,
   .hero__cta {
     font-size: 17px;
@@ -151,52 +142,60 @@
 }
 
 .floating-projects {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+  display: none;
 }
 
-.floating-item {
-  position: absolute;
-  width: 300px;
-  /* Adjust image size if necessary */
-  animation: flowDown 15s infinite linear;
-  /* Make sure the animation is linear for a smooth continuous flow */
-  top: 0;
-  /* Start from the top */
-  left: calc(100% * var(--x));
-  /* Random horizontal position */
-}
+@media (width > 992px) {
 
-.floating-item .portfolio__stats {
-  padding-inline: 2px;
-  font-size: var(--ss-step--1);
-  --icon-height: 12px;
-}
-
-.floating-item__content {
-  border-radius: 10px;
-  padding: var(--ss-space-s);
-  background: linear-gradient(to bottom, #43E29B14 0%, transparent 100%);
-  -webkit-backdrop-filter: blur(4px);
-  box-shadow: 0 4px 50px var(--ss-body-bg);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.floating-item img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-@keyframes flowDown {
-  0% {
-    transform: translateY(-100%);
-    /* Start above the container */
+  .floating-projects {
+    position: absolute;
+    display: block;
+    inset: 0;
+    z-index: -1;
   }
 
-  100% {
-    transform: translateY(102vh);
-    /* Move all the way to the bottom of the screen */
+  .floating-item {
+    position: absolute;
+    width: 300px;
+    /* Adjust image size if necessary */
+    animation: flowDown 15s infinite linear;
+    /* Make sure the animation is linear for a smooth continuous flow */
+    top: 0;
+    /* Start from the top */
+    left: calc(100% * var(--x));
+    /* Random horizontal position */
+  }
+
+  .floating-item .portfolio__stats {
+    padding-inline: 2px;
+    font-size: var(--ss-step--1);
+    --icon-height: 12px;
+  }
+
+  .floating-item__content {
+    border-radius: 10px;
+    padding: var(--ss-space-s);
+    background: linear-gradient(to bottom, #43E29B14 0%, transparent 100%);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 4px 50px var(--ss-body-bg);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .floating-item img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  @keyframes flowDown {
+    0% {
+      transform: translateY(-100%);
+      /* Start above the container */
+    }
+
+    100% {
+      transform: translateY(102vh);
+      /* Move all the way to the bottom of the screen */
+    }
   }
 }
