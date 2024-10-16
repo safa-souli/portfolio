@@ -12,7 +12,6 @@
       },
       "url": "https://www.behance.net/gallery/209171653/Fitness",
       "fields": [
-        "UI/UX",
         "Web Design"
       ],
       "stats": {
@@ -20,6 +19,27 @@
         "comments": 0
       },
       "appreciations": 3
+    },
+    {
+      "id": 2,
+      "name": "Box Saint Quentin",
+      "description": "A project about packaging boxes.",
+      "covers": {
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/eb3b23210390051.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/eb3b23210390051.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/eb3b23210390051.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
+        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/1aebf1210390051.67103396bcddc.jpg"
+      },
+      "url": "https://www.behance.net/gallery/210390051/Box-Saint-Quentin",
+      "fields": [
+        "Logo Design"
+      ],
+      "stats": {
+        "views": 1,
+        "comments": 0
+      },
+      "appreciations": 0,
+      "label": "new"
     },
     {
       "id": 2,
@@ -33,7 +53,6 @@
       },
       "url": "https://www.behance.net/gallery/210298925/WanderNest",
       "fields": [
-        "UI/UX",
         "Web Design"
       ],
       "stats": {
@@ -41,28 +60,6 @@
         "comments": 2
       },
       "appreciations": 1
-    },
-    {
-      "id": 999,
-      "name": "Coming Soon",
-      "description": "Work in Progress",
-      "covers": {
-        "202": "assets/img/coming-soon-thumbnail-202.jpg",
-        "404": "assets/img/coming-soon-thumbnail-404.jpg",
-        "808": "assets/img/coming-soon-thumbnail-808.jpg",
-        "original": "assets/img/coming-soon.jpg"
-      },
-      "fields": [
-        "UI/UX",
-        "Web Design",
-        "Logo Design",
-        "Apps"
-      ],
-      "stats": {
-        "views": 0,
-        "comments": 0
-      },
-      "appreciations": 0
     }
   ]
 }

@@ -2,7 +2,7 @@ $(document).ready(function () {
   const $window = $(window);
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
-  const mode = "prod";
+  const mode = "dev";
   let $fixedHeader;
 
 
@@ -18,10 +18,6 @@ $(document).ready(function () {
     });
   } else {
     console.debug('Service Worker is not supported');
-  }
-
-  if (document.querySelector("[data-fancybox='gallery']")) {
-    Fancybox.bind("[data-fancybox='gallery']", {});
   }
 
   function pollIframeLoad(node) {
