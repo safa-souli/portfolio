@@ -46,9 +46,9 @@
       "name": "WanderNest",
       "description": "A project providing personalized travel experiences.",
       "covers": {
-        "202": "assets/img/WanderNest-202.jpg",
-        "404": "assets/img/WanderNest-404.jpg",
-        "808": "assets/img/WanderNest-808.jpg",
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
         "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/a5f1f0210298925.670ecc6b55f22.jpg"
       },
       "url": "https://www.behance.net/gallery/210298925/WanderNest",
