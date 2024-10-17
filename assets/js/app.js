@@ -5,19 +5,18 @@ $(document).ready(function () {
   const mode = "prod";
   let $fixedHeader;
 
-
-  if ('serviceWorker' in navigator && mode === 'prod') {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
-        .then((registration) => {
-          console.debug('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.debug('Service Worker registration failed:', error);
-        });
-    });
-  } else {
-    console.debug('Service Worker is not supported');
+  if (mode === 'prod') {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
+          .then((registration) => {
+            console.debug('Service Worker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.debug('Service Worker registration failed:', error);
+          });
+      });
+    }
   }
 
   function pollIframeLoad(node) {

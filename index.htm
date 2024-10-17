@@ -37,6 +37,16 @@
   <link rel="preload" href="assets/plugins/hint.css/hint.min.css" as="style" onload="this.rel='stylesheet'">
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-602M299MGV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-602M299MGV');
+  </script>
+
 </head>
 
 <body>
@@ -112,13 +122,18 @@
         <div class="container">
           <div class="counter__wrapper">
             <div class="counter__item">
+              <h2 class="counter__number title" data-target="50">50+</h2>
+              <p class="counter__text">Project completed</p>
+            </div>
+
+            <div class="counter__item">
               <h2 class="counter__number title" data-target="05">05+</h2>
               <p class="counter__text">Years of Experience</p>
             </div>
 
             <div class="counter__item">
-              <h2 class="counter__number title" data-target="50">50+</h2>
-              <p class="counter__text">Project completed</p>
+              <h2 id="visitorsCounter" class="counter__number title">00+</h2>
+              <p class="counter__text">Visitors So Far</p>
             </div>
 
             <div class="counter__item">
