@@ -2,20 +2,20 @@
   "projects": [
     {
       "id": 1,
-      "name": "Fitness",
+      "name": "GTS",
       "description": "A fitness project aimed at promoting healthy living.",
       "covers": {
-        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "404": "https://mir-s3-cdn-cf.behance.net/projects/202/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/8e9c60209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cff8d8209171653.66fb1e8d9bc4d.jpg"
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/6b8bcb209171653.67115c255fbc9.jpg"
       },
       "url": "https://www.behance.net/gallery/209171653/Fitness",
       "fields": [
         "Web Design"
       ],
       "stats": {
-        "views": 11,
+        "views": 13,
         "comments": 0
       },
       "appreciations": 3
@@ -25,17 +25,17 @@
       "name": "Box Saint Quentin",
       "description": "A project about packaging boxes.",
       "covers": {
-        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/eb3b23210390051.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
-        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/eb3b23210390051.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
-        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/eb3b23210390051.Y3JvcCwxMDA3LDc4OCwxOTcsMA.jpg",
-        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/1aebf1210390051.67103396bcddc.jpg"
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/a120cb210390051.Y3JvcCw1MDAwLDM5MTAsMCw0OQ.jpeg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/a120cb210390051.Y3JvcCw1MDAwLDM5MTAsMCw0OQ.jpeg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/a120cb210390051.Y3JvcCw1MDAwLDM5MTAsMCw0OQ.jpeg",
+        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/4b719e210390051.6710e2a98eb9e.jpg"
       },
       "url": "https://www.behance.net/gallery/210390051/Box-Saint-Quentin",
       "fields": [
         "Logo Design"
       ],
       "stats": {
-        "views": 1,
+        "views": 2,
         "comments": 0
       },
       "appreciations": 0,
@@ -46,9 +46,9 @@
       "name": "WanderNest",
       "description": "A project providing personalized travel experiences.",
       "covers": {
-        "202": "assets/img/WanderNest-202.jpg",
-        "404": "assets/img/WanderNest-404.jpg",
-        "808": "assets/img/WanderNest-808.jpg",
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
         "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/a5f1f0210298925.670ecc6b55f22.jpg"
       },
       "url": "https://www.behance.net/gallery/210298925/WanderNest",
