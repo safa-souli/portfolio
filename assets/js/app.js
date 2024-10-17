@@ -2,7 +2,7 @@ $(document).ready(function () {
   const $window = $(window);
   const $maskedCircle = $('.masked-circle');
   const $header = $('.header');
-  const mode = "dev";
+  const mode = "prod";
   let $fixedHeader;
 
   if (mode === 'prod') {
