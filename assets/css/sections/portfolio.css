@@ -253,3 +253,21 @@
 .portfolio__content-box {
   border-radius: 16px;
 }
+
+.portfolio__item[data-label="new"]::before {
+  content: attr(data-label);
+  position: absolute;
+  z-index: 1;
+  background: var(--ss-accent-dark-color);
+  padding: var(--ss-space-xs);
+  line-height: 1.2;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-content: center;
+  font-weight: bold;
+  border-radius: 0 0 16px;
+  box-shadow: 0 0 0 6px #2D93656E;
+  font-size: var(--ss-step--1);
+  color: #16221D;
+}

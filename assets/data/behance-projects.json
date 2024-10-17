@@ -1,27 +1,7 @@
 {
   "projects": [
     {
-      "id": 1,
-      "name": "GTS",
-      "description": "A fitness project aimed at promoting healthy living.",
-      "covers": {
-        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/6b8bcb209171653.67115c255fbc9.jpg"
-      },
-      "url": "https://www.behance.net/gallery/209171653/Fitness",
-      "fields": [
-        "Web Design"
-      ],
-      "stats": {
-        "views": 13,
-        "comments": 0
-      },
-      "appreciations": 3
-    },
-    {
-      "id": 2,
+      "id": 3,
       "name": "Box Saint Quentin",
       "description": "A project about packaging boxes.",
       "covers": {
@@ -39,7 +19,7 @@
         "comments": 0
       },
       "appreciations": 0,
-      "label": "new"
+      "published_at": "2024-10-16"
     },
     {
       "id": 2,
@@ -59,7 +39,29 @@
         "views": 2,
         "comments": 2
       },
-      "appreciations": 1
+      "appreciations": 1,
+      "published_at": "2024-10-15"
+    },
+    {
+      "id": 1,
+      "name": "GTS",
+      "description": "A fitness project aimed at promoting healthy living.",
+      "covers": {
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/6b8bcb209171653.67115c255fbc9.jpg"
+      },
+      "url": "https://www.behance.net/gallery/209171653/Fitness",
+      "fields": [
+        "Web Design"
+      ],
+      "stats": {
+        "views": 13,
+        "comments": 0
+      },
+      "appreciations": 3,
+      "published_at": "2024-9-30"
     }
   ]
 }
