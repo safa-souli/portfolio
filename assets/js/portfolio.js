@@ -1,6 +1,19 @@
 $(document).ready(function () {
   const jsonProject = `assets/data/behance-projects.json`;
 
+  // Function to check if a project is "new" based on published date
+  function isNewProject(publishedDate) {
+    const currentDate = new Date();  // Get current date
+    const publishedAt = new Date(publishedDate);  // Convert published_at to Date object
+
+    const diffTime = Math.abs(currentDate - publishedAt);  // Calculate time difference in milliseconds
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));  // Convert time difference to days
+
+    // If the project was published within the last 30 days, return true
+    return diffDays <= 30;
+  }
+
+
   $.getJSON(jsonProject, function (data) {
     let $projectsContainer = $('#behance-projects');
     let $floatingContainer = $('#floating-projects'); // New container for floating projects
@@ -8,10 +21,16 @@ $(document).ready(function () {
     data.projects.forEach(function (project, index) {
       const hasBehanceUrl = project.url;
       const hasStats = project.stats && (project.stats.views || project.appreciations || project.stats.comments);
+      // Determine if the project is new
+      if (isNewProject(project.published_at)) {
+        project.label = "new";  // Set the label to "new" if the project is new
+      } else {
+        project.label = "none";  // Set the label to "normal" if it's not new
+      }
 
       // Regular portfolio items
       const projectElement = `
-        <div class="portfolio__item bg-blur ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}" data-label="${project.label}">
+        <div class="portfolio__item bg-blur ${project.fields.map(field => field.replace(/\s+/g, '-').replace(/[^\w-]/g, '-')).join(' ')}" data-label="${project.label}" data-label="${project.label}">
           <a class="portfolio__link" href="${project.covers['original']}" data-fancybox="gallery" data-caption="${project.name}">
             <picture class="portfolio__picture portfolio__picture--${project.theme}" style="aspect-ratio: 404/316">
               <source srcset="" type="image/webp">
