@@ -63,7 +63,7 @@
     grid-template-columns: auto auto auto 50%;
   }
 
-  .counter__item:nth-child(3) {
+  .counter__item:nth-child(4) {
     grid-row: unset;
   }
 }

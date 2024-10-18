@@ -23,7 +23,7 @@
 
 @media (width > 768px) {
   .page--about .counter__wrapper {
-    grid-template-columns: 1fr 1fr 3.5fr;
+    grid-template-columns: 1fr 1fr 1fr 3.5fr;
   }
 }
 
