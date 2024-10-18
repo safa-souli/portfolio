@@ -6,6 +6,51 @@ $(document).ready(function () {
   let $fixedHeader;
 
   if (mode === 'prod') {
+
+    // Fetch data from Google Sheets
+    async function fetchSheetData() {
+      const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSMVFJ5MZVWiMOBNPh7G7Hf40FH0soehDXF-HZHh-L4BsRrFL6_ioJKYqa1u1RyC5WRQOXYuw1Dvew2/pub?gid=289317344&single=true&output=csv';
+
+      try {
+        const response = await fetch(url);
+        const data = await response.text();
+        const rows = data.split('\n').map(row => row.split(','));
+
+        const screenPageViews = rows[11][1]; // Row 12, Column B (0-indexed: row[11], col[1])
+        return parseInt(screenPageViews, 10);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        return false;
+      }
+    }
+
+    // Format the number as per the requirements
+    function formatNumber(num) {
+      if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+      } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'k';
+      } else {
+        return (num - 1) + '+';
+      }
+    }
+
+    // Update the visitor counter on the page
+    async function updateVisitorCounter() {
+      const screenPageViews = await fetchSheetData();
+
+      if (screenPageViews !== false) {
+        const formattedValue = formatNumber(screenPageViews);
+        $('#visitorsCounter').text(formattedValue);
+        $('#visitorsCounter').closest('.counter__item').css('opacity', '1');
+      } else {
+        $('#visitorsCounter').css('display', 'none');
+      }
+    }
+
+    updateVisitorCounter();
+
+    // Register the service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('https://safa-souli.github.io/portfolio/sw.js', { scope: '/portfolio/' })
@@ -20,20 +65,20 @@ $(document).ready(function () {
   }
 
   function pollIframeLoad(node) {
-    var pollInterval = setInterval(function () {
+    const pollInterval = setInterval(() => {
       if (node.contentWindow && node.contentDocument.readyState === 'complete') {
-        clearInterval(pollInterval); // Stop polling once the iframe is loaded
+        clearInterval(pollInterval);
         injectStylesInIframe(node);
       }
-    }, 100); // Poll every 100ms
+    }, 100);
   }
 
   // Function to handle iframe load or start polling
   function handleIframe(node) {
     if (node.contentWindow && node.contentDocument.readyState === 'complete') {
-      injectStylesInIframe(node); // If iframe is already loaded
+      injectStylesInIframe(node);
     } else {
-      pollIframeLoad(node); // Start polling as a fallback
+      pollIframeLoad(node);
     }
   }
 
@@ -49,12 +94,13 @@ $(document).ready(function () {
 
       var customStyles = `
         :root {
-          --ss-body-bg: #0d0d0d;
-          --ss-body-color: #fff;
+          --ss-body-bg: #0F0F0F;
+          --ss-body-color: #E0E0E0;
+          --ss-body-color: #ccc;
           --ss-body-font-family: 'Sora', system-ui;
           --ss-body-font-weight: 400;
           --ss-body-line-height: 2;
-          --ss-heading-color: #f1f1f1;
+          --ss-heading-color: #ebebeb;
           --ss-heading-font-family: 'Sora', system-ui;
           --ss-heading-font-weight: 700;
           --ss-heading-line-height: 1.1;
@@ -65,7 +111,7 @@ $(document).ready(function () {
           --ss-success: #458746;
           --ss-dark-rgb: 0, 0, 0;
 
-          /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
+          /* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1240,16,1.32,10,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
 
           --ss-step--2: clamp(0.5739rem, 0.6194rem + -0.0586vw, 0.6076rem);
           --ss-step--1: clamp(0.7292rem, 0.7193rem + 0.0494vw, 0.7576rem);
@@ -75,7 +121,11 @@ $(document).ready(function () {
           --ss-step-3: clamp(1.512rem, 1.2379rem + 1.3704vw, 2.3rem);
           --ss-step-4: clamp(1.8144rem, 1.3895rem + 2.1244vw, 3.036rem);
           --ss-step-5: clamp(2.1773rem, 1.5407rem + 3.1829vw, 4.0075rem);
-
+          --ss-step-6: clamp(2.6127rem, 1.6816rem + 4.6559vw, 5.2899rem);
+          --ss-step-7: clamp(3.1353rem, 1.7971rem + 6.691vw, 6.9826rem);
+          --ss-step-8: clamp(3.7623rem, 1.8651rem + 9.4864vw, 9.217rem);
+          --ss-step-9: clamp(4.5148rem, 1.8534rem + 13.3073vw, 12.1665rem);
+          --ss-step-10: clamp(5.4178rem, 1.7162rem + 18.5078vw, 16.0598rem);
 
           /* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1240,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=s,l,xl,12 */
 
@@ -117,13 +167,13 @@ $(document).ready(function () {
           /* @link https://utopia.fyi/grid/calculator?c=320,14,1.2,1600,16,1.32,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|7|8|9|10|11|12,s-l&g=m,m,3xl,11 */
 
           --ss-grid-max-width: 84.00rem;
-          --ss-grid-ultimate-width: 53.00rem;
+          --ss-grid-ultimate-width: 54.00rem;
           --ss-grid-gutter: var(--space-m-m, clamp(1.3125rem, 1.2539rem + 0.293vw, 1.5rem));
           --ss-grid-columns: 11;
 
           /* colors */
           --ss-accent-color: #43E29B;
-          --ss-accent-color-rgb: 67,226,155;
+          --ss-accent-color-rgb: 67, 226, 155;
           --ss-accent-color-hue: 153;
           --ss-accent-color-saturation: 73.3%;
           --ss-accent-color-lightness: 57.5%;
@@ -137,7 +187,7 @@ $(document).ready(function () {
           /* buttons */
           --ss-btn-font-weight: 600;
 
-        }        
+        }
 
         body.font-lato {
           color: var(--ss-body-color);
