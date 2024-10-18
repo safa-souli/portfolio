@@ -613,6 +613,17 @@ $(document).ready(function () {
           background: var(--ss-card-bg);
         }
 
+        .tawk-chatinput .tawk-chatinput-editor {
+          color: #fff;
+        }
+
+        .tawk-chatinput-wrap.tawk-flex.tawk-flex-wrap * {
+          line-height: 1;
+        }
+          
+        .tawk-text-regular-3 {
+          color: var(--ss-body-bg);
+        }
       `;
 
       var fontFamily = `@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');`;
