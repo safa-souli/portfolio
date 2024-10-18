@@ -3,7 +3,7 @@
     {
       "id": 3,
       "name": "Box Saint Quentin",
-      "description": "A project about packaging boxes.",
+      "description": "Business Card & Brand Identity",
       "covers": {
         "202": "https://mir-s3-cdn-cf.behance.net/projects/202/a120cb210390051.Y3JvcCw1MDAwLDM5MTAsMCw0OQ.jpeg",
         "404": "https://mir-s3-cdn-cf.behance.net/projects/404/a120cb210390051.Y3JvcCw1MDAwLDM5MTAsMCw0OQ.jpeg",
@@ -15,7 +15,7 @@
         "Logo Design"
       ],
       "stats": {
-        "views": 2,
+        "views": 3,
         "comments": 0
       },
       "appreciations": 0,
@@ -24,11 +24,11 @@
     {
       "id": 2,
       "name": "WanderNest",
-      "description": "A project providing personalized travel experiences.",
+      "description": "Adventure Trip Landing Page Design",
       "covers": {
-        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
-        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
-        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/d5e361210298925.Y3JvcCwxNDQwLDExMjYsMCww.jpg",
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/8a5d41210298925.Y3JvcCw5MTEsNzEyLDE5Niw0.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/8a5d41210298925.Y3JvcCw5MTEsNzEyLDE5Niw0.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/8a5d41210298925.Y3JvcCw5MTEsNzEyLDE5Niw0.jpg",
         "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/a5f1f0210298925.670ecc6b55f22.jpg"
       },
       "url": "https://www.behance.net/gallery/210298925/WanderNest",
@@ -36,7 +36,7 @@
         "Web Design"
       ],
       "stats": {
-        "views": 2,
+        "views": 3,
         "comments": 2
       },
       "appreciations": 1,
@@ -44,12 +44,12 @@
     },
     {
       "id": 1,
-      "name": "GTS",
-      "description": "A fitness project aimed at promoting healthy living.",
+      "name": "GTS Fitness",
+      "description": "Web Design for a Gym & Wellness Center",
       "covers": {
-        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
-        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/a6be43209171653.Y3JvcCwxOTIwLDE1MDEsMCww.jpg",
+        "202": "https://mir-s3-cdn-cf.behance.net/projects/202/adaf80209171653.Y3JvcCwxNDAwLDEwOTUsMCww.jpg",
+        "404": "https://mir-s3-cdn-cf.behance.net/projects/404/adaf80209171653.Y3JvcCwxNDAwLDEwOTUsMCww.jpg",
+        "808": "https://mir-s3-cdn-cf.behance.net/projects/808/adaf80209171653.Y3JvcCwxNDAwLDEwOTUsMCww.jpg",
         "original": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/6b8bcb209171653.67115c255fbc9.jpg"
       },
       "url": "https://www.behance.net/gallery/209171653/Fitness",
@@ -57,7 +57,7 @@
         "Web Design"
       ],
       "stats": {
-        "views": 14,
+        "views": 15,
         "comments": 0
       },
       "appreciations": 3,
