@@ -19,7 +19,8 @@
         "comments": 0
       },
       "appreciations": 0,
-      "published_at": "2024-10-16"
+      "published_at": "2024-10-16",
+      "promoted": true
     },
     {
       "id": 2,
@@ -40,7 +41,8 @@
         "comments": 2
       },
       "appreciations": 1,
-      "published_at": "2024-10-15"
+      "published_at": "2024-10-15", 
+      "promoted": true
     },
     {
       "id": 1,
@@ -61,7 +63,8 @@
         "comments": 0
       },
       "appreciations": 3,
-      "published_at": "2024-9-30"
+      "published_at": "2024-9-30",
+      "promoted": true
     }
   ]
 }

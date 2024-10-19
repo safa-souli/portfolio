@@ -3,13 +3,10 @@ $(document).ready(function () {
 
   // Function to check if a project is "new" based on published date
   function isNewProject(publishedDate) {
-    const currentDate = new Date();  // Get current date
-    const publishedAt = new Date(publishedDate);  // Convert published_at to Date object
-
-    const diffTime = Math.abs(currentDate - publishedAt);  // Calculate time difference in milliseconds
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));  // Convert time difference to days
-
-    // If the project was published within the last 30 days, return true
+    const currentDate = new Date();
+    const publishedAt = new Date(publishedDate);
+    const diffTime = Math.abs(currentDate - publishedAt);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays <= 30;
   }
 
@@ -23,9 +20,9 @@ $(document).ready(function () {
       const hasStats = project.stats && (project.stats.views || project.appreciations || project.stats.comments);
       // Determine if the project is new
       if (isNewProject(project.published_at)) {
-        project.label = "new";  // Set the label to "new" if the project is new
+        project.label = "new";
       } else {
-        project.label = "none";  // Set the label to "normal" if it's not new
+        project.label = "none";
       }
 
       // Regular portfolio items
@@ -80,31 +77,27 @@ $(document).ready(function () {
       // Append the created HTML to the portfolio container
       $projectsContainer.append(projectElement);
 
-      // Create the floating project items with random scale and z-index for depth
-      let randomX = Math.random(); // Random horizontal position
-      let randomScale = .7 + Math.random() * .7; // Random scaling between 1 and 1.9
-      let randomZIndex = Math.floor(randomScale * 100); // Higher scale = higher z-index (closer to the viewer)
-
-      const floatingElement = `
-        <div class="floating-item" style="--x:${randomX}; z-index: ${randomZIndex};">
-          <div class="floating-item__content" style="--x:${randomX}; transform: scale(${randomScale});">
-            <figure class="floating-item__image">
-              <img src="${project.covers['404']}" alt="${project.name}">
-            </figure>
-
-            ${hasStats ? `
-              <div class="portfolio__stats">
-                ${project.stats.views ? `<span class="portfolio__stat-item"><i class="icon icon--eye"></i> ${project.stats.views}</span>` : ''}
-                ${project.appreciations ? `<span class="portfolio__stat-item"><i class="icon icon--like"></i> ${project.appreciations}</span>` : ''}
-                ${project.stats.comments ? `<span class="portfolio__stat-item"><i class="icon icon--comments"></i> ${project.stats.comments}</span>` : ''}
-              </div>
-            ` : ''}
+      if (project.promoted) {
+        const floatingElement = `
+          <div class="floating-item">
+            <div class="floating-item__content">
+              <figure class="floating-item__image">
+                <img src="${project.covers['404']}" alt="${project.name}">
+              </figure>
+              ${hasStats ? `
+                <div class="portfolio__stats">
+                  ${project.stats.views ? `<span class="portfolio__stat-item"><i class="icon icon--eye"></i> ${project.stats.views}</span>` : ''}
+                  ${project.appreciations ? `<span class="portfolio__stat-item"><i class="icon icon--like"></i> ${project.appreciations}</span>` : ''}
+                  ${project.stats.comments ? `<span class="portfolio__stat-item"><i class="icon icon--comments"></i> ${project.stats.comments}</span>` : ''}
+                </div>
+              ` : ''}
+            </div>
           </div>
-        </div>
-      `;
+        `;
 
-      // Append the floating project HTML to the floating container
-      $floatingContainer.append(floatingElement);
+        // Append the floating project HTML to the floating container
+        $floatingContainer.append(floatingElement);
+      }
 
       $('#viewOnBehance').on('click', function (event) {
         if (!navigator.onLine) {
