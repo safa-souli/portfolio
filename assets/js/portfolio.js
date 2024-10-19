@@ -1,10 +1,10 @@
-function applyAnimation(y, element, increment, maxViewportWidth) {
+function applyAnimation(y, element, increment, startY, endY) {
   function animate() {
     // Increment Y and check the bounds
     y += increment;
-    if (y >= maxViewportWidth) {
-      // Directly set the Y position to -74 without animation
-      y = -maxViewportWidth;
+    if (y >= endY) {
+      // Directly set the Y position to the ennd without animation
+      y = startY;
 
       // Update the element's transform immediately to the new position
       element.css({
@@ -141,7 +141,7 @@ function floatingProjectsAnimate() {
       });
 
       // Apply animation only to the Y value
-      applyAnimation(floatingProjectsTransform[nthOfType].TranslateY, $(this), Math.random() * (0.1358 - 0.1000) + 0.1000, 60);
+      applyAnimation(floatingProjectsTransform[nthOfType].TranslateY, $(this), Math.random() * (0.1358 - 0.1000) + 0.1000, -20, 69);
     }
   });
 }
