@@ -149,28 +149,32 @@
 } */
 
 @media (min-width: 992px) {
-
   .floating-projects {
+    pointer-events: none;
     position: absolute;
-    /* Ensure correct context within a relatively or absolutely positioned parent */
-    inset: 0;
-    /* Fill the container */
-    z-index: -1;
-    /* Set behind other content as needed, adjust if interaction is required */
-    overflow: hidden;
-    /* Prevent floating items from overflowing */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    perspective: var(--ss-grid-max-width);
+    transform-style: preserve-3d;
   }
 
   .floating-item {
     position: absolute;
     width: 300px;
     top: 0;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
   }
 
   .floating-item .portfolio__stats {
     padding-inline: 2px;
-    font-size: var(--ss-step--1);
-    --icon-height: 12px;
+    --icon-height: 17px;
+    --icon-color: #a5a5a5;
+    margin-top: 6px;
   }
 
   .floating-item__content {
@@ -199,52 +203,66 @@
     width: 100%;
     border-radius: 8px;
   }
-}
 
-.floating-projects .floating-item:nth-of-type(1) {
-  transform: translate(10vw, 10vw) scale(0.85);
-}
 
-.floating-projects .floating-item:nth-of-type(2) {
-  transform: translate(30vw, -5vw) scale(1.1);
-}
+  .floating-projects .floating-item:nth-of-type(6) {
+    --darkness: 0.8;
+    transform: translate3d(35.5vw, -0.65103vw, -25vw) scale(0.85);
+  }
 
-.floating-projects .floating-item:nth-of-type(3) {
-  transform: translate(70vw, 32vw) scale(1.05)
-}
+  .floating-projects .floating-item:nth-of-type(9) {
+    --darkness: 0.2;
+    transform: translate3d(45.5vw, -20.6385vw, -5vw) scale(1.1);
+  }
 
-.floating-projects .floating-item:nth-of-type(4) {
-  transform: translate(50vw, -20vw) scale(0.9);
-}
+  .floating-projects .floating-item:nth-of-type(5) {
+    --darkness: 0.1;
+    transform: translate3d(-2.5vw, -25.626vw, -18vw) scale(0.86);
+  }
 
-.floating-projects .floating-item:nth-of-type(5) {
-  transform: translate(-40vw, 0vw) scale(1.2);
-}
+  .floating-projects .floating-item:nth-of-type(4) {
+    --darkness: 0.6;
+    transform: translate3d(87.5vw, -31.6135vw, -20vw) scale(0.9);
+  }
 
-.floating-projects .floating-item:nth-of-type(6) {
-  transform: translate(20vw, 30vw) scale(0.95);
-}
+  .floating-projects .floating-item:nth-of-type(3) {
+    --darkness: 0.4;
+    transform: translate3d(75.5vw, -1.60105vw, -2vw) scale(0.8);
+  }
 
-.floating-projects .floating-item:nth-of-type(7) {
-  transform: translate(60vw, 20vw) scale(1.15);
-}
+  .floating-projects .floating-item:nth-of-type(1) {
+    --darkness: 0.5;
+    transform: translate3d(3.75vw, 18.6614vw, -20vw) scale(0.95);
+  }
 
-.floating-projects .floating-item:nth-of-type(8) {
-  transform: translate(-30vw, 10vw) scale(0.92);
-}
+  .floating-projects .floating-item:nth-of-type(7) {
+    --darkness: 0.7;
+    transform: translate3d(9.75vw, 71.1739vw, 0vw) scale(1.15);
+  }
 
-.floating-projects .floating-item:nth-of-type(9) {
-  transform: translate(15vw, -15vw) scale(1.05);
-}
+  .floating-projects .floating-item:nth-of-type(8) {
+    --darkness: 0.7;
+    transform: translate3d(23.5vw, 48.4364vw, -2vw) scale(0.92);
+  }
 
-.floating-projects .floating-item:nth-of-type(10) {
-  transform: translate(40vw, 5vw) scale(0.87);
-}
+  .floating-projects .floating-item:nth-of-type(2) {
+    --darkness: 0.7;
+    transform: translate3d(67.5vw, 39.9489vw, -20vw) scale(1.05);
+  }
 
-.floating-projects .floating-item:nth-of-type(11) {
-  transform: translate(-10vw, 20vw) scale(1.08);
-}
+  .floating-projects .floating-item:nth-of-type(10) {
+    --darkness: 0.5;
+    transform: translate3d(48.5vw, -63.0386vw, -20vw) scale(0.87);
+  }
 
-.floating-projects .floating-item:nth-of-type(12) {
-  transform: translate(35vw, -25vw) scale(0.88);
+  .floating-projects .floating-item:nth-of-type(11) {
+    --darkness: 0.4;
+    transform: translate3d(82vw, 64.4739vw, -13.5vw) scale(1.08);
+  }
+
+  .floating-projects .floating-item:nth-of-type(12) {
+    --darkness: 0.6;
+    transform: translate3d(68vw, -62.5136vw, 1vw) scale(0.88);
+  }
+
 }

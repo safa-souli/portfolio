@@ -1,4 +1,4 @@
-const mode = "prod";
+const mode = "dev";
 if (mode === "prod") {
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }

@@ -43,13 +43,8 @@
 
 .portfolio__stat-item {
   display: flex;
-  align-items: baseline;
-  gap: 4px;
+  gap: 6px;
   line-height: 1;
-}
-
-.portfolio__stat-item .icon {
-  transform: translateY(2px);
 }
 
 .portfolio__tools {

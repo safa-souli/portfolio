@@ -1,3 +1,151 @@
+function applyAnimation(y, element, increment, maxViewportWidth) {
+  function animate() {
+    // Increment Y and check the bounds
+    y += increment;
+    if (y >= maxViewportWidth) {
+      // Directly set the Y position to -74 without animation
+      y = -maxViewportWidth;
+
+      // Update the element's transform immediately to the new position
+      element.css({
+        "transition": "none", // Temporarily disable transitions
+        "transform": `translate3d(${element.data('translateX')}vw, ${y}vw, ${element.data('translateZ')}vw)`
+      });
+
+      // Force reflow to immediately apply the styles
+      element[0].offsetHeight;
+
+      // Re-enable transitions for smooth animation afterward
+      element.css("transition", "");
+    } else {
+      // Apply the transformation with the incremented Y value
+      element.css({
+        "transform": `translate3d(${element.data('translateX')}vw, ${y}vw, ${element.data('translateZ')}vw)`
+      });
+    }
+
+    // Store the updated Y value in the element's data attribute for future reference
+    element.data('translateY', y);
+
+    // Call animate on the next frame
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation loop
+  requestAnimationFrame(animate);
+}
+
+function floatingProjectsAnimate() {
+  const floatingProjectsTransform = {
+    6: {
+      darkness: 0.8,
+      TranslateX: 35.5,
+      TranslateY: -0.65103,
+      TranslateZ: -25,
+      Scale: 0.85
+    },
+    9: {
+      darkness: 0.2,
+      TranslateX: 45.5,
+      TranslateY: -20.6385,
+      TranslateZ: -5,
+      Scale: 1.1
+    },
+    5: {
+      darkness: 0.1,
+      TranslateX: -2.5,
+      TranslateY: -25.626,
+      TranslateZ: -18,
+      Scale: 0.86
+    },
+    4: {
+      darkness: 0.6,
+      TranslateX: 87.5,
+      TranslateY: -31.6135,
+      TranslateZ: -20,
+      Scale: 0.9
+    },
+    3: {
+      darkness: 0.4,
+      TranslateX: 75.5,
+      TranslateY: -1.60105,
+      TranslateZ: -2,
+      Scale: 0.8
+    },
+    1: {
+      darkness: 0.5,
+      TranslateX: 3.75,
+      TranslateY: 18.6614,
+      TranslateZ: -20,
+      Scale: 0.95
+    },
+    7: {
+      darkness: 0.7,
+      TranslateX: 9.75,
+      TranslateY: 71.1739,
+      TranslateZ: 0,
+      Scale: 1.15
+    },
+    8: {
+      darkness: 0.7,
+      TranslateX: 23.5,
+      TranslateY: 48.4364,
+      TranslateZ: -2,
+      Scale: 0.92
+    },
+    2: {
+      darkness: 0.7,
+      TranslateX: 67.5,
+      TranslateY: 39.9489,
+      TranslateZ: -20,
+      Scale: 1.05
+    },
+    10: {
+      darkness: 0.5,
+      TranslateX: 48.5,
+      TranslateY: -63.0386,
+      TranslateZ: -20,
+      Scale: 0.87
+    },
+    11: {
+      darkness: 0.4,
+      TranslateX: 82,
+      TranslateY: 64.4739,
+      TranslateZ: -13.5,
+      Scale: 1.08
+    },
+    12: {
+      darkness: 0.6,
+      TranslateX: 68,
+      TranslateY: -62.5136,
+      TranslateZ: 1,
+      Scale: 0.88
+    }
+  };
+
+  $(".floating-projects .floating-item").each(function (index) {
+    // Convert the index to 1-based index to match with nth-of-type
+    const nthOfType = index + 1;
+
+    // Make sure the entry exists in the object
+    if (floatingProjectsTransform[nthOfType]) {
+      // Store the X, Y, and Z values in data attributes
+      $(this).data('translateX', floatingProjectsTransform[nthOfType].TranslateX);
+      $(this).data('translateY', floatingProjectsTransform[nthOfType].TranslateY);
+      $(this).data('translateZ', floatingProjectsTransform[nthOfType].TranslateZ);
+
+      // Apply initial styles including scale and darkness
+      $(this).css({
+        "--darkness": floatingProjectsTransform[nthOfType].darkness,
+        "transform": `translate3d(${floatingProjectsTransform[nthOfType].TranslateX}vw, ${floatingProjectsTransform[nthOfType].TranslateY}vw, ${floatingProjectsTransform[nthOfType].TranslateZ}vw) scale(${floatingProjectsTransform[nthOfType].Scale})`
+      });
+
+      // Apply animation only to the Y value
+      applyAnimation(floatingProjectsTransform[nthOfType].TranslateY, $(this), Math.random() * (0.1358 - 0.1000) + 0.1000, 60);
+    }
+  });
+}
+
 $(document).ready(function () {
   const jsonProject = `assets/data/behance-projects.json`;
 
@@ -18,6 +166,8 @@ $(document).ready(function () {
     data.projects.forEach(function (project, index) {
       const hasBehanceUrl = project.url;
       const hasStats = project.stats && (project.stats.views || project.appreciations || project.stats.comments);
+
+      index++;
       // Determine if the project is new
       if (isNewProject(project.published_at)) {
         project.label = "new";
@@ -82,7 +232,7 @@ $(document).ready(function () {
         const floatingElement = `
           <div class="floating-item">
             <div class="floating-item__content">
-              <figure class="floating-item__image">
+              <figure class="floating-item__image" style="aspect-ratio: 4/3">
                 <img src="${project.covers['404']}" alt="${project.name}">
               </figure>
               ${hasStats ? `
@@ -98,6 +248,10 @@ $(document).ready(function () {
 
         // Append the floating project HTML to the floating container
         $floatingContainer.append(floatingElement);
+      }
+
+      if (index === data.projects.length) {
+        floatingProjectsAnimate();
       }
 
       $('#viewOnBehance').on('click', function (event) {
