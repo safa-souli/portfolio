@@ -141,7 +141,7 @@ function floatingProjectsAnimate() {
       });
 
       // Apply animation only to the Y value
-      applyAnimation(floatingProjectsTransform[nthOfType].TranslateY, $(this), Math.random() * (0.1358 - 0.1000) + 0.1000, -20, 69);
+      applyAnimation(floatingProjectsTransform[nthOfType].TranslateY, $(this), Math.random() * (0.1200 - 0.1000) + 0.1000, -20, 69);
     }
   });
 }
