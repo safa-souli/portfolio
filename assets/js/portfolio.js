@@ -1,9 +1,41 @@
-function applyAnimation(y, element, increment, startY, endY) {
+function applyAnimation(y, element, increment) {
+  var startY = -30;
+  var endY = 70;
+  var isPaused = false; // Flag to pause the animation
+  var originalZIndex = element.css("z-index"); // Store the original z-index
+  var originalDarkness = element.css("--darkness"); // Store the original darkness
+
+  // Add event listeners to stop and resume animation on hover, and update z-index and darkness
+  element.on('mouseenter', function () {
+    isPaused = true;
+
+    // Set the z-index and darkness
+    element.css({
+      "z-index": "999",
+      "--darkness": "0"
+    });
+  });
+
+  element.on('mouseleave', function () {
+    isPaused = false;
+    // Reset the z-index and darkness to original values
+    element.css({
+      "z-index": originalZIndex,
+      "--darkness": originalDarkness
+    });
+
+    // Resume the animation loop
+    requestAnimationFrame(animate);
+  });
+
   function animate() {
+    // Stop animation if paused
+    if (isPaused) return;
+
     // Increment Y and check the bounds
     y += increment;
     if (y >= endY) {
-      // Directly set the Y position to the ennd without animation
+      // Directly set the Y position to the end without animation
       y = startY;
 
       // Update the element's transform immediately to the new position
@@ -37,89 +69,101 @@ function applyAnimation(y, element, increment, startY, endY) {
 
 function floatingProjectsAnimate() {
   const floatingProjectsTransform = {
-    6: {
-      darkness: 0.8,
-      TranslateX: 35.5,
-      TranslateY: -0.65103,
-      TranslateZ: -25,
-      Scale: 0.85
-    },
-    9: {
-      darkness: 0.2,
-      TranslateX: 45.5,
-      TranslateY: -20.6385,
-      TranslateZ: -5,
-      Scale: 1.1
-    },
-    5: {
-      darkness: 0.1,
-      TranslateX: -2.5,
-      TranslateY: -25.626,
-      TranslateZ: -18,
-      Scale: 0.86
-    },
-    4: {
-      darkness: 0.6,
-      TranslateX: 87.5,
-      TranslateY: -31.6135,
-      TranslateZ: -20,
-      Scale: 0.9
-    },
-    3: {
-      darkness: 0.4,
-      TranslateX: 75.5,
-      TranslateY: -1.60105,
-      TranslateZ: -2,
-      Scale: 0.8
-    },
-    1: {
-      darkness: 0.5,
-      TranslateX: 3.75,
-      TranslateY: 18.6614,
-      TranslateZ: -20,
-      Scale: 0.95
-    },
     7: {
-      darkness: 0.7,
+      darkness: 0.1,
       TranslateX: 9.75,
       TranslateY: 71.1739,
       TranslateZ: 0,
-      Scale: 1.15
+      Scale: 1.15,
+      zIndex: 12
+    },
+    9: {
+      darkness: 0.4,
+      TranslateX: 45.5,
+      TranslateY: -20.6385,
+      TranslateZ: -5,
+      Scale: 1.1,
+      zIndex: 11
+    },
+    11: {
+      darkness: 0.2,
+      TranslateX: 82,
+      TranslateY: 64.4739,
+      TranslateZ: -13.5,
+      Scale: 1.08,
+      zIndex: 10
+    },
+    2: {
+      darkness: 0.2,
+      TranslateX: 67.5,
+      TranslateY: 39.9489,
+      TranslateZ: -20,
+      Scale: 1.05,
+      zIndex: 9
     },
     8: {
       darkness: 0.7,
       TranslateX: 23.5,
       TranslateY: 48.4364,
       TranslateZ: -2,
-      Scale: 0.92
+      Scale: 0.92,
+      zIndex: 8
     },
-    2: {
+    4: {
       darkness: 0.7,
-      TranslateX: 67.5,
-      TranslateY: 39.9489,
+      TranslateX: 87.5,
+      TranslateY: -31.6135,
       TranslateZ: -20,
-      Scale: 1.05
+      Scale: 0.9,
+      zIndex: 7
     },
-    10: {
-      darkness: 0.5,
-      TranslateX: 48.5,
-      TranslateY: -63.0386,
+    1: {
+      darkness: 0.75,
+      TranslateX: 3.75,
+      TranslateY: 18.6614,
       TranslateZ: -20,
-      Scale: 0.87
-    },
-    11: {
-      darkness: 0.4,
-      TranslateX: 82,
-      TranslateY: 64.4739,
-      TranslateZ: -13.5,
-      Scale: 1.08
+      Scale: 0.95,
+      zIndex: 6
     },
     12: {
-      darkness: 0.6,
+      darkness: 0.8,
       TranslateX: 68,
       TranslateY: -62.5136,
       TranslateZ: 1,
-      Scale: 0.88
+      Scale: 0.88,
+      zIndex: 5
+    },
+    10: {
+      darkness: 0.8,
+      TranslateX: 48.5,
+      TranslateY: -63.0386,
+      TranslateZ: -20,
+      Scale: 0.87,
+      zIndex: 4
+    },
+    5: {
+      darkness: 0.8,
+      TranslateX: -2.5,
+      TranslateY: -25.626,
+      TranslateZ: -18,
+      Scale: 0.86,
+      zIndex: 3
+    },
+    6: {
+      darkness: 0.8,
+      TranslateX: 35.5,
+      TranslateY: -0.65103,
+      TranslateZ: -25,
+      Scale: 0.85,
+      zIndex: 2
+    },
+    3: {
+      darkness: 0.8,
+      TranslateX: 75.5,
+      TranslateY: -1.60105,
+      TranslateZ: -2,
+      Scale: 0.8,
+      zIndex: 1
     }
   };
 
@@ -137,11 +181,12 @@ function floatingProjectsAnimate() {
       // Apply initial styles including scale and darkness
       $(this).css({
         "--darkness": floatingProjectsTransform[nthOfType].darkness,
-        "transform": `translate3d(${floatingProjectsTransform[nthOfType].TranslateX}vw, ${floatingProjectsTransform[nthOfType].TranslateY}vw, ${floatingProjectsTransform[nthOfType].TranslateZ}vw) scale(${floatingProjectsTransform[nthOfType].Scale})`
+        "transform": `translate3d(${floatingProjectsTransform[nthOfType].TranslateX}vw, ${floatingProjectsTransform[nthOfType].TranslateY}vw, ${floatingProjectsTransform[nthOfType].TranslateZ}vw) scale(${floatingProjectsTransform[nthOfType].Scale}`,
+        "z-index": floatingProjectsTransform[nthOfType].zIndex
       });
 
       // Apply animation only to the Y value
-      applyAnimation(floatingProjectsTransform[nthOfType].TranslateY, $(this), Math.random() * (0.1200 - 0.1000) + 0.1000, -20, 69);
+      applyAnimation(floatingProjectsTransform[nthOfType].TranslateY, $(this), Math.random() * (0.1100 - 0.1000) + 0.1000);
     }
   });
 }
@@ -230,7 +275,7 @@ $(document).ready(function () {
 
       if (project.promoted && project.actif) {
         const floatingElement = `
-          <div class="floating-item">
+          <div class="floating-item"  ${hasBehanceUrl ? `title="click to view on behance" onclick="window.open('${project.url}', '_blank')"` : ''}>
             <div class="floating-item__content">
               <figure class="floating-item__image" style="aspect-ratio: 4/3">
                 <img src="${project.covers['404']}" alt="${project.name}">

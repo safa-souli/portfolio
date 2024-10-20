@@ -15,7 +15,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease, box-shadow .5s ease;
-  outline: 3px solid transparent;
+  outline: 1px solid transparent;
   box-shadow: 0 0 0 var(--ss-accent-color);
   color: var(--ss-body-bg);
   border: none;
@@ -39,8 +39,8 @@
 }
 
 .cta__btn--outline {
-  background-image: var(--ss-accent-gradient);
-  outline-color: #29c27b59;
+  background-image: linear-gradient(90deg, #fff 0%, #fff 100%);
+  outline-color: var(--ss-accent-color);
   padding-block: calc(var(--ss-space-xs-s) - 1px);
 }
 
