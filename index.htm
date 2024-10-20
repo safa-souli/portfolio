@@ -39,22 +39,13 @@
   <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-602M299MGV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-602M299MGV');
-  </script>
+  <script async src="assets/js/gtag.js"></script>
 
 </head>
 
 <body>
   <div class="masked-circle"></div>
-
-  <!-- <div class="noise-wrapper">
-    <div class="noise-overlay"></div>
-  </div> -->
+  <div class="night-stand-bg"></div>
 
   <div id="page-content" class="page__content page--home">
     <header class="header bg-blur">
@@ -99,20 +90,23 @@
       <div class="hero__content">
         <div class="container">
           <div class="hero__wrapper">
-            <h1 class="hero__title title">Skilled Web Developer +<br> UI Designer</h1>
+            <h1 class="hero__title title">Web Developer +<br> UI Designer</h1>
             <h2 class="hero__subtitle subtitle">Hi! I'm Safa Souli</h2>
-            <p class="hero__text">
+            <p class="hero__text" style="display:none">
               Let's create high-performance websites with stunning, user-friendly interfaces. Partner with a developer
               who blends
               creativity and technical expertise for top-tier results
             </p>
             <cta class="hero__cta">
-              <a class="cta__btn--outline animate-page" href="portfolio.htm"><i class="icon icon--eye"></i> View
-                Portfolio
-              </a>
-              <a class="cta__btn--outline" href="assets/pdf/Resume-English.pdf" target="_blank"><i
-                  class="icon icon--download-file"></i> Download CV </a>
-
+              <span class="btn-wrappper">
+                <a class="cta__btn--outline animate-page" href="portfolio.htm"><i class="icon icon--eye"></i> View
+                  Portfolio
+                </a>
+              </span>
+              <span class="btn-wrappper">
+                <a class="cta__btn--outline" href="assets/pdf/Resume-English.pdf" target="_blank"><i
+                    class="icon icon--download-file"></i> Download CV </a>
+              </span>
             </cta>
           </div>
         </div>
@@ -232,9 +226,6 @@
     </service>
 
     <portfolio class="portfolio bg-img__wrapper">
-      <figure class="bg-img  bg-img--left">
-        <img class="bg-img__img" src="assets/img/waves-line-abstract/1.svg" alt="abstract-left">
-      </figure>
       <div class="container">
         <div class="portfolio__header ds-header">
           <h2 class="portfolio__title title">My recent Work</h2>
@@ -398,9 +389,6 @@
     </profile>
 
     <skill class="skill">
-      <figure class="bg-img bg-img--right">
-        <img class="bg-img__img" src="assets/img/waves-line-abstract/8.svg" alt="abstract-right">
-      </figure>
       <div class="container">
         <div class="skill__wrapper">
           <div class="skill__content">
@@ -681,9 +669,6 @@
     </skill>
 
     <contact class="contact">
-      <figure class="bg-img  bg-img--bottom-left">
-        <img class="bg-img__img" src="assets/img/waves-line-abstract/18.svg" alt="abstract-left">
-      </figure>
       <div class="container">
         <div class="contact__wrapper">
           <div class="contact__info">

@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "id": 4,
+      "name": "Coming Soon",
+      "description": "Work in Progress",
+      "covers": {
+        "202": "assets/img/coming-soon-thumbnail-202.jpg",
+        "404": "assets/img/coming-soon-thumbnail-404.jpg",
+        "808": "assets/img/coming-soon-thumbnail-808.jpg",
+        "original": "assets/img/coming-soon-thumbnail.jpg"
+      },
+      "fields": [
+        "Logo Design"
+      ],
+      "actif": false,
+      "promoted": true
+    },
+    {
       "id": 3,
       "name": "Box Saint Quentin",
       "description": "Business Card & Brand Identity",
@@ -15,11 +31,13 @@
         "Logo Design"
       ],
       "stats": {
-        "views": 3,
+        "views": 4,
         "comments": 0
       },
       "appreciations": 0,
-      "published_at": "2024-10-16"
+      "published_at": "2024-10-16",
+      "actif": true,
+      "promoted": true
     },
     {
       "id": 2,
@@ -36,11 +54,13 @@
         "Web Design"
       ],
       "stats": {
-        "views": 3,
+        "views": 4,
         "comments": 2
       },
       "appreciations": 1,
-      "published_at": "2024-10-15"
+      "published_at": "2024-10-15",
+      "actif": true,
+      "promoted": true
     },
     {
       "id": 1,
@@ -57,11 +77,13 @@
         "Web Design"
       ],
       "stats": {
-        "views": 15,
+        "views": 18,
         "comments": 0
       },
       "appreciations": 3,
-      "published_at": "2024-9-30"
+      "published_at": "2024-9-30",
+      "actif": true,
+      "promoted": true
     }
   ]
 }

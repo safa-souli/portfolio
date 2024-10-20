@@ -1,5 +1,5 @@
 .page--home .counter.bg-blur::after {
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(2rem);
 }
 
 .page--home .header.bg-blur::after {

@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'my-portfolio-cache-v0.0.17';
+const CACHE_NAME = 'my-portfolio-cache-v0.0.18';
 
 const urlsToCache = [
   // HTML pages
