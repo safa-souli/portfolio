@@ -267,6 +267,14 @@
   backdrop-filter: blur(6px);
 }
 
+.night-stand-bg {
+  position: fixed;
+  inset: 0;
+  background: url(../../../assets/img/sparkle.svg);
+  opacity: 0.08;
+  width: 100vw;
+  height: 100vh;
+}
 @media (width >=992px) {
   .hero__title {
     font-size: 4.75rem;
