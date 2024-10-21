@@ -49,7 +49,7 @@
 }
 
 .page--about .profile__header .subtitle {
-  font-weight: 500;
+  font-weight: var(--ss-heading-font-weight);
   line-height: 1.8;
 }
 

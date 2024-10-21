@@ -107,7 +107,7 @@ cta {
   display: grid;
   gap: var(--ss-grid-gutter);
   grid-template-columns: repeat(var(--grid-columns, 1), 1fr);
-  margin-top: var(--ss-space-xl);
+  margin-top: var(--ss-space-2xl);
 }
 
 @media (width > 768px) {
@@ -131,7 +131,7 @@ cta {
   font-family: inherit !important;
   border-radius: 7px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--ss-body-font-weight);
 }
 
 .bg-blur {
@@ -191,6 +191,7 @@ cta {
 .tilt-wrapper {
   transition: transform 300ms linear;
   position: relative;
+  z-index: 1;
   perspective: 100rem;
   margin-bottom: var(--ss-grid-gutter);
 }

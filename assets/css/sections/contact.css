@@ -58,11 +58,12 @@
   grid-area: subtitle;
   line-height: 1.4;
   font-weight: 300;
+  color: #8f8f8f;
 }
 
 .contact__item-title {
   grid-area: title;
-  font-weight: 600;
+  font-weight: var(--ss-heading-font-weight);
   font-size: var(--ss-step-1);
   line-height: 1.5;
   color: var(--ss-heading-color);
@@ -238,7 +239,7 @@
   }
 }
 
-@media (width >= 768px) {
+@media (width >=768px) {
   .contact__list::after {
     content: unset;
   }

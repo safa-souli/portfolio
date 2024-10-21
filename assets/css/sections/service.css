@@ -5,19 +5,19 @@
 
 .service__item {
   border-radius: var(--ss-border-radius);
-  padding: var(--ss-space-s-l);
+  padding: var(--ss-space-l-xl) var(--ss-space-l);
 }
 
 .service__item-title {
-  margin-bottom: var(--ss-space-xs-s);
+  margin-bottom: var(--ss-space-s);
   font-size: var(--ss-step-1);
 }
 
 .service__icon {
   display: grid;
   background: var(--ss-dark);
-  padding: var(--ss-space-xs-s);
-  margin-bottom: var(--ss-space-s-m);
+  padding: var(--ss-space-s);
+  margin-bottom: var(--ss-space-l);
   border-radius: 100vmax;
   width: fit-content;
   aspect-ratio: 1/1;
