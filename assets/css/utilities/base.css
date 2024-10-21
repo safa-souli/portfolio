@@ -445,7 +445,7 @@ cta {
 
 #page-content::after {
   content: "";
-  width: 18vw;
+  width: 20vw;
   border-left: 1px solid #ffffff0a;
   border-right: 1px solid #ffffff0a;
   height: 100%;
@@ -458,7 +458,7 @@ cta {
 
 #page-content::before {
   content: "";
-  width: 54vw;
+  width: 62vw;
   border-left: 1px solid #ffffff0a;
   border-right: 1px solid #ffffff0a;
   height: 100%;

@@ -3,8 +3,26 @@
 }
 
 .callout__content {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   border-radius: var(--ss-border-radius);
   padding-block: var(--ss-space-s-l);
+}
+
+.callout__content::before {
+  content: "";
+  position: absolute;
+  background: url(../../../assets/img/sparkle.svg), url(../../../assets/img/sparkle.svg);
+  background-position-x: 0%, 0%;
+  background-position-y: 0%, 0%;
+  background-size: auto, auto;
+  background-position: -34% 49%, 136% 48%;
+  background-size: 500px 1000%, 500px 500%;
+  background-repeat: no-repeat;
+  inset: 0;
+  opacity: .2;
+  transform: rotate(8deg);
 }
 
 .callout__wrapper {

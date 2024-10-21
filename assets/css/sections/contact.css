@@ -250,3 +250,17 @@
   left: 0;
   z-index: 1;
 }
+
+#contact-form::before {
+  content: "";
+  position: absolute;
+  background: none, url(../../../assets/img/sparkle.svg);
+  background-position-x: 0%, 0%;
+  background-position-y: 0%, 0%;
+  background-size: auto, auto;
+  background-position: 100% -216%, 100% 315%;
+  background-size: 100% 500px, 100% 500px;
+  background-repeat: repeat-x;
+  inset: 0;
+  opacity: .2;
+}
