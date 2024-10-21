@@ -60,7 +60,6 @@
 .nav__link {
   color: var(--ss-heading-color);
   text-decoration: none;
-  font-weight: var(--ss-btn-font-weight);
 }
 
 #header-fixed {

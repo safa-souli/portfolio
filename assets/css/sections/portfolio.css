@@ -125,7 +125,7 @@
   color: var(--ss-accent-color);
   padding-bottom: 1px;
   margin-bottom: -1px;
-  font-weight: 600;
+  font-weight: var(--ss-heading-font-weight);
   text-decoration: none;
 }
 
@@ -168,7 +168,7 @@
   border: none;
   padding: var(--ss-space-s);
   line-height: 1;
-  font-weight: 600;
+  font-weight: var(--ss-heading-font-weight);
   font-family: var(--ss-body-font-family);
   font-size: var(--ss-step-0);
   cursor: pointer;

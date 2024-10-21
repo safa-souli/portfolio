@@ -34,7 +34,7 @@
 
 .skill__caption {
   margin-top: var(--ss-space-s);
-  font-weight: 600;
+  font-weight: var(--ss-heading-font-weight);
   line-height: 1;
 }
 

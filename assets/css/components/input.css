@@ -81,7 +81,7 @@ textarea.form__input {
 }
 
 .form__label {
-  font-weight: 500;
+  font-weight: var(--ss-heading-font-weight);
   display: block;
   margin-bottom: var(--ss-space-2xs);
 }
