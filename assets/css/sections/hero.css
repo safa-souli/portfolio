@@ -251,7 +251,7 @@
   aspect-ratio: 1/1;
   background: linear-gradient(to bottom, rgba(var(--ss-accent-color-rgb), 30%), transparent 20%, transparent, transparent);
   border: 3px solid var(--ss-accent-color);
-  border-radius: 100%;
+  border-radius: 50%;
   bottom: -125%;
   box-shadow: 0px 0px 4px rgba(var(--ss-accent-color-rgb), 25%), 0px 0px 10px rgba(var(--ss-accent-color-rgb), 50%), 0px 0px 20px rgba(var(--ss-accent-color-rgb), 75%), inset 0px 0px 4px rgba(var(--ss-accent-color-rgb), 0.25), inset 0px 0px 10px rgba(var(--ss-accent-color-rgb), 0.50), inset 0px 0px 20px rgba(var(--ss-accent-color-rgb), 0.75);
   z-index: -2;
