@@ -136,7 +136,7 @@
 
 .portfolio__content hr {
   grid-area: hr;
-  opacity: .2;
+  opacity: .1;
   margin-block: var(--ss-space-s) var(--ss-space-xs);
 }
 
