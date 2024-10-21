@@ -144,9 +144,9 @@ cta {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, #43E29B14 0%, transparent 100%);
-  -webkit-backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 4px 50px var(--ss-body-bg);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: inherit;
   transform: inherit;
@@ -437,4 +437,34 @@ cta {
 
 .bg-img.bg-img--right {
   top: -16%;
+}
+
+#page-content {
+  position: relative;
+}
+
+#page-content::after {
+  content: "";
+  width: 18vw;
+  border-left: 1px solid #ffffff0a;
+  border-right: 1px solid #ffffff0a;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+
+#page-content::before {
+  content: "";
+  width: 54vw;
+  border-left: 1px solid #ffffff0a;
+  border-right: 1px solid #ffffff0a;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
 }

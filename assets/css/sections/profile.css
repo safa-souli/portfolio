@@ -63,7 +63,7 @@
 
 .profile--aboutme+hr {
   margin-block: var(--ss-space-2xl);
-  opacity: .2;
+  opacity: .1;
 }
 
 .profile__subtitle {
